@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rizo - حوّل حياتك إلى لعبة</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://i.postimg.cc/90QXM0kb/44.png" type="image/png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Chakra Petch for a futuristic, strong feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Custom styles to match the brand identity */
+        body {
+            background-color: #000000;
+            color: #FFFFFF;
+            font-family: 'Chakra Petch', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .bg-gradient-primary {
+            background: linear-gradient(170deg, #000000, #10002B, #000000, #1a0042);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+        }
+        
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .bg-gradient-radial {
+            background: radial-gradient(circle, rgba(106,0,255,0.15) 0%, rgba(0,0,0,0) 60%);
+        }
+
+        .text-neon-purple {
+            color: #6A00FF;
+            text-shadow: 0 0 5px #6A00FF, 0 0 10px #6A00FF;
+        }
+
+        .btn-primary {
+            background-color: #6A00FF;
+            color: #FFFFFF;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(106, 0, 255, 0.5), 0 0 20px rgba(106, 0, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 15px rgba(106, 0, 255, 0.8), 0 0 30px rgba(106, 0, 255, 0.5);
+        }
+        
+        .btn-secondary {
+             background-color: transparent;
+             color: #6A00FF;
+             border: 2px solid #6A00FF;
+             transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #6A00FF;
+            color: #FFFFFF;
+            box-shadow: 0 0 15px rgba(106, 0, 255, 0.8);
+        }
+
+        /* Animation for elements fading in on scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Roadmap Styles */
+        .roadmap-line {
+            position: absolute;
+            right: 1.25rem; /* Adjust based on icon size */
+            top: 1.25rem;
+            bottom: -1.25rem;
+            width: 2px;
+            background-color: rgba(106, 0, 255, 0.3);
+            z-index: 0;
+        }
+        .roadmap-item:last-child .roadmap-line {
+            display: none;
+        }
+        .roadmap-item, .support-tier {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .roadmap-item:hover, .support-tier:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(106, 0, 255, 0.1);
+        }
+        
+        /* Counter Styles */
+        .digit-box {
+            background-color: #6A00FF;
+            color: #FFFFFF;
+            padding: 0.5rem 1rem;
+            margin: 0 0.2rem;
+            border-radius: 0.375rem; /* 6px */
+            font-weight: 700;
+            font-size: 2.25rem; /* 36px */
+            line-height: 2.5rem; /* 40px */
+            min-width: 48px;
+            text-align: center;
+            display: inline-block;
+            box-shadow: 0 0 10px rgba(106, 0, 255, 0.8);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Main Container -->
+    <div class="min-h-screen w-full">
+
+        <!-- 1. Hero Section -->
+        <section id="hero" class="min-h-screen flex items-center justify-center text-center p-6 bg-gradient-primary relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-radial"></div>
+            <div class="relative z-10 fade-in">
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-widest uppercase" style="text-shadow: 0 0 10px rgba(255,255,255,0.3);">
+                    حوّل حياتك إلى لعبة RPG حقيقية
+                </h1>
+                <p class="mt-6 text-lg md:text-xl max-w-2xl mx-auto text-gray-300">
+                    رحلتي لبناء أول تطبيق سيغيّر مفهوم تطوير الذات للأبد.
+                </p>
+                <a href="#cta-main" class="mt-10 inline-block btn-primary font-bold py-4 px-12 rounded-lg text-xl uppercase tracking-wider">
+                    سجّل للوصول المبكر
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. Personal Video Section -->
+        <section id="about-rizo" class="py-20 px-6 bg-black">
+            <div class="max-w-4xl mx-auto text-center fade-in">
+                <img src="https://i.postimg.cc/90QXM0kb/44.png" alt="شعار Rizo" class="mx-auto w-24 h-24 mb-6 rounded-full object-cover">
+                <h2 class="text-4xl md:text-5xl font-bold text-neon-purple tracking-wider">قصة Rizo</h2>
+                <div class="mt-8 relative w-full max-w-3xl mx-auto aspect-video rounded-2xl overflow-hidden border-2 border-purple-800/50 shadow-lg shadow-purple-900/20">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/xkMOZF8Iwbc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                 <p class="mt-8 text-lg md:text-xl max-w-3xl mx-auto text-gray-300 leading-relaxed">
+                    في عمر الـ 20، شعرت أن الحياة الواقعية تفتقر لنظام واضح للتقدم. هذا التطبيق ليس مجرد مشروع، بل هو محاولتي لصناعة الأداة التي كنت أحتاجها، ومساعدة الآلاف على خوض رحلة تطوير الذات، وتحقيق حلمي بأن أكون أول من يغير واقع عائلتي.
+                </p>
+            </div>
+        </section>
+        
+        <!-- 3. About the App Section (Restored) -->
+        <section id="about-app" class="py-20 px-6 bg-black">
+            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-right fade-in">
+                    <h2 class="text-4xl md:text-5xl font-bold tracking-wider">تطبيق سيغيّر حياتك</h2>
+                    <p class="mt-6 text-lg md:text-xl text-gray-300">
+                        مستوحى من نظام Solo Leveling… XP، Health، Missions، Levels… كل هذا سيصبح واقعًا حقيقيًا، وليس مجرد لعبة. الهدف: يجعلك أقوى نسخة من نفسك كل يوم.
+                    </p>
+                </div>
+                <div class="w-full max-w-sm mx-auto fade-in">
+                    <img src="https://i.postimg.cc/7ZDzr9sg/55.jpg" 
+                         alt="صورة لواجهة التطبيق" 
+                         class="rounded-2xl border-2 border-purple-800/50 shadow-lg shadow-purple-900/20 w-full h-auto">
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Roadmap Section -->
+        <section id="roadmap" class="py-20 px-6 bg-black">
+            <div class="max-w-4xl mx-auto fade-in">
+                <h2 class="text-center text-4xl md:text-5xl font-bold text-neon-purple tracking-wider mb-12">خارطة الطريق</h2>
+                <div class="relative">
+                    <!-- Roadmap Items -->
+                    <div class="roadmap-item relative pr-10 pb-10">
+                        <div class="roadmap-line"></div>
+                        <div class="absolute top-0 right-0 w-10 h-10 bg-green-500/20 border-2 border-green-500 rounded-full flex items-center justify-center z-10"><i class="fas fa-check text-green-400"></i></div>
+                        <h3 class="text-2xl font-bold mb-2">المرحلة الأولى: الواجهة الأساسية <span class="text-sm font-normal text-green-400">(تمت)</span></h3>
+                        <p class="text-gray-400">إنشاء واجهة المهام، وشريط الصحة، الطاقة، والخبرة.</p>
+                    </div>
+                    <div class="roadmap-item relative pr-10 pb-10">
+                         <div class="roadmap-line"></div>
+                        <div class="absolute top-0 right-0 w-10 h-10 bg-green-500/20 border-2 border-green-500 rounded-full flex items-center justify-center z-10"><i class="fas fa-check text-green-400"></i></div>
+                        <h3 class="text-2xl font-bold mb-2">المرحلة الثانية: السجلات والمهارات <span class="text-sm font-normal text-green-400">(تمت)</span></h3>
+                        <p class="text-gray-400">إنشاء شاشة سجل المهام، الإنجازات، الملف الشخصي، وشجرة المهارات.</p>
+                    </div>
+                    <div class="roadmap-item relative pr-10 pb-10">
+                         <div class="roadmap-line"></div>
+                        <div class="absolute top-0 right-0 w-10 h-10 bg-purple-500/20 border-2 border-purple-500 rounded-full flex items-center justify-center z-10"><i class="fas fa-spinner fa-spin text-purple-400"></i></div>
+                        <h3 class="text-2xl font-bold mb-2">المرحلة الثالثة: المتجر والدهاليز <span class="text-sm font-normal text-purple-400">(نعمل عليها الآن)</span></h3>
+                        <p class="text-gray-400">إنشاء المتجر، شاشة الدهليز (Dungeon)، وتحسين تجربة المستخدم.</p>
+                    </div>
+                    <div class="roadmap-item relative pr-10 pb-10">
+                        <div class="roadmap-line"></div>
+                        <div class="absolute top-0 right-0 w-10 h-10 bg-gray-700/50 border-2 border-gray-600 rounded-full flex items-center justify-center z-10"><i class="far fa-circle text-gray-500"></i></div>
+                        <h3 class="text-2xl font-bold mb-2">المرحلة الرابعة: الرحلة والمغامرات <span class="text-sm font-normal text-gray-500">(قادمة)</span></h3>
+                        <p class="text-gray-400">ميزات ضخمة لتوسيع عالم اللعبة.</p>
+                    </div>
+                    <div class="roadmap-item relative pr-10 pb-10">
+                        <div class="roadmap-line"></div>
+                        <div class="absolute top-0 right-0 w-10 h-10 bg-gray-700/50 border-2 border-gray-600 rounded-full flex items-center justify-center z-10"><i class="far fa-circle text-gray-500"></i></div>
+                        <h3 class="text-2xl font-bold mb-2">المرحلة الخامسة: الأفاتار والتحديات <span class="text-sm font-normal text-gray-500">(قادمة)</span></h3>
+                        <p class="text-gray-400">الأفاتارات، التصنيف، التحديات، ولوحة الصدارة.</p>
+                    </div>
+                    <div class="roadmap-item relative pr-10">
+                        <div class="absolute top-0 right-0 w-10 h-10 bg-gray-700/50 border-2 border-gray-600 rounded-full flex items-center justify-center z-10"><i class="far fa-circle text-gray-500"></i></div>
+                        <h3 class="text-2xl font-bold mb-2">المرحلة السادسة: مهام المجتمع <span class="text-sm font-normal text-gray-500">(قادمة)</span></h3>
+                        <p class="text-gray-400">ميزة تتيح للمستخدمين إنشاء مهام ومشاركتها.</p>
+                    </div>
+                </div>
+                 <p class="text-center mt-12 text-purple-400 text-lg">... ودائماً سيكون هناك المزيد!</p>
+            </div>
+        </section>
+
+        <!-- 5. Support the Journey Section -->
+        <section id="support" class="py-20 px-6" style="background-color: #10002B;">
+            <div class="max-w-5xl mx-auto text-center fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold tracking-wider">ادعم الرحلة وكن جزءًا من الأسطورة</h2>
+                <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+                    دعمك هو الوقود الذي سيشعل هذه الثورة. باستثمارك في المشروع، أنت لا تشتري منتجًا، بل تساهم في بناء فكرة ستغير حياة الكثيرين.
+                </p>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Tier 1 -->
+                    <div class="support-tier p-8 border border-purple-900 rounded-xl bg-black/30 flex flex-col">
+                        <h3 class="text-2xl font-bold">الداعم البرونزي</h3>
+                        <p class="text-4xl font-bold my-4">$5</p>
+                        <p class="text-gray-400 flex-grow">اسمك في قائمة الشرف الخاصة بالموقع.</p>
+                        <a href="https://paymob.xyz/Ry8JGwXY/" target="_blank" class="mt-6 inline-block btn-secondary font-bold py-3 px-8 rounded-lg text-lg">ادعم الآن</a>
+                    </div>
+                    <!-- Tier 2 (Highlighted with FOMO) -->
+                    <div class="support-tier p-8 border-2 border-[#6A00FF] rounded-xl bg-black/50 flex flex-col transform md:scale-105 shadow-lg shadow-purple-900/50">
+                        <h3 class="text-2xl font-bold text-neon-purple">الصياد الفضي</h3>
+                        <p class="text-5xl font-bold my-4">$20</p>
+                        <ul class="text-gray-300 text-right space-y-2 flex-grow">
+                            <li><i class="fas fa-check text-green-400 ml-2"></i> كل ما سبق</li>
+                            <li><i class="fas fa-check text-green-400 ml-2"></i> وصول حصري للنسخة التجريبية (Beta)</li>
+                            <li class="font-bold text-white"><i class="fas fa-star text-yellow-400 ml-2"></i> شارة 'الداعم المؤسس' النادرة</li>
+                        </ul>
+                        <div class="mt-4 text-yellow-400 font-bold">لأول 100 داعم فقط! (متبقٍ 87)</div>
+                        <a href="https://paymob.xyz/BzzuM2DL/" target="_blank" class="mt-6 inline-block btn-primary font-bold py-3 px-8 rounded-lg text-lg">اختر الفئة</a>
+                    </div>
+                    <!-- Tier 3 -->
+                    <div class="support-tier p-8 border border-purple-900 rounded-xl bg-black/30 flex flex-col">
+                        <h3 class="text-2xl font-bold">الملك الذهبي</h3>
+                        <p class="text-4xl font-bold my-4">$50</p>
+                        <ul class="text-gray-400 text-right space-y-2 flex-grow">
+                             <li><i class="fas fa-check text-green-400 ml-2"></i> كل ما سبق</li>
+                             <li><i class="fas fa-check text-green-400 ml-2"></i> دور خاص في سيرفر الديسكورد</li>
+                        </ul>
+                        <a href="https://paymob.xyz/DHmttZCy/" target="_blank" class="mt-6 inline-block btn-secondary font-bold py-3 px-8 rounded-lg text-lg">ادعم الآن</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Community Section (Multi-Platform) -->
+        <section id="community" class="py-20 px-6 bg-black">
+            <div class="max-w-4xl mx-auto text-center fade-in">
+                <i class="fas fa-users text-6xl text-neon-purple mb-4"></i>
+                <h2 class="text-4xl md:text-5xl font-bold tracking-wider">المجتمع هو القوة الحقيقية</h2>
+                <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+                    هذا المشروع لا يبنيه شخص واحد، بل مجتمع كامل من الأبطال. بانضمامك لمجتمعنا على المنصات التالية، ستكون جزءًا من العقل المدبر للتطبيق.
+                </p>
+                <div class="mt-8 text-left max-w-md mx-auto space-y-4">
+                    <p class="text-lg"><i class="fas fa-comments text-purple-400 w-6 text-center ml-2"></i> تواصل مباشر معي وشارك أفكارك.</p>
+                    <p class="text-lg"><i class="fas fa-vote-yea text-purple-400 w-6 text-center ml-2"></i> صوّت على الميزات القادمة للتطبيق.</p>
+                    <p class="text-lg"><i class="fas fa-eye text-purple-400 w-6 text-center ml-2"></i> شاهد كواليس التطوير وتحديثات حصرية.</p>
+                </div>
+                <!-- Social Icons instead of a single button -->
+                <div class="mt-10 flex justify-center space-x-8 space-x-reverse">
+                    <a href="https://t.me/xrizo0" target="_blank" class="text-[#6A00FF] hover:text-white transition-all duration-300 transform hover:scale-125"><i class="fab fa-telegram text-4xl"></i></a>
+                    <a href="https://www.instagram.com/xrizo0?igsh=ZDlmeXV3bDZoN2di" target="_blank" class="text-[#6A00FF] hover:text-white transition-all duration-300 transform hover:scale-125"><i class="fab fa-instagram text-4xl"></i></a>
+                    <a href="https://youtube.com/@xrizo?si=UgNMLrF-RPFK6FdL" target="_blank" class="text-[#6A00FF] hover:text-white transition-all duration-300 transform hover:scale-125"><i class="fab fa-youtube text-4xl"></i></a>
+                    <a href="https://www.tiktok.com/@xrizo0?_t=ZS-8xo2BHa4V3S&_r=1" target="_blank" class="text-[#6A00FF] hover:text-white transition-all duration-300 transform hover:scale-125"><i class="fab fa-tiktok text-4xl"></i></a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 7. Main CTA Section -->
+        <section id="cta-main" class="py-24 px-6 bg-black relative border-t border-purple-900/30">
+            <div class="absolute inset-0 bg-gradient-radial"></div>
+            <div class="relative z-10 max-w-2xl mx-auto text-center fade-in">
+                <!-- MailerLite Form Container -->
+                <div class="ml-embedded" data-form="gSs5fs"></div>
+            </div>
+        </section>
+
+        <!-- 8. Footer -->
+        <footer class="bg-black py-8 px-6">
+            <div class="max-w-6xl mx-auto text-center text-gray-600">
+                <div class="flex justify-center space-x-6 space-x-reverse mb-6">
+                    <!-- Social Icons Updated -->
+                    <a href="https://youtube.com/@xrizo?si=UgNMLrF-RPFK6FdL" target="_blank" class="text-[#6A00FF] hover:text-white transition-colors"><i class="fab fa-youtube text-2xl"></i></a>
+                    <a href="https://www.tiktok.com/@xrizo0?_t=ZS-8xo2BHa4V3S&_r=1" target="_blank" class="text-[#6A00FF] hover:text-white transition-colors"><i class="fab fa-tiktok text-2xl"></i></a>
+                    <a href="https://www.instagram.com/xrizo0?igsh=ZDlmeXV3bDZoN2di" target="_blank" class="text-[#6A00FF] hover:text-white transition-colors"><i class="fab fa-instagram text-2xl"></i></a>
+                    <a href="https://t.me/xrizo0" target="_blank" class="text-[#6A00FF] hover:text-white transition-colors"><i class="fab fa-telegram text-2xl"></i></a>
+                </div>
+                <p class="text-sm">© Rizo 2025 – All Rights Reserved</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <!-- MailerLite Universal -->
+    <script>
+        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+        ml('account', '1645574');
+    </script>
+    <!-- End MailerLite Universal -->
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Observer for general fade-in animations
+            const fadeObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            document.querySelectorAll('.fade-in').forEach((el) => {
+                fadeObserver.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
