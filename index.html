@@ -51,6 +51,11 @@
             color: #FFFFFF;
             font-family: 'Chakra Petch', sans-serif;
             scroll-behavior: smooth;
+            /* More Subtle Cyberpunk Grid Background */
+            background-image: 
+                linear-gradient(rgba(106, 0, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(106, 0, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
         }
 
         .bg-gradient-primary {
@@ -66,7 +71,7 @@
         }
 
         .bg-gradient-radial {
-            background: radial-gradient(circle, rgba(106,0,255,0.15) 0%, rgba(0,0,0,0) 60%);
+            background: radial-gradient(circle, rgba(106,0,255,0.2) 0%, rgba(0,0,0,0) 70%);
         }
 
         .text-neon-purple {
@@ -82,7 +87,7 @@
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
+            transform: translateY(-3px) scale(1.05);
             box-shadow: 0 0 15px rgba(106, 0, 255, 0.8), 0 0 30px rgba(106, 0, 255, 0.5);
         }
         
@@ -132,6 +137,22 @@
             box-shadow: 0 10px 20px rgba(106, 0, 255, 0.1);
         }
         
+        /* Counter Styles */
+        .digit-box {
+            background-color: #6A00FF;
+            color: #FFFFFF;
+            padding: 0.5rem 1rem;
+            margin: 0 0.2rem;
+            border-radius: 0.375rem; /* 6px */
+            font-weight: 700;
+            font-size: 2.25rem; /* 36px */
+            line-height: 2.5rem; /* 40px */
+            min-width: 48px;
+            text-align: center;
+            display: inline-block;
+            box-shadow: 0 0 10px rgba(106, 0, 255, 0.8);
+        }
+
         /* Recaptcha Badge Fix for Mobile */
         @media (max-width: 767px) {
             .grecaptcha-badge {
@@ -151,7 +172,7 @@
             <div class="absolute inset-0 bg-gradient-radial"></div>
             <div class="relative z-10 fade-in">
                 <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-widest uppercase" style="text-shadow: 0 0 10px rgba(255,255,255,0.3);">
-                    حوّل حياتك إلى لعبة RPG حقيقية
+                    حوّل حياتك إلى لعبة <span class="text-neon-purple">RPG</span> حقيقية
                 </h1>
                 <p class="mt-6 text-lg md:text-xl max-w-2xl mx-auto text-gray-300">
                     رحلتي لبناء أول تطبيق سيغيّر مفهوم تطوير الذات للأبد.
@@ -278,9 +299,10 @@
                     <div class="support-tier p-8 border border-purple-900 rounded-xl bg-black/30 flex flex-col">
                         <h3 class="text-2xl font-bold">الملك الذهبي</h3>
                         <p class="text-4xl font-bold my-4">$50</p>
-                        <ul class="text-gray-400 text-right space-y-2 flex-grow">
+                        <ul class="text-gray-300 text-right space-y-2 flex-grow">
                              <li><i class="fas fa-check text-green-400 ml-2"></i> كل ما سبق</li>
-                             <li><i class="fas fa-check text-green-400 ml-2"></i> دور خاص في سيرفر الديسكورد</li>
+                             <li><i class="fas fa-check text-green-400 ml-2"></i> وصول ألفا (Alpha) للتطبيق</li>
+                             <li><i class="fas fa-check text-green-400 ml-2"></i> جلسة نقاش حصرية معك</li>
                         </ul>
                         <a href="https://paymob.xyz/DHmttZCy/" target="_blank" class="mt-6 inline-block btn-secondary font-bold py-3 px-8 rounded-lg text-lg">ادعم الآن</a>
                     </div>
@@ -315,6 +337,13 @@
         <section id="cta-main" class="py-24 px-6 bg-black relative border-t border-purple-900/30">
             <div class="absolute inset-0 bg-gradient-radial"></div>
             <div class="relative z-10 max-w-2xl mx-auto text-center fade-in">
+                <!-- Counter placed before the form for Social Proof -->
+                <div class="flex flex-col items-center mb-6">
+                    <div id="counter" class="inline-flex mb-4" dir="ltr">
+                        <!-- Digits will be generated here -->
+                    </div>
+                    <p class="text-lg text-neon-purple tracking-widest">🔥 انضم إلى شخصًا سجلوا للوصول المبكر!</p>
+                 </div>
                 <!-- MailerLite Form Container -->
                 <div class="ml-embedded" data-form="gSs5fs"></div>
             </div>
@@ -366,6 +395,58 @@
             document.querySelectorAll('.fade-in').forEach((el) => {
                 fadeObserver.observe(el);
             });
+
+            // Counter Animation Logic
+            const counterElement = document.getElementById('counter');
+            const targetNumber = 347;
+            let animationTimer = null; 
+
+            const updateCounter = (number) => {
+                if (!counterElement) return;
+                counterElement.innerHTML = ''; 
+                const digits = number.toString().split('');
+                digits.forEach(digit => {
+                    const digitSpan = document.createElement('span');
+                    digitSpan.className = 'digit-box';
+                    digitSpan.textContent = digit;
+                    counterElement.appendChild(digitSpan);
+                });
+            };
+            
+            const animateCounter = () => {
+                if (animationTimer) {
+                    clearInterval(animationTimer);
+                }
+                
+                let currentNumber = 0;
+                const duration = 1500; 
+                const stepTime = 15; 
+                const increment = Math.ceil(targetNumber / (duration / stepTime));
+
+                animationTimer = setInterval(() => {
+                    currentNumber += increment;
+                    if (currentNumber >= targetNumber) {
+                        currentNumber = targetNumber;
+                        clearInterval(animationTimer);
+                    }
+                    updateCounter(currentNumber);
+                }, stepTime);
+            };
+
+            const counterObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter();
+                    }
+                });
+            }, {
+                threshold: 0.8
+            });
+
+            if (counterElement) {
+                updateCounter(0);
+                counterObserver.observe(counterElement);
+            }
         });
     </script>
 </body>
