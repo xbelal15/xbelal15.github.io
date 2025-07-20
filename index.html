@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rizo - حوّل حياتك إلى لعبة</title>
+    <title>EGORISE - حوّل حياتك إلى لعبة</title>
     
     <!-- Favicon -->
-    <link rel="icon" href="https://i.postimg.cc/90QXM0kb/44.png" type="image/png">
+    <link rel="icon" href="https://i.postimg.cc/vHQvLBCT/photo-2025-07-20-18-45-40.jpg" type="image/png">
 
     <!-- Meta Tags for Social Sharing -->
     <meta name="description" content="رحلة Rizo لبناء أول تطبيق يغير مفهوم تطوير الذات، مستوحى من Solo Leveling. انضم للوصول المبكر وكن جزءًا من الأسطورة.">
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://xbelal15.github.io/">
-    <meta property="og:title" content="Rizo - حوّل حياتك إلى لعبة RPG حقيقية">
+    <meta property="og:title" content="EGORISE - حوّل حياتك إلى لعبة RPG حقيقية">
     <meta property="og:description" content="رحلة Rizo لبناء أول تطبيق يغير مفهوم تطوير الذات، مستوحى من Solo Leveling. انضم للوصول المبكر وكن جزءًا من الأسطورة.">
     <meta property="og:image" content="https://i.postimg.cc/7ZDzr9sg/55.jpg">
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://xbelal15.github.io/">
-    <meta property="twitter:title" content="Rizo - حوّل حياتك إلى لعبة RPG حقيقية">
+    <meta property="twitter:title" content="EGORISE - حوّل حياتك إلى لعبة RPG حقيقية">
     <meta property="twitter:description" content="رحلة Rizo لبناء أول تطبيق يغير مفهوم تطوير الذات، مستوحى من Solo Leveling. انضم للوصول المبكر وكن جزءًا من الأسطورة.">
     <meta property="twitter:image" content="https://i.postimg.cc/7ZDzr9sg/55.jpg">
 
@@ -91,19 +91,6 @@
             box-shadow: 0 0 15px rgba(106, 0, 255, 0.8), 0 0 30px rgba(106, 0, 255, 0.5);
         }
         
-        .btn-secondary {
-             background-color: transparent;
-             color: #6A00FF;
-             border: 2px solid #6A00FF;
-             transition: all 0.3s ease;
-        }
-        
-        .btn-secondary:hover {
-            background-color: #6A00FF;
-            color: #FFFFFF;
-            box-shadow: 0 0 15px rgba(106, 0, 255, 0.8);
-        }
-
         /* Animation for elements fading in on scroll */
         .fade-in {
             opacity: 0;
@@ -129,36 +116,42 @@
         .roadmap-item:last-child .roadmap-line {
             display: none;
         }
-        .roadmap-item, .support-tier {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .roadmap-item:hover, .support-tier:hover {
+        .roadmap-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(106, 0, 255, 0.1);
         }
         
-        /* Counter Styles */
-        .digit-box {
-            background-color: #6A00FF;
-            color: #FFFFFF;
-            padding: 0.5rem 1rem;
-            margin: 0 0.2rem;
-            border-radius: 0.375rem; /* 6px */
-            font-weight: 700;
-            font-size: 2.25rem; /* 36px */
-            line-height: 2.5rem; /* 40px */
-            min-width: 48px;
-            text-align: center;
-            display: inline-block;
-            box-shadow: 0 0 10px rgba(106, 0, 255, 0.8);
-        }
-
         /* MailerLite Form Responsive Fix */
         @media (max-width: 400px) {
             .ml-form-recaptcha {
                 transform: scale(0.9) !important;
                 transform-origin: center !important;
             }
+        }
+        
+        /* Epic Countdown Timer Styles */
+        .timer-box {
+            background-color: rgba(10, 0, 20, 0.5);
+            border: 1px solid #6A00FF;
+            border-radius: 0.375rem;
+            padding: 0.5rem;
+            min-width: 70px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 0 10px rgba(106, 0, 255, 0.5);
+            backdrop-filter: blur(2px);
+        }
+        .timer-number {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1;
+            color: #FFFFFF;
+            text-shadow: 0 0 5px rgba(255,255,255,0.5);
+        }
+        .timer-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #a78bfa; /* Lighter purple for label */
         }
     </style>
 </head>
@@ -171,20 +164,54 @@
         <section id="hero" class="min-h-screen flex items-center justify-center text-center p-6 bg-gradient-primary relative overflow-hidden">
             <div class="absolute inset-0 bg-gradient-radial"></div>
             <div class="relative z-10 fade-in">
+                <div class="mb-8">
+                    <p class="text-lg text-yellow-300 tracking-widest mb-3">لقد بدأ العد التنازلي للنسخة التجريبية!</p>
+                    <div id="countdown-timer" class="flex justify-center items-center space-x-2 space-x-reverse text-center">
+                        <!-- Days -->
+                        <div class="timer-box">
+                            <span id="days" class="timer-number">00</span>
+                            <span class="timer-label">يوم</span>
+                        </div>
+                        <!-- Hours -->
+                        <div class="timer-box">
+                            <span id="hours" class="timer-number">00</span>
+                            <span class="timer-label">ساعة</span>
+                        </div>
+                        <!-- Minutes -->
+                        <div class="timer-box">
+                            <span id="minutes" class="timer-number">00</span>
+                            <span class="timer-label">دقيقة</span>
+                        </div>
+                        <!-- Seconds -->
+                        <div class="timer-box">
+                            <span id="seconds" class="timer-number">00</span>
+                            <span class="timer-label">ثانية</span>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-gray-300">اغتنم فرصتك وانضم لسيرفر الديسكورد لتجربتها أولاً.</p>
+                </div>
+
                 <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-widest uppercase" style="text-shadow: 0 0 10px rgba(255,255,255,0.3);">
                     حوّل حياتك إلى لعبة <span class="text-neon-purple">RPG</span> حقيقية
                 </h1>
-                <p class="mt-6 text-lg md:text-xl max-w-2xl mx-auto text-gray-300">
-                    رحلتي لبناء أول تطبيق سيغيّر مفهوم تطوير الذات للأبد.
-                </p>
-                <a href="#cta-main" class="mt-10 inline-block btn-primary font-bold py-4 px-12 rounded-lg text-xl uppercase tracking-wider">
-                    سجّل للوصول المبكر
+                
+                <a href="https://discord.gg/chkaYVz36U" target="_blank" class="mt-10 inline-block btn-primary font-bold py-4 px-12 rounded-lg text-xl uppercase tracking-wider">
+                    انضم لقلعة الأبطال
                 </a>
+            </div>
+        </section>
+        
+        <!-- NEW App Intro Section -->
+        <section id="app-intro" class="py-20 px-6 bg-black">
+            <div class="max-w-4xl mx-auto text-center fade-in">
+                 <img src="https://i.postimg.cc/vHQvLBCT/photo-2025-07-20-18-45-40.jpg" alt="شعار تطبيق EGORISE" class="mx-auto w-48 h-48 mb-6 drop-shadow-[0_0_15px_rgba(106,0,255,0.6)]">
+                 <h2 class="text-6xl md:text-7xl font-bold text-neon-purple tracking-wider">EGORISE</h2>
+                 <p class="mt-4 text-xl md:text-2xl text-gray-400 tracking-widest">LEVEL UP YOUR REALITY</p>
             </div>
         </section>
 
         <!-- 2. Personal Video Section -->
-        <section id="about-rizo" class="py-20 px-6 bg-black">
+        <section id="about-rizo" class="py-20 px-6 bg-black border-t border-purple-900/30">
             <div class="max-w-4xl mx-auto text-center fade-in">
                 <img src="https://i.postimg.cc/90QXM0kb/44.png" alt="شعار Rizo" class="mx-auto w-24 h-24 mb-6 rounded-full object-cover">
                 <h2 class="text-4xl md:text-5xl font-bold text-neon-purple tracking-wider">قصة Rizo</h2>
@@ -192,18 +219,18 @@
                     <iframe class="w-full h-full" src="https://www.youtube.com/embed/xkMOZF8Iwbc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                  <p class="mt-8 text-lg md:text-xl max-w-3xl mx-auto text-gray-300 leading-relaxed">
-                    في عمر الـ 20، شعرت أن الحياة الواقعية تفتقر لنظام واضح للتقدم. هذا التطبيق ليس مجرد مشروع، بل هو محاولتي لصناعة الأداة التي كنت أحتاجها، ومساعدة الآلاف على خوض رحلة تطوير الذات، وتحقيق حلمي بأن أكون أول من يغير واقع عائلتي.
+                    في عمر الـ 20، شعرت أن الحياة الواقعية تفتقر لنظام واضح للتقدم. تطبيق <span class="text-neon-purple font-bold">EGORISE</span> ليس مجرد مشروع، بل هو محاولتي لصناعة الأداة التي كنت أحتاجها، ومساعدة الآلاف على خوض رحلة تطوير الذات، وتحقيق حلمي بأن أكون أول من يغير واقع عائلتي.
                 </p>
             </div>
         </section>
         
         <!-- 3. About the App Section (Restored) -->
-        <section id="about-app" class="py-20 px-6 bg-black">
+        <section id="about-app" class="py-20 px-6 bg-black border-t border-purple-900/30">
             <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center">
                 <div class="text-center md:text-right fade-in">
-                    <h2 class="text-4xl md:text-5xl font-bold tracking-wider">تطبيق سيغيّر حياتك</h2>
+                    <h2 class="text-4xl md:text-5xl font-bold tracking-wider">ما هو <span class="text-neon-purple">EGORISE</span>؟</h2>
                     <p class="mt-6 text-lg md:text-xl text-gray-300">
-                        مستوحى من نظام Solo Leveling… XP، Health، Missions، Levels… كل هذا سيصبح واقعًا حقيقيًا، وليس مجرد لعبة. الهدف: يجعلك أقوى نسخة من نفسك كل يوم.
+                        هو نظام مستوحى من Solo Leveling… XP، Health، Missions، Levels… كل هذا سيصبح واقعًا حقيقيًا، وليس مجرد لعبة. الهدف: يجعلك أقوى نسخة من نفسك كل يوم.
                     </p>
                 </div>
                 <div class="w-full max-w-sm mx-auto fade-in">
@@ -215,7 +242,7 @@
         </section>
 
         <!-- 4. Roadmap Section -->
-        <section id="roadmap" class="py-20 px-6 bg-black">
+        <section id="roadmap" class="py-20 px-6 bg-black border-t border-purple-900/30">
             <div class="max-w-4xl mx-auto fade-in">
                 <div class="text-center mb-12">
                      <h2 class="text-4xl md:text-5xl font-bold text-neon-purple tracking-wider">خارطة الطريق</h2>
@@ -236,15 +263,15 @@
                     </div>
                     <div class="roadmap-item relative pr-10 pb-10">
                          <div class="roadmap-line"></div>
-                        <div class="absolute top-0 right-0 w-10 h-10 bg-purple-500/20 border-2 border-purple-500 rounded-full flex items-center justify-center z-10"><i class="fas fa-spinner fa-spin text-purple-400"></i></div>
-                        <h3 class="text-2xl font-bold mb-2">المرحلة الثالثة: المتجر والدهاليز <span class="text-sm font-normal text-purple-400">(نعمل عليها الآن)</span></h3>
+                        <div class="absolute top-0 right-0 w-10 h-10 bg-green-500/20 border-2 border-green-500 rounded-full flex items-center justify-center z-10"><i class="fas fa-check text-green-400"></i></div>
+                        <h3 class="text-2xl font-bold mb-2">المرحلة الثالثة: المتجر والدهاليز <span class="text-sm font-normal text-green-400">(تمت)</span></h3>
                         <p class="text-gray-400">إنشاء المتجر، شاشة الدهليز (Dungeon)، وتحسين تجربة المستخدم.</p>
                     </div>
                     <div class="roadmap-item relative pr-10 pb-10">
                         <div class="roadmap-line"></div>
-                        <div class="absolute top-0 right-0 w-10 h-10 bg-gray-700/50 border-2 border-gray-600 rounded-full flex items-center justify-center z-10"><i class="far fa-circle text-gray-500"></i></div>
-                        <h3 class="text-2xl font-bold mb-2">المرحلة الرابعة: التحسينات والاختبارات <span class="text-sm font-normal text-gray-500">(قادمة)</span></h3>
-                        <p class="text-gray-400">تحسين تجربة المستخدم، تطوير جميع الميزات، إضافة مؤثرات صوتية، واختبار التطبيق بشكل كامل.</p>
+                        <div class="absolute top-0 right-0 w-10 h-10 bg-purple-500/20 border-2 border-purple-500 rounded-full flex items-center justify-center z-10"><i class="fas fa-spinner fa-spin text-purple-400"></i></div>
+                        <h3 class="text-2xl font-bold mb-2">المرحلة الرابعة: التحسينات والاختبارات <span class="text-sm font-normal text-purple-400">(حاليًا)</span></h3>
+                        <p class="text-gray-400 mt-2">تحسين تجربة المستخدم، تطوير جميع الميزات، إضافة مؤثرات صوتية، واختبار التطبيق بشكل كامل.</p>
                     </div>
                     <div class="roadmap-item relative pr-10 pb-10">
                         <div class="roadmap-line"></div>
@@ -262,50 +289,25 @@
             </div>
         </section>
 
-        <!-- 5. Support the Journey Section -->
+        <!-- 5. Support & Contact Section (Discord) -->
         <section id="support" class="py-20 px-6" style="background-color: #10002B;">
-            <div class="max-w-5xl mx-auto text-center fade-in">
-                <h2 class="text-4xl md:text-5xl font-bold tracking-wider">ادعم الرحلة وكن جزءًا من الأسطورة</h2>
+            <div class="max-w-4xl mx-auto text-center fade-in">
+                <i class="fab fa-discord text-6xl text-neon-purple mb-4"></i>
+                <h2 class="text-4xl md:text-5xl font-bold tracking-wider">ادعمني وتواصل معي شخصيًا</h2>
                 <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-                    دعمك هو الوقود الذي سيشعل هذه الثورة. باستثمارك في المشروع، أنت لا تشتري منتجًا، بل تساهم في بناء فكرة ستغير حياة الكثيرين.
+                    أفضل طريقة لدعم المشروع هي بالانضمام إلى مجتمعنا الحصري على ديسكورد. هناك يمكنك التواصل معي مباشرة، دعم المشروع، والحصول على مميزات أسطورية.
                 </p>
-                <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Tier 1 -->
-                    <div class="support-tier p-8 border border-purple-900 rounded-xl bg-black/30 flex flex-col">
-                        <h3 class="text-2xl font-bold">الداعم البرونزي</h3>
-                        <p class="text-4xl font-bold my-4">$5</p>
-                        <p class="text-gray-400 flex-grow">اسمك في قائمة الشرف الخاصة بالموقع.</p>
-                        <a href="https://paymob.xyz/Ry8JGwXY/" target="_blank" class="mt-6 inline-block btn-secondary font-bold py-3 px-8 rounded-lg text-lg">ادعم الآن</a>
-                    </div>
-                    <!-- Tier 2 (Highlighted with FOMO) -->
-                    <div class="support-tier p-8 border-2 border-[#6A00FF] rounded-xl bg-black/50 flex flex-col transform md:scale-105 shadow-lg shadow-purple-900/50">
-                        <h3 class="text-2xl font-bold text-neon-purple">الصياد الفضي</h3>
-                        <p class="text-5xl font-bold my-4">$20</p>
-                        <ul class="text-gray-300 text-right space-y-2 flex-grow">
-                            <li><i class="fas fa-check text-green-400 ml-2"></i> كل ما سبق</li>
-                            <li><i class="fas fa-check text-green-400 ml-2"></i> وصول حصري للنسخة التجريبية (Beta)</li>
-                            <li class="font-bold text-white"><i class="fas fa-star text-yellow-400 ml-2"></i> شارة 'الداعم المؤسس' النادرة</li>
-                        </ul>
-                        <div class="mt-4 text-yellow-400 font-bold">لأول 100 داعم فقط! (متبقٍ 56)</div>
-                        <a href="https://paymob.xyz/BzzuM2DL/" target="_blank" class="mt-6 inline-block btn-primary font-bold py-3 px-8 rounded-lg text-lg">اختر الفئة</a>
-                    </div>
-                    <!-- Tier 3 -->
-                    <div class="support-tier p-8 border border-purple-900 rounded-xl bg-black/30 flex flex-col">
-                        <h3 class="text-2xl font-bold">الملك الذهبي</h3>
-                        <p class="text-4xl font-bold my-4">$50</p>
-                        <ul class="text-gray-300 text-right space-y-2 flex-grow">
-                             <li><i class="fas fa-check text-green-400 ml-2"></i> كل ما سبق</li>
-                             <li><i class="fas fa-check text-green-400 ml-2"></i> وصول ألفا (Alpha) للتطبيق</li>
-                             <li><i class="fas fa-check text-green-400 ml-2"></i> جلسة نقاش حصرية معك</li>
-                        </ul>
-                        <a href="https://paymob.xyz/DHmttZCy/" target="_blank" class="mt-6 inline-block btn-secondary font-bold py-3 px-8 rounded-lg text-lg">ادعم الآن</a>
-                    </div>
+                <div class="mt-8 text-center max-w-2xl mx-auto p-6 border border-purple-800 rounded-lg bg-black/30">
+                    <p class="text-lg text-gray-300">افتح تذكرة في شات <span class="font-bold text-purple-400">#المساعدة</span>، اشترِ رتبة داخل السيرفر، واحصل على مميزات حصرية داخل السيرفر والتطبيق. كل التفاصيل موجودة في شات <span class="font-bold text-purple-400">#الترقيات</span>.</p>
                 </div>
+                <a href="https://discord.gg/chkaYVz36U" target="_blank" class="mt-10 inline-block btn-primary font-bold py-4 px-12 rounded-lg text-xl uppercase tracking-wider">
+                    انضم لقلعة الأبطال على ديسكورد
+                </a>
             </div>
         </section>
 
         <!-- 6. Community Section (Multi-Platform) -->
-        <section id="community" class="py-20 px-6 bg-black">
+        <section id="community" class="py-20 px-6 bg-black border-t border-purple-900/30">
             <div class="max-w-4xl mx-auto text-center fade-in">
                 <i class="fas fa-users text-6xl text-neon-purple mb-4"></i>
                 <h2 class="text-4xl md:text-5xl font-bold tracking-wider">المجتمع هو القوة الحقيقية</h2>
@@ -319,6 +321,7 @@
                 </div>
                 <!-- Social Icons instead of a single button -->
                 <div class="mt-10 flex justify-center space-x-8 space-x-reverse">
+                    <a href="https://discord.gg/chkaYVz36U" target="_blank" class="text-[#6A00FF] hover:text-white transition-all duration-300 transform hover:scale-125"><i class="fab fa-discord text-4xl"></i></a>
                     <a href="https://t.me/xrizo0" target="_blank" class="text-[#6A00FF] hover:text-white transition-all duration-300 transform hover:scale-125"><i class="fab fa-telegram text-4xl"></i></a>
                     <a href="https://www.instagram.com/xrizo0?igsh=ZDlmeXV3bDZoN2di" target="_blank" class="text-[#6A00FF] hover:text-white transition-all duration-300 transform hover:scale-125"><i class="fab fa-instagram text-4xl"></i></a>
                     <a href="https://youtube.com/@xrizo?si=UgNMLrF-RPFK6FdL" target="_blank" class="text-[#6A00FF] hover:text-white transition-all duration-300 transform hover:scale-125"><i class="fab fa-youtube text-4xl"></i></a>
@@ -331,13 +334,6 @@
         <section id="cta-main" class="py-24 px-6 bg-black relative border-t border-purple-900/30">
             <div class="absolute inset-0 bg-gradient-radial"></div>
             <div class="relative z-10 max-w-2xl mx-auto text-center fade-in">
-                <!-- Counter placed before the form for Social Proof -->
-                <div class="flex flex-col items-center mb-6">
-                    <div id="counter" class="inline-flex mb-4" dir="ltr">
-                        <!-- Digits will be generated here -->
-                    </div>
-                    <p class="text-lg text-neon-purple tracking-widest">🔥 انضم إلى شخصًا سجلوا للوصول المبكر!</p>
-                 </div>
                 <!-- MailerLite Form Container -->
                 <div class="ml-embedded" data-form="gSs5fs"></div>
             </div>
@@ -348,6 +344,7 @@
             <div class="max-w-6xl mx-auto text-center text-gray-600">
                 <div class="flex justify-center items-center space-x-6 space-x-reverse mb-6">
                     <!-- Social Icons Updated -->
+                    <a href="https://discord.gg/chkaYVz36U" target="_blank" class="text-[#6A00FF] hover:text-white transition-colors"><i class="fab fa-discord text-2xl"></i></a>
                     <a href="https://youtube.com/@xrizo?si=UgNMLrF-RPFK6FdL" target="_blank" class="text-[#6A00FF] hover:text-white transition-colors"><i class="fab fa-youtube text-2xl"></i></a>
                     <a href="https://www.tiktok.com/@xrizo0?_t=ZS-8xo2BHa4V3S&_r=1" target="_blank" class="text-[#6A00FF] hover:text-white transition-colors"><i class="fab fa-tiktok text-2xl"></i></a>
                     <a href="https://www.instagram.com/xrizo0?igsh=ZDlmeXV3bDZoN2di" target="_blank" class="text-[#6A00FF] hover:text-white transition-colors"><i class="fab fa-instagram text-2xl"></i></a>
@@ -390,56 +387,30 @@
                 fadeObserver.observe(el);
             });
 
-            // Counter Animation Logic
-            const counterElement = document.getElementById('counter');
-            const targetNumber = 2674;
-            let animationTimer = null; 
+            // Countdown Timer Logic
+            const countdownElement = document.getElementById('countdown-timer');
+            if (countdownElement) {
+                const countdownDate = new Date().getTime() + (5 * 24 * 60 * 60 * 1000);
 
-            const updateCounter = (number) => {
-                if (!counterElement) return;
-                counterElement.innerHTML = ''; 
-                const digits = number.toString().split('');
-                digits.forEach(digit => {
-                    const digitSpan = document.createElement('span');
-                    digitSpan.className = 'digit-box';
-                    digitSpan.textContent = digit;
-                    counterElement.appendChild(digitSpan);
-                });
-            };
-            
-            const animateCounter = () => {
-                if (animationTimer) {
-                    clearInterval(animationTimer);
-                }
-                
-                let currentNumber = 0;
-                const duration = 1500; 
-                const stepTime = 15; 
-                const increment = Math.ceil(targetNumber / (duration / stepTime));
+                const timerInterval = setInterval(() => {
+                    const now = new Date().getTime();
+                    const distance = countdownDate - now;
 
-                animationTimer = setInterval(() => {
-                    currentNumber += increment;
-                    if (currentNumber >= targetNumber) {
-                        currentNumber = targetNumber;
-                        clearInterval(animationTimer);
+                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    document.getElementById('days').innerText = days < 10 ? '0' + days : days;
+                    document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
+                    document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
+                    document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+
+                    if (distance < 0) {
+                        clearInterval(timerInterval);
+                        countdownElement.innerHTML = "<span class='text-red-500 font-bold text-xl'>انتهى الوقت!</span>";
                     }
-                    updateCounter(currentNumber);
-                }, stepTime);
-            };
-
-            const counterObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        animateCounter();
-                    }
-                });
-            }, {
-                threshold: 0.8
-            });
-
-            if (counterElement) {
-                updateCounter(0);
-                counterObserver.observe(counterElement);
+                }, 1000);
             }
         });
     </script>
