@@ -201,8 +201,18 @@
             </div>
         </section>
         
+        <!-- NEW App Intro Section Moved Here -->
+        <section id="app-intro" class="py-20 px-6 bg-black">
+            <div class="max-w-4xl mx-auto text-center fade-in">
+                 <img src="https://i.postimg.cc/vHQvLBCT/photo-2025-07-20-18-45-40.jpg" alt="شعار تطبيق EGORISE" class="mx-auto w-48 h-48 mb-6 drop-shadow-[0_0_15px_rgba(106,0,255,0.6)]">
+                 <h2 class="text-6xl md:text-7xl font-bold text-neon-purple tracking-wider">EGORISE</h2>
+                 <p class="mt-4 text-xl md:text-2xl text-gray-400 tracking-widest">LEVEL UP YOUR REALITY</p>
+                 <p class="mt-6 text-lg text-gray-300 max-w-2xl mx-auto">هذا هو التطبيق الذي سيغير مفهوم تطوير الذات قريبا.</p>
+            </div>
+        </section>
+
         <!-- 2. Personal Video Section -->
-        <section id="about-rizo" class="py-20 px-6 bg-black">
+        <section id="about-rizo" class="py-20 px-6 bg-black border-t border-purple-900/30">
             <div class="max-w-4xl mx-auto text-center fade-in">
                 <img src="https://i.postimg.cc/90QXM0kb/44.png" alt="شعار Rizo" class="mx-auto w-24 h-24 mb-6 rounded-full object-cover">
                 <h2 class="text-4xl md:text-5xl font-bold text-neon-purple tracking-wider">قصة Rizo</h2>
@@ -321,16 +331,6 @@
             </div>
         </section>
         
-        <!-- NEW App Intro Section Moved Here -->
-        <section id="app-intro" class="py-20 px-6 bg-black border-t border-purple-900/30">
-            <div class="max-w-4xl mx-auto text-center fade-in">
-                 <img src="https://i.postimg.cc/vHQvLBCT/photo-2025-07-20-18-45-40.jpg" alt="شعار تطبيق EGORISE" class="mx-auto w-48 h-48 mb-6 drop-shadow-[0_0_15px_rgba(106,0,255,0.6)]">
-                 <h2 class="text-6xl md:text-7xl font-bold text-neon-purple tracking-wider">EGORISE</h2>
-                 <p class="mt-4 text-xl md:text-2xl text-gray-400 tracking-widest">LEVEL UP YOUR REALITY</p>
-                 <p class="mt-6 text-lg text-gray-300 max-w-2xl mx-auto">هذا هو التطبيق الذي سيغير مفهوم تطوير الذات قريبا.</p>
-            </div>
-        </section>
-
         <!-- 7. Main CTA Section -->
         <section id="cta-main" class="py-24 px-6 bg-black relative border-t border-purple-900/30">
             <div class="absolute inset-0 bg-gradient-radial"></div>
@@ -391,8 +391,8 @@
             // Countdown Timer Logic
             const countdownElement = document.getElementById('countdown-timer');
             if (countdownElement) {
-                // Set the date we're counting down to (5 days from now)
-                const countdownDate = new Date("July 25, 2025 23:59:59").getTime();
+                // Set the date we're counting down to: Sunday at 10 PM (22:00) Egypt time (GMT+3)
+                const countdownDate = new Date("2025-07-27T22:00:00+03:00").getTime();
 
                 const timerInterval = setInterval(() => {
                     const now = new Date().getTime();
