@@ -132,9 +132,9 @@
         .timer-box {
             background-color: rgba(10, 0, 20, 0.5);
             border: 1px solid #6A00FF;
-            border-radius: 0.375rem;
-            padding: 0.5rem;
-            min-width: 70px;
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+            min-width: 90px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -142,14 +142,14 @@
             backdrop-filter: blur(2px);
         }
         .timer-number {
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 700;
             line-height: 1;
             color: #FBBF24; /* Yellow color for numbers */
             text-shadow: 0 0 8px rgba(251, 191, 36, 0.7);
         }
         .timer-label {
-            font-size: 0.75rem;
+            font-size: 0.875rem;
             text-transform: uppercase;
             color: #a78bfa; /* Lighter purple for label */
         }
@@ -165,8 +165,8 @@
             <div class="absolute inset-0 bg-gradient-radial"></div>
             <div class="relative z-10 fade-in">
                 <div class="mb-8">
-                    <p class="text-lg text-yellow-300 tracking-widest mb-3">لقد بدأ العد التنازلي للنسخة التجريبية!</p>
-                    <div id="countdown-timer" class="flex justify-center items-center space-x-2 space-x-reverse text-center">
+                    <p class="text-lg text-yellow-300 tracking-widest mb-3">العد التنازلي للنسخة التجريبية | ينتهي في الجمعة 10 مساءً</p>
+                    <div id="countdown-timer" class="flex justify-center items-center space-x-2 md:space-x-4 space-x-reverse text-center">
                         <!-- Days -->
                         <div class="timer-box">
                             <span id="days" class="timer-number">00</span>
@@ -211,14 +211,11 @@
             </div>
         </section>
 
-        <!-- 2. Personal Video Section -->
+        <!-- 2. Personal Story Section -->
         <section id="about-rizo" class="py-20 px-6 bg-black border-t border-purple-900/30">
             <div class="max-w-4xl mx-auto text-center fade-in">
                 <img src="https://i.postimg.cc/90QXM0kb/44.png" alt="شعار Rizo" class="mx-auto w-24 h-24 mb-6 rounded-full object-cover">
                 <h2 class="text-4xl md:text-5xl font-bold text-neon-purple tracking-wider">قصة Rizo</h2>
-                <div class="mt-8 relative w-full max-w-3xl mx-auto aspect-video rounded-2xl overflow-hidden border-2 border-purple-800/50 shadow-lg shadow-purple-900/20">
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/xkMOZF8Iwbc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
                  <p class="mt-8 text-lg md:text-xl max-w-3xl mx-auto text-gray-300 leading-relaxed">
                     في عمر الـ 20، شعرت أن الحياة الواقعية تفتقر لنظام واضح للتقدم. تطبيق <span class="text-neon-purple font-bold">EGORISE</span> ليس مجرد مشروع، بل هو محاولتي لصناعة الأداة التي كنت أحتاجها، ومساعدة الآلاف على خوض رحلة تطوير الذات، وتحقيق حلمي بأن أكون أول من يغير واقع عائلتي.
                 </p>
@@ -319,13 +316,13 @@
                     <p class="text-lg"><i class="fas fa-comments text-purple-400 w-6 text-center ml-2"></i> تواصل مباشر معي وشارك أفكارك.</p>
                     <p class="text-lg"><i class="fas fa-vote-yea text-purple-400 w-6 text-center ml-2"></i> صوّت على الميزات القادمة للتطبيق.</p>
                     <p class="text-lg"><i class="fas fa-eye text-purple-400 w-6 text-center ml-2"></i> شاهد كواليس التطوير وتحديثات حصرية.</p>
+                    <p class="text-lg"><i class="fas fa-star text-purple-400 w-6 text-center ml-2"></i> ادفع مقابل الحصول على ميزات داخل التطبيق، تجربة النسخة التجريبية قبل الجميع، ومزايا داخل سيرفر الديسكورد.</p>
                 </div>
                 <!-- Social Icons instead of a single button -->
                 <div class="mt-10 flex justify-center space-x-8 space-x-reverse">
                     <a href="https://discord.gg/chkaYVz36U" target="_blank" class="text-[#6A00FF] hover:text-white transition-all duration-300 transform hover:scale-125"><i class="fab fa-discord text-4xl"></i></a>
                     <a href="https://t.me/xrizo0" target="_blank" class="text-[#6A00FF] hover:text-white transition-all duration-300 transform hover:scale-125"><i class="fab fa-telegram text-4xl"></i></a>
                     <a href="https://www.instagram.com/xrizo0?igsh=ZDlmeXV3bDZoN2di" target="_blank" class="text-[#6A00FF] hover:text-white transition-all duration-300 transform hover:scale-125"><i class="fab fa-instagram text-4xl"></i></a>
-                    <a href="https://youtube.com/@xrizo?si=UgNMLrF-RPFK6FdL" target="_blank" class="text-[#6A00FF] hover:text-white transition-all duration-300 transform hover:scale-125"><i class="fab fa-youtube text-4xl"></i></a>
                     <a href="https://www.tiktok.com/@xrizo0?_t=ZS-8xo2BHa4V3S&_r=1" target="_blank" class="text-[#6A00FF] hover:text-white transition-all duration-300 transform hover:scale-125"><i class="fab fa-tiktok text-4xl"></i></a>
                 </div>
             </div>
@@ -346,7 +343,6 @@
                 <div class="flex justify-center items-center space-x-6 space-x-reverse mb-6">
                     <!-- Social Icons Updated -->
                     <a href="https://discord.gg/chkaYVz36U" target="_blank" class="text-[#6A00FF] hover:text-white transition-colors"><i class="fab fa-discord text-2xl"></i></a>
-                    <a href="https://youtube.com/@xrizo?si=UgNMLrF-RPFK6FdL" target="_blank" class="text-[#6A00FF] hover:text-white transition-colors"><i class="fab fa-youtube text-2xl"></i></a>
                     <a href="https://www.tiktok.com/@xrizo0?_t=ZS-8xo2BHa4V3S&_r=1" target="_blank" class="text-[#6A00FF] hover:text-white transition-colors"><i class="fab fa-tiktok text-2xl"></i></a>
                     <a href="https://www.instagram.com/xrizo0?igsh=ZDlmeXV3bDZoN2di" target="_blank" class="text-[#6A00FF] hover:text-white transition-colors"><i class="fab fa-instagram text-2xl"></i></a>
                     <a href="https://t.me/xrizo0" target="_blank" class="text-[#6A00FF] hover:text-white transition-colors"><i class="fab fa-telegram text-2xl"></i></a>
@@ -391,8 +387,9 @@
             // Countdown Timer Logic
             const countdownElement = document.getElementById('countdown-timer');
             if (countdownElement) {
-                // Set the date we're counting down to: Sunday at 10 PM (22:00) Egypt time (GMT+3)
-                const countdownDate = new Date("2025-07-27T22:00:00+03:00").getTime();
+                // Set the date we're counting down to: Friday at 10 PM (22:00) Egypt time (GMT+3)
+                // Note: JavaScript months are 0-11, so August is 7.
+                const countdownDate = new Date("2025-08-01T22:00:00+03:00").getTime();
 
                 const timerInterval = setInterval(() => {
                     const now = new Date().getTime();
