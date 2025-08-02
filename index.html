@@ -128,13 +128,13 @@
             }
         }
         
-        /* Epic Countdown Timer Styles */
+        /* Epic Timer Styles */
         .timer-box {
             background-color: rgba(10, 0, 20, 0.5);
             border: 1px solid #6A00FF;
             border-radius: 0.5rem;
-            padding: 0.75rem;
-            min-width: 90px;
+            padding: 0.5rem;
+            min-width: 70px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -142,14 +142,14 @@
             backdrop-filter: blur(2px);
         }
         .timer-number {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 700;
             line-height: 1;
             color: #FBBF24; /* Yellow color for numbers */
             text-shadow: 0 0 8px rgba(251, 191, 36, 0.7);
         }
         .timer-label {
-            font-size: 0.875rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             color: #a78bfa; /* Lighter purple for label */
         }
@@ -164,39 +164,14 @@
         <section id="hero" class="min-h-screen flex items-center justify-center text-center p-6 bg-gradient-primary relative overflow-hidden">
             <div class="absolute inset-0 bg-gradient-radial"></div>
             <div class="relative z-10 fade-in">
-                <div class="mb-8">
-                    <p class="text-lg text-yellow-300 tracking-widest mb-3">العد التنازلي للنسخة التجريبية | ينتهي في الجمعة 10 مساءً</p>
-                    <div id="countdown-timer" class="flex justify-center items-center space-x-2 md:space-x-4 space-x-reverse text-center">
-                        <!-- Days -->
-                        <div class="timer-box">
-                            <span id="days" class="timer-number">00</span>
-                            <span class="timer-label">يوم</span>
-                        </div>
-                        <!-- Hours -->
-                        <div class="timer-box">
-                            <span id="hours" class="timer-number">00</span>
-                            <span class="timer-label">ساعة</span>
-                        </div>
-                        <!-- Minutes -->
-                        <div class="timer-box">
-                            <span id="minutes" class="timer-number">00</span>
-                            <span class="timer-label">دقيقة</span>
-                        </div>
-                        <!-- Seconds -->
-                        <div class="timer-box">
-                            <span id="seconds" class="timer-number">00</span>
-                            <span class="timer-label">ثانية</span>
-                        </div>
-                    </div>
-                    <p class="mt-4 text-gray-300">اغتنم فرصتك وانضم لسيرفر الديسكورد لتجربتها أولاً.</p>
-                </div>
-
                 <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-widest uppercase" style="text-shadow: 0 0 10px rgba(255,255,255,0.3);">
                     حوّل حياتك إلى لعبة <span class="text-neon-purple">RPG</span> حقيقية
                 </h1>
-                
-                <a href="https://discord.gg/chkaYVz36U" target="_blank" class="mt-10 inline-block btn-primary font-bold py-4 px-12 rounded-lg text-xl uppercase tracking-wider">
-                    انضم لقلعة الأبطال
+                <p class="mt-6 text-lg md:text-xl max-w-2xl mx-auto text-gray-300">
+                    رحلتي لبناء أول تطبيق سيغيّر مفهوم تطوير الذات للأبد.
+                </p>
+                <a href="#cta-main" class="mt-10 inline-block btn-primary font-bold py-4 px-12 rounded-lg text-xl uppercase tracking-wider">
+                    سجّل للوصول المبكر
                 </a>
             </div>
         </section>
@@ -251,54 +226,94 @@
                         <div class="roadmap-line"></div>
                         <div class="absolute top-0 right-0 w-10 h-10 bg-green-500/20 border-2 border-green-500 rounded-full flex items-center justify-center z-10"><i class="fas fa-check text-green-400"></i></div>
                         <h3 class="text-2xl font-bold mb-2">المرحلة الأولى: الواجهة الأساسية <span class="text-sm font-normal text-green-400">(تمت)</span></h3>
-                        <p class="text-gray-400">إنشاء واجهة المهام، وشريط الصحة، الطاقة، والخبرة.</p>
                     </div>
                     <div class="roadmap-item relative pr-10 pb-10">
                          <div class="roadmap-line"></div>
                         <div class="absolute top-0 right-0 w-10 h-10 bg-green-500/20 border-2 border-green-500 rounded-full flex items-center justify-center z-10"><i class="fas fa-check text-green-400"></i></div>
                         <h3 class="text-2xl font-bold mb-2">المرحلة الثانية: السجلات والمهارات <span class="text-sm font-normal text-green-400">(تمت)</span></h3>
-                        <p class="text-gray-400">إنشاء شاشة سجل المهام، الإنجازات، الملف الشخصي، وشجرة المهارات.</p>
                     </div>
                     <div class="roadmap-item relative pr-10 pb-10">
                          <div class="roadmap-line"></div>
                         <div class="absolute top-0 right-0 w-10 h-10 bg-green-500/20 border-2 border-green-500 rounded-full flex items-center justify-center z-10"><i class="fas fa-check text-green-400"></i></div>
                         <h3 class="text-2xl font-bold mb-2">المرحلة الثالثة: المتجر والدهاليز <span class="text-sm font-normal text-green-400">(تمت)</span></h3>
-                        <p class="text-gray-400">إنشاء المتجر، شاشة الدهليز (Dungeon)، وتحسين تجربة المستخدم.</p>
+                    </div>
+                    <div class="roadmap-item relative pr-10 pb-10">
+                        <div class="roadmap-line"></div>
+                        <div class="absolute top-0 right-0 w-10 h-10 bg-green-500/20 border-2 border-green-500 rounded-full flex items-center justify-center z-10"><i class="fas fa-check text-green-400"></i></div>
+                        <h3 class="text-2xl font-bold mb-2">المرحلة الرابعة: التحسينات والاختبارات <span class="text-sm font-normal text-green-400">(تمت)</span></h3>
                     </div>
                     <div class="roadmap-item relative pr-10 pb-10">
                         <div class="roadmap-line"></div>
                         <div class="absolute top-0 right-0 w-10 h-10 bg-purple-500/20 border-2 border-purple-500 rounded-full flex items-center justify-center z-10"><i class="fas fa-spinner fa-spin text-purple-400"></i></div>
-                        <h3 class="text-2xl font-bold mb-2">المرحلة الرابعة: التحسينات والاختبارات <span class="text-sm font-normal text-purple-400">(حاليًا)</span></h3>
-                        <p class="text-gray-400 mt-2">تحسين تجربة المستخدم، تطوير جميع الميزات، إضافة مؤثرات صوتية، واختبار التطبيق بشكل كامل.</p>
-                    </div>
-                    <div class="roadmap-item relative pr-10 pb-10">
-                        <div class="roadmap-line"></div>
-                        <div class="absolute top-0 right-0 w-10 h-10 bg-gray-700/50 border-2 border-gray-600 rounded-full flex items-center justify-center z-10"><i class="far fa-circle text-gray-500"></i></div>
-                        <h3 class="text-2xl font-bold mb-2">المرحلة الخامسة: الإطلاق التجريبي <span class="text-sm font-normal text-gray-500">(قادمة)</span></h3>
-                        <p class="text-gray-400">إطلاق تجريبي لعدد محدود من المستخدمين وأخذ الآراء والملاحظات.</p>
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                             <h3 class="text-2xl font-bold mb-2 sm:mb-0">المرحلة الخامسة: الإطلاق التجريبي <span class="text-sm font-normal text-purple-400">(حاليًا)</span></h3>
+                        </div>
+                        <p class="text-gray-400 mt-2">تم الإرسال إلى <span class="text-neon-purple font-bold">111</span> مستخدمًا. الآن جاري التقييم والتحسين بناءً على آراء المجتمع!</p>
+                        <div id="elapsed-timer" class="mt-3 flex justify-center sm:justify-start items-center space-x-2 space-x-reverse text-center">
+                            <!-- Days -->
+                            <div class="timer-box">
+                                <span id="elapsed-days" class="timer-number">00</span>
+                                <span class="timer-label">يوم</span>
+                            </div>
+                            <!-- Hours -->
+                            <div class="timer-box">
+                                <span id="elapsed-hours" class="timer-number">00</span>
+                                <span class="timer-label">ساعة</span>
+                            </div>
+                            <!-- Minutes -->
+                            <div class="timer-box">
+                                <span id="elapsed-minutes" class="timer-number">00</span>
+                                <span class="timer-label">دقيقة</span>
+                            </div>
+                            <!-- Seconds -->
+                            <div class="timer-box">
+                                <span id="elapsed-seconds" class="timer-number">00</span>
+                                <span class="timer-label">ثانية</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="roadmap-item relative pr-10">
                         <div class="absolute top-0 right-0 w-10 h-10 bg-gray-700/50 border-2 border-gray-600 rounded-full flex items-center justify-center z-10"><i class="fas fa-rocket text-gray-500"></i></div>
                         <h3 class="text-2xl font-bold mb-2">المرحلة السادسة: الإطلاق الرسمي <span class="text-sm font-normal text-gray-500">(قادمة)</span></h3>
-                        <p class="text-gray-400">إطلاق التطبيق بشكل رسمي على أندرويد و iOS لجميع المستخدمين.</p>
+                        <p class="text-gray-400">إطلاق التطبيق بشكل رسمي على أندرويد لجميع المستخدمين.</p>
                     </div>
                 </div>
                  <p class="text-center mt-12 text-purple-400 text-lg">... ودائماً سيكون هناك المزيد!</p>
             </div>
         </section>
 
-        <!-- 5. Support & Contact Section (Discord) -->
+        <!-- 5. Beta Access & Support Section (Discord) -->
         <section id="support" class="py-20 px-6" style="background-color: #10002B;">
-            <div class="max-w-4xl mx-auto text-center fade-in">
+            <div class="max-w-5xl mx-auto text-center fade-in">
                 <i class="fab fa-discord text-6xl text-neon-purple mb-4"></i>
-                <h2 class="text-4xl md:text-5xl font-bold tracking-wider">ادعمني وتواصل معي شخصيًا</h2>
+                <h2 class="text-4xl md:text-5xl font-bold tracking-wider">🔥 بوابة البيتا فُتحت! احصل على وصول فوري 🔥</h2>
                 <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-                    أفضل طريقة لدعم المشروع هي بالانضمام إلى مجتمعنا الحصري على ديسكورد. هناك يمكنك التواصل معي مباشرة، دعم المشروع، والحصول على مميزات أسطورية.
+                    بسبب الحماس الهائل، قررت فتح الباب لعدد محدود من الأبطال للانضمام فورًا للنسخة التجريبية. ادعم تطوير التطبيق واحصل على وصول فوري وميزات أسطورية عبر سيرفر الديسكورد.
                 </p>
-                <div class="mt-8 text-center max-w-2xl mx-auto p-6 border border-purple-800 rounded-lg bg-black/30">
-                    <p class="text-lg text-gray-300">افتح تذكرة في شات <span class="font-bold text-purple-400">#المساعدة</span>، اشترِ رتبة داخل السيرفر، واحصل على مميزات حصرية داخل السيرفر والتطبيق. كل التفاصيل موجودة في شات <span class="font-bold text-purple-400">#الترقيات</span>.</p>
+                <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 text-right">
+                    <!-- Tier 1 -->
+                    <div class="p-6 border border-purple-800 rounded-lg bg-black/30">
+                        <h3 class="text-2xl font-bold text-yellow-400">⚡️ رتبة "الصياد المؤقت"</h3>
+                        <p class="text-3xl font-bold my-3">$10 <span class="text-lg text-red-500 line-through">$15</span></p>
+                        <ul class="space-y-2 text-gray-300">
+                            <li><i class="fas fa-check text-green-400 ml-2"></i> دخول فوري للنسخة التجريبية الحالية</li>
+                            <li><i class="fas fa-check text-green-400 ml-2"></i> دور خاص ومؤقت على الديسكورد</li>
+                            <li><i class="fas fa-check text-green-400 ml-2"></i> حزمة 50 جوهرة داخل التطبيق</li>
+                        </ul>
+                    </div>
+                    <!-- Tier 2 -->
+                    <div class="p-6 border-2 border-purple-500 rounded-lg bg-black/50">
+                        <h3 class="text-2xl font-bold text-yellow-400">💎 رتبة "المؤسس الأسطوري"</h3>
+                        <p class="text-3xl font-bold my-3">$25 <span class="text-lg text-red-500 line-through">$30</span></p>
+                        <ul class="space-y-2 text-gray-300">
+                            <li><i class="fas fa-check text-green-400 ml-2"></i> دخول فوري ودائم لجميع النسخ</li>
+                            <li><i class="fas fa-check text-green-400 ml-2"></i> لقب "المؤسس" الحصري داخل اللعبة</li>
+                            <li><i class="fas fa-check text-green-400 ml-2"></i> حزمة موارد خاصة عند الإطلاق</li>
+                        </ul>
+                    </div>
                 </div>
-                <a href="https://discord.gg/chkaYVz36U" target="_blank" class="mt-10 inline-block btn-primary font-bold py-4 px-12 rounded-lg text-xl uppercase tracking-wider">
+                <p class="mt-8 text-gray-400">**الأماكن محدودة جدًا!** لمعرفة التفاصيل والحصول على رتبتك، انضم للسيرفر وتواصل معي.</p>
+                <a href="https://discord.gg/chkaYVz36U" target="_blank" class="mt-8 inline-block btn-primary font-bold py-4 px-12 rounded-lg text-xl uppercase tracking-wider">
                     انضم لقلعة الأبطال على ديسكورد
                 </a>
             </div>
@@ -384,31 +399,25 @@
                 fadeObserver.observe(el);
             });
 
-            // Countdown Timer Logic
-            const countdownElement = document.getElementById('countdown-timer');
-            if (countdownElement) {
-                // Set the date we're counting down to: Friday at 10 PM (22:00) Egypt time (GMT+3)
-                // Note: JavaScript months are 0-11, so August is 7.
-                const countdownDate = new Date("2025-08-01T22:00:00+03:00").getTime();
+            // Elapsed Timer Logic
+            const elapsedTimerElement = document.getElementById('elapsed-timer');
+            if (elapsedTimerElement) {
+                // Set the date we're counting up from (August 2, 2025 at 6 PM Egypt time)
+                const startTime = new Date("2025-08-02T18:00:00+03:00").getTime();
 
                 const timerInterval = setInterval(() => {
                     const now = new Date().getTime();
-                    const distance = countdownDate - now;
+                    const distance = now - startTime;
 
                     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
                     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                    document.getElementById('days').innerText = days < 10 ? '0' + days : days;
-                    document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
-                    document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
-                    document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
-
-                    if (distance < 0) {
-                        clearInterval(timerInterval);
-                        countdownElement.innerHTML = "<span class='text-red-500 font-bold text-xl'>انتهى الوقت!</span>";
-                    }
+                    document.getElementById('elapsed-days').innerText = days < 10 ? '0' + days : days;
+                    document.getElementById('elapsed-hours').innerText = hours < 10 ? '0' + hours : hours;
+                    document.getElementById('elapsed-minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
+                    document.getElementById('elapsed-seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
                 }, 1000);
             }
         });
