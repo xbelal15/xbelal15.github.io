@@ -6,7 +6,7 @@
     <title>EGORISE - حوّل حياتك إلى لعبة</title>
     
     <!-- Favicon -->
-    <link rel="icon" href="https://i.postimg.cc/vHQvLBCT/photo-2025-07-20-18-45-40.jpg" type="image/png">
+    <link rel="icon" href="https://i.postimg.cc/YCt0RjSm/LS20250816224047.png" type="image/png">
 
     <!-- Meta Tags for Social Sharing -->
     <meta name="description" content="رحلة Rizo لبناء أول تطبيق يغير مفهوم تطوير الذات، مستوحى من Solo Leveling. انضم للوصول المبكر وكن جزءًا من الأسطورة.">
@@ -78,6 +78,12 @@
             color: #6A00FF;
             text-shadow: 0 0 5px #6A00FF, 0 0 10px #6A00FF;
         }
+        
+        /* NEW: Golden glow effect for launch date */
+        .text-glow-gold {
+            color: #FBBF24; /* A nice golden yellow */
+            text-shadow: 0 0 8px rgba(251, 191, 36, 0.7), 0 0 12px rgba(251, 191, 36, 0.5);
+        }
 
         .btn-primary {
             background-color: #6A00FF;
@@ -128,7 +134,7 @@
             }
         }
         
-        /* Epic Timer Styles */
+        /* Timer Styles (reusable for both timers) */
         .timer-box {
             background-color: rgba(10, 0, 20, 0.5);
             border: 1px solid #6A00FF;
@@ -170,23 +176,51 @@
                 <p class="mt-6 text-lg md:text-xl max-w-2xl mx-auto text-gray-300">
                     رحلتي لبناء أول تطبيق سيغيّر مفهوم تطوير الذات للأبد.
                 </p>
-                <a href="#cta-main" class="mt-10 inline-block btn-primary font-bold py-4 px-12 rounded-lg text-xl uppercase tracking-wider">
-                    سجّل للوصول المبكر
+                <a href="https://discord.gg/chkaYVz36U" target="_blank" class="mt-10 inline-block btn-primary font-bold py-4 px-12 rounded-lg text-xl uppercase tracking-wider">
+                    انضم لسيرفر الديسكورد
                 </a>
+                <p class="mt-4 text-sm text-gray-400 max-w-md mx-auto">
+                    سيرفر الديسكورد هو أول مكان سينزل فيه التطبيق، شحن الجواهر، فعاليات ومسابقات... والكثير!
+                </p>
             </div>
         </section>
         
-        <!-- NEW App Intro Section Moved Here -->
-        <section id="app-intro" class="py-20 px-6 bg-black">
+        <!-- 2. Official Launch Section (REPLACED Beta Section and MOVED here) -->
+        <section id="coming-soon" class="py-20 px-6" style="background-color: #10002B;">
             <div class="max-w-4xl mx-auto text-center fade-in">
-                 <img src="https://i.postimg.cc/vHQvLBCT/photo-2025-07-20-18-45-40.jpg" alt="شعار تطبيق EGORISE" class="mx-auto w-48 h-48 mb-6 drop-shadow-[0_0_15px_rgba(106,0,255,0.6)]">
-                 <h2 class="text-6xl md:text-7xl font-bold text-neon-purple tracking-wider">EGORISE</h2>
-                 <p class="mt-4 text-xl md:text-2xl text-gray-400 tracking-widest">LEVEL UP YOUR REALITY</p>
-                 <p class="mt-6 text-lg text-gray-300 max-w-2xl mx-auto">هذا هو التطبيق الذي سيغير مفهوم تطوير الذات قريبا.</p>
+                <img src="https://i.postimg.cc/YCt0RjSm/LS20250816224047.png" alt="شعار تطبيق EGORISE" class="mx-auto w-40 h-40 mb-6 drop-shadow-[0_0_15px_rgba(106,0,255,0.6)]">
+                <h2 class="text-3xl font-bold text-glow-gold tracking-widest mb-4">موعد الإطلاق الرسمي: 1 سبتمبر 2025</h2>
+                <h3 class="text-4xl md:text-5xl font-bold tracking-wider">ترقبوا الإطلاق الكبير</h3>
+                <!-- Countdown Timer -->
+                <div class="mt-10">
+                    <p class="text-2xl font-bold text-white mb-4">العد التنازلي للإطلاق على Google Play:</p>
+                    <div id="countdown-timer" class="flex justify-center items-center space-x-2 space-x-reverse text-center">
+                        <!-- Days -->
+                        <div class="timer-box">
+                            <span id="countdown-days" class="timer-number">00</span>
+                            <span class="timer-label">يوم</span>
+                        </div>
+                        <!-- Hours -->
+                        <div class="timer-box">
+                            <span id="countdown-hours" class="timer-number">00</span>
+                            <span class="timer-label">ساعة</span>
+                        </div>
+                        <!-- Minutes -->
+                        <div class="timer-box">
+                            <span id="countdown-minutes" class="timer-number">00</span>
+                            <span class="timer-label">دقيقة</span>
+                        </div>
+                        <!-- Seconds -->
+                        <div class="timer-box">
+                            <span id="countdown-seconds" class="timer-number">00</span>
+                            <span class="timer-label">ثانية</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- 2. Personal Story Section -->
+        <!-- 3. Personal Story Section -->
         <section id="about-rizo" class="py-20 px-6 bg-black border-t border-purple-900/30">
             <div class="max-w-4xl mx-auto text-center fade-in">
                 <img src="https://i.postimg.cc/90QXM0kb/44.png" alt="شعار Rizo" class="mx-auto w-24 h-24 mb-6 rounded-full object-cover">
@@ -197,7 +231,7 @@
             </div>
         </section>
         
-        <!-- 3. About the App Section (Restored) -->
+        <!-- 4. About the App Section -->
         <section id="about-app" class="py-20 px-6 bg-black border-t border-purple-900/30">
             <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center">
                 <div class="text-center md:text-right fade-in">
@@ -214,7 +248,7 @@
             </div>
         </section>
 
-        <!-- 4. Roadmap Section -->
+        <!-- 5. Roadmap Section -->
         <section id="roadmap" class="py-20 px-6 bg-black border-t border-purple-900/30">
             <div class="max-w-4xl mx-auto fade-in">
                 <div class="text-center mb-12">
@@ -272,35 +306,46 @@
                     </div>
                     <div class="roadmap-item relative pr-10 pb-10">
                         <div class="roadmap-line"></div>
+                        <div class="absolute top-0 right-0 w-10 h-10 bg-green-500/20 border-2 border-green-500 rounded-full flex items-center justify-center z-10"><i class="fas fa-check text-green-400"></i></div>
+                        <h3 class="text-2xl font-bold mb-2">المرحلة السادسة: نظام تسجيل الدخول <span class="text-sm font-normal text-green-400">(تمت)</span></h3>
+                        <p class="text-gray-400 mt-2">تم إنشاء نظام تسجيل دخول وحفظ جميع البيانات وربط التطبيق بقاعدة بيانات سحابية.</p>
+                    </div>
+                    <div class="roadmap-item relative pr-10 pb-10">
+                        <div class="roadmap-line"></div>
                         <div class="absolute top-0 right-0 w-10 h-10 bg-purple-500/20 border-2 border-purple-500 rounded-full flex items-center justify-center z-10"><i class="fas fa-spinner fa-spin text-purple-400"></i></div>
-                        <h3 class="text-2xl font-bold mb-2">المرحلة السادسة: نظام تسجيل الدخول <span class="text-sm font-normal text-purple-400">(حاليًا)</span></h3>
-                        <p class="text-gray-400 mt-2">إنشاء نظام تسجيل دخول وحفظ جميع البيانات وربط التطبيق بقاعدة بيانات سحابية.</p>
+                        <h3 class="text-2xl font-bold mb-2">المرحلة السابعة: تجربة شاملة واختبار <span class="text-sm font-normal text-purple-400">(حاليًا)</span></h3>
+                        <p class="text-gray-400 mt-2">اختبار للتطبيق بالكامل للتأكد من عدم وجود أخطاء على المدى البعيد.</p>
                     </div>
                     <div class="roadmap-item relative pr-10">
                         <div class="absolute top-0 right-0 w-10 h-10 bg-gray-700/50 border-2 border-gray-600 rounded-full flex items-center justify-center z-10"><i class="fas fa-rocket text-gray-500"></i></div>
-                        <h3 class="text-2xl font-bold mb-2">المرحلة السابعة: الإطلاق الرسمي <span class="text-sm font-normal text-gray-500">(قادمة)</span></h3>
+                        <h3 class="text-2xl font-bold mb-2">المرحلة الثامنة: الإطلاق الرسمي <span class="text-sm font-normal text-gray-500">(قادمة)</span></h3>
                         <p class="text-gray-400">إطلاق التطبيق بشكل رسمي على أندرويد لجميع المستخدمين.</p>
+                        <!-- Countdown Timer for Roadmap -->
+                        <div id="countdown-timer-roadmap" class="mt-3 flex justify-center sm:justify-start items-center space-x-2 space-x-reverse text-center">
+                            <div class="timer-box">
+                                <span id="countdown-days-roadmap" class="timer-number">00</span>
+                                <span class="timer-label">يوم</span>
+                            </div>
+                            <div class="timer-box">
+                                <span id="countdown-hours-roadmap" class="timer-number">00</span>
+                                <span class="timer-label">ساعة</span>
+                            </div>
+                            <div class="timer-box">
+                                <span id="countdown-minutes-roadmap" class="timer-number">00</span>
+                                <span class="timer-label">دقيقة</span>
+                            </div>
+                            <div class="timer-box">
+                                <span id="countdown-seconds-roadmap" class="timer-number">00</span>
+                                <span class="timer-label">ثانية</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                  <p class="text-center mt-12 text-purple-400 text-lg">... ودائماً سيكون هناك المزيد!</p>
             </div>
         </section>
 
-        <!-- 5. Beta Closed / Coming Soon Section -->
-        <section id="coming-soon" class="py-20 px-6" style="background-color: #10002B;">
-            <div class="max-w-4xl mx-auto text-center fade-in">
-                <i class="fab fa-google-play text-6xl text-neon-purple mb-4"></i>
-                <h2 class="text-4xl md:text-5xl font-bold tracking-wider">بوابة البيتا أُغلقت! ترقبوا الإطلاق الرسمي</h2>
-                <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-                    شكرًا لكل الأبطال الذين شاركوا في النسخة التجريبية. لقد تم إغلاق الوصول الآن للتركيز على التحسينات النهائية بناءً على آرائكم القيمة.
-                </p>
-                <div class="mt-10">
-                    <p class="text-2xl font-bold text-white">انتظروا النسخة الرسمية مجانًا على Google Play قريبًا!</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 6. Community Section (Multi-Platform) -->
+        <!-- 6. Community Section -->
         <section id="community" class="py-20 px-6 bg-black border-t border-purple-900/30">
             <div class="max-w-4xl mx-auto text-center fade-in">
                 <i class="fas fa-users text-6xl text-neon-purple mb-4"></i>
@@ -324,7 +369,17 @@
             </div>
         </section>
         
-        <!-- 7. Main CTA Section -->
+        <!-- 7. App Intro Section (MOVED here) -->
+        <section id="app-intro" class="py-20 px-6 bg-black border-t border-purple-900/30">
+            <div class="max-w-4xl mx-auto text-center fade-in">
+                 <img src="https://i.postimg.cc/YCt0RjSm/LS20250816224047.png" alt="شعار تطبيق EGORISE" class="mx-auto w-48 h-48 mb-6 drop-shadow-[0_0_15px_rgba(106,0,255,0.6)]">
+                 <h2 class="text-6xl md:text-7xl font-bold text-neon-purple tracking-wider">EGORISE</h2>
+                 <p class="mt-4 text-xl md:text-2xl text-gray-400 tracking-widest">LEVEL UP YOUR REALITY</p>
+                 <p class="mt-6 text-lg text-gray-300 max-w-2xl mx-auto">هذا هو التطبيق الذي سيغير مفهوم تطوير الذات قريبا.</p>
+            </div>
+        </section>
+
+        <!-- 8. Main CTA Section -->
         <section id="cta-main" class="py-24 px-6 bg-black relative border-t border-purple-900/30">
             <div class="absolute inset-0 bg-gradient-radial"></div>
             <div class="relative z-10 max-w-2xl mx-auto text-center fade-in">
@@ -333,7 +388,7 @@
             </div>
         </section>
 
-        <!-- 8. Footer -->
+        <!-- 9. Footer -->
         <footer class="bg-black py-8 px-6">
             <div class="max-w-6xl mx-auto text-center text-gray-600">
                 <div class="flex justify-center items-center space-x-6 space-x-reverse mb-6">
@@ -354,13 +409,13 @@
     </div>
 
     <!-- Scripts -->
-    <!-- MailerLite Universal -->
+    <!-- MailerLite Universal (CORRECTED AND COMPLETE) -->
     <script>
-        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-        ml('account', '1645574');
+      (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+      .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+      n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+      (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+      ml('account', '1645574');
     </script>
     <!-- End MailerLite Universal -->
     
@@ -380,7 +435,7 @@
                 fadeObserver.observe(el);
             });
 
-            // Elapsed Timer Logic
+            // Elapsed Timer Logic (Counting UP from a past date)
             const elapsedTimerElement = document.getElementById('elapsed-timer');
             if (elapsedTimerElement) {
                 // Set the date we're counting up from (e.g., August 2, 2025 at 6 PM Egypt time)
@@ -399,6 +454,51 @@
                     document.getElementById('elapsed-hours').innerText = hours < 10 ? '0' + hours : hours;
                     document.getElementById('elapsed-minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
                     document.getElementById('elapsed-seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+                }, 1000);
+            }
+
+            // Countdown Timer Logic (Counting DOWN to a future date)
+            const countdownTimerElement = document.getElementById('countdown-timer');
+            const countdownTimerRoadmapElement = document.getElementById('countdown-timer-roadmap');
+            
+            if (countdownTimerElement) {
+                // Set the date we're counting down to (September 1, 2025, at midnight Egypt time)
+                const countDownDate = new Date("2025-09-01T00:00:00+03:00").getTime();
+
+                const countdownInterval = setInterval(() => {
+                    const now = new Date().getTime();
+                    const distance = countDownDate - now;
+
+                    // Time calculations for days, hours, minutes and seconds
+                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    // Display the result in the main timer
+                    document.getElementById('countdown-days').innerText = days < 10 ? '0' + days : days;
+                    document.getElementById('countdown-hours').innerText = hours < 10 ? '0' + hours : hours;
+                    document.getElementById('countdown-minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
+                    document.getElementById('countdown-seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+                    
+                    // Also display the result in the roadmap timer if it exists
+                    if (countdownTimerRoadmapElement) {
+                        document.getElementById('countdown-days-roadmap').innerText = days < 10 ? '0' + days : days;
+                        document.getElementById('countdown-hours-roadmap').innerText = hours < 10 ? '0' + hours : hours;
+                        document.getElementById('countdown-minutes-roadmap').innerText = minutes < 10 ? '0' + minutes : minutes;
+                        document.getElementById('countdown-seconds-roadmap').innerText = seconds < 10 ? '0' + seconds : seconds;
+                    }
+
+
+                    // If the count down is finished, write some text 
+                    if (distance < 0) {
+                        clearInterval(countdownInterval);
+                        const launchedMessage = `<p class="text-2xl font-bold text-green-400">التطبيق متوفر الآن على Google Play!</p>`;
+                        countdownTimerElement.innerHTML = launchedMessage;
+                        if(countdownTimerRoadmapElement) {
+                            countdownTimerRoadmapElement.innerHTML = `<p class="text-lg font-bold text-green-400">تم الإطلاق!</p>`;
+                        }
+                    }
                 }, 1000);
             }
         });
