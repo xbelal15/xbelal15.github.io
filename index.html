@@ -146,7 +146,6 @@
             color: #a78bfa; /* Lighter purple for label */
         }
         
-        /* New Styles for Donation Section */
         .progress-bar-bg {
             box-shadow: inset 0 2px 4px rgba(0,0,0,0.4);
         }
@@ -159,9 +158,42 @@
             filter: sepia(100%) saturate(300%) hue-rotate(220deg) brightness(90%) contrast(110%);
             -webkit-filter: sepia(100%) saturate(300%) hue-rotate(220deg) brightness(90%) contrast(110%);
         }
+
+        /* Styles for Sticky Navigation */
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(106, 0, 255, 0.2);
+            transition: all 0.3s ease-in-out;
+        }
+        .sticky-nav a {
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+        .sticky-nav a:hover {
+            color: #a78bfa;
+            text-shadow: 0 0 8px rgba(106, 0, 255, 0.8);
+        }
+
     </style>
 </head>
 <body class="overflow-x-hidden">
+
+    <!-- Sticky Navigation Bar -->
+    <header class="sticky-nav">
+        <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold tracking-widest text-white">EGORISE</a>
+            <div class="hidden md:flex items-center space-x-8 space-x-reverse text-lg">
+                <a href="#about-rizo">القصة</a>
+                <a href="#support">ادعمنا</a>
+                <a href="#roadmap">خارطة الطريق</a>
+                <a href="#community">المجتمع</a>
+            </div>
+        </nav>
+    </header>
 
     <!-- Main Container -->
     <div class="min-h-screen w-full">
@@ -185,7 +217,7 @@
         <!-- 2. Official Launch Section -->
         <section id="coming-soon" class="py-20 px-6 bg-black border-t border-purple-900/30">
             <div class="max-w-4xl mx-auto text-center fade-in">
-                <img src="https://i.postimg.cc/YCt0RjSm/LS20250816224047.png" alt="شعار تطبيق EGORISE" class="mx-auto w-40 h-40 mb-6 drop-shadow-[0_0_15px_rgba(106,0,255,0.6)]">
+                <img src="https://i.postimg.cc/YCt0RjSm/LS20250816224047.png" alt="شعار تطبيق EGORISE الرسمي" class="mx-auto w-40 h-40 mb-6 drop-shadow-[0_0_15px_rgba(106,0,255,0.6)]">
                 <h2 class="text-3xl font-bold text-glow-gold tracking-widest mb-4">موعد الإطلاق الرسمي: 20 سبتمبر 2025</h2>
                 <h3 class="text-4xl md:text-5xl font-bold tracking-wider">ترقبوا الإطلاق الكبير</h3>
                 <!-- Countdown Timer -->
@@ -204,7 +236,7 @@
         <!-- 3. Personal Story Section -->
         <section id="about-rizo" class="py-20 px-6 bg-black border-t border-purple-900/30">
             <div class="max-w-4xl mx-auto text-center fade-in">
-                <img src="https://i.postimg.cc/90QXM0kb/44.png" alt="شعار Rizo" class="mx-auto w-24 h-24 mb-6 rounded-full object-cover">
+                <img src="https://i.postimg.cc/90QXM0kb/44.png" alt="صورة شخصية لـ Rizo مطور تطبيق EGORISE" class="mx-auto w-24 h-24 mb-6 rounded-full object-cover">
                 <h2 class="text-4xl md:text-5xl font-bold text-neon-purple tracking-wider">قصة Rizo</h2>
                  <p class="mt-8 text-lg md:text-xl max-w-3xl mx-auto text-gray-300 leading-relaxed">
                     في عمر الـ 20، شعرت أن الحياة الواقعية تفتقر لنظام واضح للتقدم. تطبيق <span class="text-neon-purple font-bold">EGORISE</span> ليس مجرد مشروع، بل هو محاولتي لصناعة الأداة التي كنت أحتاجها، ومساعدة الآلاف على خوض رحلة تطوير الذات، وتحقيق حلمي بأن أكون أول من يغير واقع عائلتي.
@@ -223,11 +255,9 @@
                 <div class="mt-10 max-w-2xl mx-auto">
                     <div class="flex justify-between items-center mb-2 text-white">
                         <span class="font-bold">هدف التأسيس: $1500</span>
-                        <!-- To update the text, change the numbers here -->
                         <span id="progress-text" class="font-bold text-purple-400">$0 / $1500 (0%)</span>
                     </div>
                     <div class="w-full bg-gray-800 rounded-full h-4 border-2 border-purple-800/50 progress-bar-bg">
-                        <!-- To update the progress bar, change the width percentage here. For example, style="width: 25%;" -->
                         <div id="progress-bar-fill" class="bg-purple-600 h-full rounded-full progress-bar-fill" style="width: 0%;"></div>
                     </div>
                     <p class="text-sm mt-2 text-gray-400">لتغطية تكاليف السيرفرات، التسويق، والتطوير المستمر.</p>
@@ -237,7 +267,7 @@
                     <h3 class="text-2xl font-bold text-glow-gold mb-6">ماذا ستحصل عليه مقابل دعمك؟</h3>
                     <div class="flex flex-col md:flex-row items-center justify-center gap-8">
                         <div class="text-center">
-                            <img src="https://i.postimg.cc/rFK4NJc7/tarot-04-the-emperor.png" alt="لقب المؤسس المميز" class="founder-badge-icon mx-auto w-24 h-24 mb-2 drop-shadow-[0_0_15px_rgba(172,122,255,0.6)]">
+                            <img src="https://i.postimg.cc/rFK4NJc7/tarot-04-the-emperor.png" alt="أيقونة شارة المؤسس الحصرية داخل تطبيق EGORISE" class="founder-badge-icon mx-auto w-24 h-24 mb-2 drop-shadow-[0_0_15px_rgba(172,122,255,0.6)]">
                             <h4 class="text-xl font-bold">لقب المؤسس المميز</h4>
                             <p class="text-gray-400">لقب حصري داخل التطبيق والديسكورد يميّزك كداعم أساسي للمشروع.</p>
                         </div>
@@ -273,7 +303,7 @@
                     </p>
                 </div>
                 <div class="w-full max-w-sm mx-auto fade-in">
-                    <img src="https://i.postimg.cc/7ZDzr9sg/55.jpg" alt="صورة لواجهة التطبيق" class="rounded-2xl border-2 border-purple-800/50 shadow-lg shadow-purple-900/20 w-full h-auto">
+                    <img src="https://i.postimg.cc/7ZDzr9sg/55.jpg" alt="لقطة شاشة لتطبيق EGORISE تعرض واجهة المستخدم الرئيسية مع إحصائيات اللاعب" class="rounded-2xl border-2 border-purple-800/50 shadow-lg shadow-purple-900/20 w-full h-auto">
                 </div>
             </div>
         </section>
@@ -325,7 +355,7 @@
         <!-- 8. App Intro Section -->
         <section id="app-intro" class="py-20 px-6 bg-black border-t border-purple-900/30">
             <div class="max-w-4xl mx-auto text-center fade-in">
-                 <img src="https://i.postimg.cc/YCt0RjSm/LS20250816224047.png" alt="شعار تطبيق EGORISE" class="mx-auto w-48 h-48 mb-6 drop-shadow-[0_0_15px_rgba(106,0,255,0.6)]">
+                 <img src="https://i.postimg.cc/YCt0RjSm/LS20250816224047.png" alt="شعار تطبيق EGORISE الرسمي" class="mx-auto w-48 h-48 mb-6 drop-shadow-[0_0_15px_rgba(106,0,255,0.6)]">
                  <h2 class="text-6xl md:text-7xl font-bold text-neon-purple tracking-wider">EGORISE</h2>
                  <p class="mt-4 text-xl md:text-2xl text-gray-400 tracking-widest">LEVEL UP YOUR REALITY</p>
                  <p class="mt-6 text-lg text-gray-300 max-w-2xl mx-auto">هذا هو التطبيق الذي سيغير مفهوم تطوير الذات قريبا.</p>
@@ -355,6 +385,28 @@
 
     <!-- Scripts -->
     <script>
+        // --- NEW: Function to update the support progress bar and text automatically ---
+        function updateSupportProgress(currentAmount, goalAmount) {
+            const progressBar = document.getElementById('progress-bar-fill');
+            const progressText = document.getElementById('progress-text');
+
+            // Ensure the elements exist before trying to update them
+            if (!progressBar || !progressText) {
+                console.error("Progress bar elements not found.");
+                return;
+            }
+
+            // Calculate the percentage, ensuring it doesn't go over 100%
+            const percentage = Math.min(100, (currentAmount / goalAmount) * 100);
+
+            // Update the progress bar's width
+            progressBar.style.width = percentage + '%';
+
+            // Update the text to show current amount, goal, and percentage
+            progressText.textContent = `$${currentAmount} / $${goalAmount} (${Math.round(percentage)}%)`;
+        }
+
+
         document.addEventListener("DOMContentLoaded", () => {
             // Observer for general fade-in animations
             const fadeObserver = new IntersectionObserver((entries) => {
@@ -423,8 +475,12 @@
                     }
                 }, 1000);
             }
+
+            // --- NEW: Call the support progress update function on page load ---
+            // Simply change the first number (20) to update the progress bar everywhere.
+            updateSupportProgress(20, 1500);
+
         });
     </script>
 </body>
 </html>
-
