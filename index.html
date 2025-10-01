@@ -269,7 +269,7 @@
                     </a>
                     <div class="flex items-center gap-2 text-lg text-gray-400">
                         <i class="fas fa-users text-purple-400"></i>
-                        <span id="download-counter" class="font-bold text-glow-gold text-2xl">111</span>
+                        <span id="download-counter" class="font-bold text-glow-gold text-2xl">0</span>
                         <span>بطل قاموا بالتحميل</span>
                     </div>
                 </div>
@@ -543,12 +543,18 @@
             const downloadBtn = document.getElementById('download-btn');
             const downloadCounterElement = document.getElementById('download-counter');
             if (downloadBtn && downloadCounterElement) {
-                let downloadCount = 111; // Starting number
+                // Get the count from the browser's local storage, or start at 0 if it doesn't exist.
+                let downloadCount = parseInt(localStorage.getItem('egoriseDownloadCount') || '0', 10);
                 downloadCounterElement.innerText = downloadCount;
 
                 downloadBtn.addEventListener('click', () => {
+                    // Increment the count
                     downloadCount++;
+                    // Save the new count to local storage so it persists for the user
+                    localStorage.setItem('egoriseDownloadCount', downloadCount);
+                    // Update the display with the new count
                     downloadCounterElement.innerText = downloadCount;
+                    // Trigger the animation
                     downloadCounterElement.classList.add('count-up-animation');
                     setTimeout(() => {
                         downloadCounterElement.classList.remove('count-up-animation');
@@ -603,5 +609,4 @@
     </script>
 </body>
 </html>
-
 
