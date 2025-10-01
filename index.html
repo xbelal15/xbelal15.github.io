@@ -567,6 +567,16 @@
                     setTimeout(() => {
                         downloadCounterElement.classList.remove('count-up-animation');
                     }, 400);
+
+                    // --- [ الإضافة الجديدة ] ---
+                    // إرسال حدث مخصص إلى جوجل أناليتكس لتتبع التحميلات بدقة
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'download_app_click', {
+                            'event_category': 'App Downloads',
+                            'event_label': 'Beta APK Download v0.1'
+                        });
+                    }
+                    // --- [ نهاية الإضافة ] ---
                 });
             }
 
@@ -618,4 +628,5 @@
     </script>
 </body>
 </html>
+
 
