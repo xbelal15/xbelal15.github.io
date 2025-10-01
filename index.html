@@ -269,7 +269,7 @@
                     </a>
                     <div class="flex items-center gap-2 text-lg text-gray-400">
                         <i class="fas fa-users text-purple-400"></i>
-                        <span id="download-counter" class="font-bold text-glow-gold text-2xl">0</span>
+                        <span id="download-counter" class="font-bold text-glow-gold text-2xl">1342</span>
                         <span>بطل قاموا بالتحميل</span>
                     </div>
                 </div>
@@ -538,22 +538,30 @@
                 });
             }, { threshold: 0.1 });
             document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
-
-            // --- Download Counter Logic ---
+            
+            // --- Manual Download Counter Logic ---
             const downloadBtn = document.getElementById('download-btn');
             const downloadCounterElement = document.getElementById('download-counter');
             if (downloadBtn && downloadCounterElement) {
-                // Get the count from the browser's local storage, or start at 0 if it doesn't exist.
-                let downloadCount = parseInt(localStorage.getItem('egoriseDownloadCount') || '0', 10);
-                downloadCounterElement.innerText = downloadCount;
+                // The base count that you will update manually in the code
+                const baseDownloadCount = 1342;
+                
+                // We use localStorage to track if THIS specific user has clicked before.
+                // This makes the counter interactive for them, but the base number is what you control.
+                let userClickCount = parseInt(localStorage.getItem('egoriseUserClicks') || '0', 10);
+                
+                // Display the initial total count for this user
+                downloadCounterElement.innerText = baseDownloadCount + userClickCount;
 
                 downloadBtn.addEventListener('click', () => {
-                    // Increment the count
-                    downloadCount++;
-                    // Save the new count to local storage so it persists for the user
-                    localStorage.setItem('egoriseDownloadCount', downloadCount);
-                    // Update the display with the new count
-                    downloadCounterElement.innerText = downloadCount;
+                    // Increment the user's personal click count
+                    userClickCount++;
+                    localStorage.setItem('egoriseUserClicks', userClickCount);
+                    
+                    // Update the display with the new total count for this user
+                    const newTotal = baseDownloadCount + userClickCount;
+                    downloadCounterElement.innerText = newTotal;
+
                     // Trigger the animation
                     downloadCounterElement.classList.add('count-up-animation');
                     setTimeout(() => {
@@ -561,6 +569,7 @@
                     }, 400);
                 });
             }
+
 
             // --- Donation Modal Logic ---
             const modal = document.getElementById('donate-modal');
