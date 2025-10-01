@@ -259,19 +259,25 @@
         <section id="beta-download" class="py-20 px-6 bg-black border-t border-purple-900/30">
             <div class="max-w-4xl mx-auto text-center fade-in">
                 <img src="https://i.postimg.cc/YCt0RjSm/LS20250816224047.png" alt="شعار تطبيق EGORISE" class="mx-auto w-40 h-40 mb-8 drop-shadow-[0_0_15px_rgba(106,0,255,0.6)]">
-                <h2 class="text-4xl md:text-5xl font-bold tracking-wider">النسخة التجريبية <span class="text-neon-purple">متاحة الآن</span></h2>
+                <h2 class="text-4xl md:text-5xl font-bold tracking-wider">النسخة التجريبية <span class="text-neon-purple">v0.2 متاحة الآن</span></h2>
                 <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-                    كن من أوائل الأبطال الذين يختبرون عالم EGORISE. حمّل النسخة التجريبية مباشرة وشاركنا رأيك!
+                    كن من أوائل الأبطال الذين يختبرون عالم EGORISE. حمّل التحديث الجديد مباشرة وشاركنا رأيك!
                 </p>
                 <div class="mt-10 flex flex-col items-center justify-center gap-4">
-                    <a id="download-btn" href="https://github.com/xbelal15/xbelal15.github.io/releases/download/v0.1-beta/app-arm64-v8a-release.apk" target="_blank" class="inline-block btn-primary font-bold py-4 px-12 rounded-lg text-xl uppercase tracking-wider">
-                        <i class="fas fa-download mr-3"></i> تحميل الآن (Beta)
+                    <a id="download-btn" href="https://github.com/xbelal15/xbelal15.github.io/releases/download/v0.2-beta/app-arm64-v8a-release.apk" target="_blank" class="inline-block btn-primary font-bold py-4 px-12 rounded-lg text-xl uppercase tracking-wider">
+                        <i class="fas fa-download mr-3"></i> تحميل التحديث (v0.2)
                     </a>
                     <div class="flex items-center gap-2 text-lg text-gray-400">
                         <i class="fas fa-users text-purple-400"></i>
                         <span id="download-counter" class="font-bold text-glow-gold text-2xl">3546</span>
                         <span>بطل قاموا بالتحميل</span>
                     </div>
+                    <p class="mt-2 text-sm text-gray-500">
+                        هل تملك هاتفًا قديمًا؟ 
+                        <a href="https://github.com/xbelal15/xbelal15.github.io/releases/download/v0.2-beta/app-armeabi-v7a-release.apk" class="text-purple-400 hover:underline">
+                            حمّل النسخة المتوافقة من هنا (32-bit)
+                        </a>
+                    </p>
                 </div>
             </div>
         </section>
@@ -324,6 +330,14 @@
             <div class="max-w-4xl mx-auto text-center fade-in">
                 <h2 class="text-4xl md:text-5xl font-bold tracking-wider mb-12">آخر <span class="text-neon-purple">الأخبار</span></h2>
                 <div class="max-w-2xl mx-auto text-right">
+                    <!-- News Item 2 -->
+                    <div class="bg-gray-900/50 border border-purple-800/30 rounded-lg p-6 mb-6">
+                        <p class="text-sm text-gray-400 mb-2">2 أكتوبر 2025</p>
+                        <h3 class="text-2xl font-bold text-glow-gold mb-3">إشعار صيانة وتحسينات قادمة!</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            لضمان أفضل تجربة ممكنة، يخضع السيرفر حاليًا لصيانة مؤقتة. من المتوقع أن يعود التطبيق للعمل بكامل طاقته اليوم الساعة 12:00 ظهرًا بتوقيت مصر. شكرًا لصبركم ودعمكم المستمر!
+                        </p>
+                    </div>
                     <!-- News Item 1 -->
                     <div class="bg-gray-900/50 border border-purple-800/30 rounded-lg p-6 mb-6">
                         <p class="text-sm text-gray-400 mb-2">1 أكتوبر 2025</p>
@@ -568,15 +582,15 @@
                         downloadCounterElement.classList.remove('count-up-animation');
                     }, 400);
 
-                    // --- [ الإضافة الجديدة ] ---
-                    // إرسال حدث مخصص إلى جوجل أناليتكس لتتبع التحميلات بدقة
+                    // --- [ تحديث مهم ] ---
+                    // إرسال حدث مخصص إلى جوجل أناليتكس لتتبع تحميلات الإصدار الجديد
                     if (typeof gtag === 'function') {
                         gtag('event', 'download_app_click', {
                             'event_category': 'App Downloads',
-                            'event_label': 'Beta APK Download v0.1'
+                            'event_label': 'Beta APK Download v0.2'
                         });
                     }
-                    // --- [ نهاية الإضافة ] ---
+                    // --- [ نهاية التحديث ] ---
                 });
             }
 
@@ -628,6 +642,4 @@
     </script>
 </body>
 </html>
-
-
 
