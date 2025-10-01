@@ -183,6 +183,40 @@
             text-shadow: 0 0 8px rgba(106, 0, 255, 0.8);
         }
 
+        /* Download Counter Animation */
+        @keyframes count-up {
+            0% { transform: translateY(0); opacity: 1; color: #FBBF24; }
+            50% { transform: translateY(-10px); opacity: 0; }
+            51% { transform: translateY(10px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; color: #FBBF24; }
+        }
+        .count-up-animation {
+            animation: count-up 0.4s ease-in-out;
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            transition: opacity 0.3s ease;
+        }
+        .modal-content {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .modal.hidden .modal-overlay {
+            opacity: 0;
+        }
+        .modal.hidden .modal-content {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+        .copy-btn {
+            background-color: rgba(106, 0, 255, 0.2);
+            border: 1px solid rgba(106, 0, 255, 0.5);
+            transition: all 0.2s ease;
+        }
+        .copy-btn:hover {
+            background-color: rgba(106, 0, 255, 0.4);
+        }
+
     </style>
 </head>
 <body class="overflow-x-hidden">
@@ -229,9 +263,16 @@
                 <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
                     كن من أوائل الأبطال الذين يختبرون عالم EGORISE. حمّل النسخة التجريبية مباشرة وشاركنا رأيك!
                 </p>
-                <a href="https://play.google.com/store/apps/details?id=com.rizo.egorise" target="_blank" class="mt-10 inline-block btn-primary font-bold py-4 px-12 rounded-lg text-xl uppercase tracking-wider">
-                    <i class="fas fa-download mr-3"></i> تحميل الآن (Beta)
-                </a>
+                <div class="mt-10 flex flex-col items-center justify-center gap-4">
+                    <a id="download-btn" href="https://play.google.com/store/apps/details?id=com.rizo.egorise" target="_blank" class="inline-block btn-primary font-bold py-4 px-12 rounded-lg text-xl uppercase tracking-wider">
+                        <i class="fas fa-download mr-3"></i> تحميل الآن (Beta)
+                    </a>
+                    <div class="flex items-center gap-2 text-lg text-gray-400">
+                        <i class="fas fa-users text-purple-400"></i>
+                        <span id="download-counter" class="font-bold text-glow-gold text-2xl">111</span>
+                        <span>بطل قاموا بالتحميل</span>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -271,15 +312,9 @@
                 </div>
 
                 <div class="mt-12">
-                    <h3 class="text-2xl font-bold mb-4">اختر طريقة الدعم التي تناسبك:</h3>
-                    <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
-                        <a href="https://play.google.com/store/apps/details?id=com.rizo.egorise" target="_blank" class="w-full sm:w-auto inline-block btn-primary font-bold py-4 px-10 rounded-lg text-lg uppercase tracking-wider">
-                            <i class="fas fa-shopping-cart ml-2"></i> ادعم عبر شراء الجواهر
-                        </a>
-                        <a href="https://discord.gg/chkaYVz36U" target="_blank" class="w-full sm:w-auto inline-block bg-gray-700 hover:bg-gray-600 text-white font-bold py-4 px-10 rounded-lg text-lg uppercase tracking-wider transition-colors">
-                           <i class="fab fa-discord ml-2"></i> تواصل للتبرع المباشر
-                        </a>
-                    </div>
+                    <button id="open-donate-modal" class="w-full sm:w-auto inline-block btn-primary font-bold py-4 px-10 rounded-lg text-lg uppercase tracking-wider">
+                        <i class="fas fa-hand-holding-heart ml-2"></i> اختر طريقة الدعم التي تناسبك
+                    </button>
                 </div>
             </div>
         </section>
@@ -297,11 +332,11 @@
                             نحن نعمل بجد لوضع اللمسات الأخيرة على النسخة التجريبية من EGORISE. ترقبوا الإعلان الرسمي عن إتاحة التحميل المباشر من موقعنا الرسمي. استعدوا لتكونوا من أوائل الأبطال في هذا العالم!
                         </p>
                     </div>
-                    <!-- Add more news items here in the future -->
                 </div>
             </div>
         </section>
 
+        <!-- ... other sections ... -->
         <!-- 5. Personal Story Section -->
         <section id="about-rizo" class="py-20 px-6 bg-black border-t border-purple-900/30">
             <div class="max-w-4xl mx-auto text-center fade-in">
@@ -335,7 +370,6 @@
                      <h2 class="text-4xl md:text-5xl font-bold text-neon-purple tracking-wider">خارطة الطريق</h2>
                 </div>
                 <div class="relative">
-                    <!-- Roadmap Items here... -->
                     <div class="roadmap-item relative pr-10 pb-10"><div class="roadmap-line"></div><div class="absolute top-0 right-0 w-10 h-10 bg-green-500/20 border-2 border-green-500 rounded-full flex items-center justify-center z-10"><i class="fas fa-check text-green-400"></i></div><h3 class="text-2xl font-bold mb-2">المرحلة الأولى: الواجهة الأساسية <span class="text-sm font-normal text-green-400">(تمت)</span></h3></div>
                     <div class="roadmap-item relative pr-10 pb-10"><div class="roadmap-line"></div><div class="absolute top-0 right-0 w-10 h-10 bg-green-500/20 border-2 border-green-500 rounded-full flex items-center justify-center z-10"><i class="fas fa-check text-green-400"></i></div><h3 class="text-2xl font-bold mb-2">المرحلة الثانية: السجلات والمهارات <span class="text-sm font-normal text-green-400">(تمت)</span></h3></div>
                     <div class="roadmap-item relative pr-10 pb-10"><div class="roadmap-line"></div><div class="absolute top-0 right-0 w-10 h-10 bg-green-500/20 border-2 border-green-500 rounded-full flex items-center justify-center z-10"><i class="fas fa-check text-green-400"></i></div><h3 class="text-2xl font-bold mb-2">المرحلة الثالثة: المتجر والدهاليز <span class="text-sm font-normal text-green-400">(تمت)</span></h3></div>
@@ -413,103 +447,158 @@
 
     </div>
 
+    <!-- Donation Modal -->
+    <div id="donate-modal" class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+        <!-- Overlay -->
+        <div id="modal-overlay" class="modal-overlay absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+        <!-- Content -->
+        <div class="modal-content relative w-full max-w-lg bg-gray-900/80 border border-purple-800/50 rounded-2xl shadow-lg shadow-purple-900/20 p-8 text-center">
+            <button id="close-modal-btn" class="absolute top-4 left-4 text-gray-500 hover:text-white transition-colors">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            <h2 class="text-3xl font-bold text-glow-gold mb-6">ادعم أسطورة EGORISE</h2>
+            <div class="space-y-6">
+                <!-- Crypto Option -->
+                <div class="bg-black/30 p-4 rounded-lg border border-gray-700 text-right">
+                    <h3 class="text-xl font-bold mb-4 text-neon-purple"><i class="fas fa-coins ml-2"></i>التبرع عبر العملات الرقمية</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <p class="text-gray-400">Binance Pay ID:</p>
+                            <div class="flex items-center gap-2">
+                                <p id="binance-id" class="text-lg font-mono text-gray-200">572095376</p>
+                                <button class="copy-btn px-3 py-1 rounded-md text-sm" data-copy-target="binance-id">
+                                    <i class="fas fa-copy mr-1"></i> نسخ
+                                </button>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-gray-400">USDT Address (Tron/TRC20):</p>
+                            <div class="flex items-center gap-2">
+                                <p id="usdt-address" class="text-sm font-mono text-gray-200 break-all">TBXADDkdCzuYQwsjp6yvGbN6qCAEavBXH8</p>
+                                <button class="copy-btn px-3 py-1 rounded-md text-sm" data-copy-target="usdt-address">
+                                    <i class="fas fa-copy mr-1"></i> نسخ
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Discord Option -->
+                <a href="https://discord.gg/chkaYVz36U" target="_blank" class="w-full block bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg text-lg transition-colors">
+                    <i class="fab fa-discord ml-2"></i> تواصل للتبرع المباشر
+                </a>
+                <!-- Gems Option -->
+                <a href="https://discord.gg/chkaYVz36U" target="_blank" class="w-full block bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-6 rounded-lg text-lg transition-colors">
+                    <i class="fas fa-gem ml-2"></i> تواصل لشراء الجواهر
+                </a>
+            </div>
+        </div>
+    </div>
+
+
     <!-- Scripts -->
     <script>
-        // --- NEW: Function to update the support progress bar and text automatically ---
-        function updateSupportProgress(currentAmount, goalAmount) {
-            const progressBar = document.getElementById('progress-bar-fill');
-            const progressText = document.getElementById('progress-text');
+        document.addEventListener("DOMContentLoaded", () => {
+            // --- Function to update the support progress bar and text automatically ---
+            function updateSupportProgress(currentAmount, goalAmount) {
+                const progressBar = document.getElementById('progress-bar-fill');
+                const progressText = document.getElementById('progress-text');
+                if (!progressBar || !progressText) return;
 
-            // Ensure the elements exist before trying to update them
-            if (!progressBar || !progressText) {
-                console.error("Progress bar elements not found.");
-                return;
+                const percentage = Math.min(100, (currentAmount / goalAmount) * 100);
+                progressBar.style.width = percentage + '%';
+                progressText.textContent = `$${currentAmount} / $${goalAmount} (${Math.round(percentage)}%)`;
             }
 
-            // Calculate the percentage, ensuring it doesn't go over 100%
-            const percentage = Math.min(100, (currentAmount / goalAmount) * 100);
+            // --- Function to handle copy to clipboard ---
+            function copyToClipboard(textToCopy, buttonElement) {
+                const tempTextArea = document.createElement('textarea');
+                tempTextArea.value = textToCopy;
+                document.body.appendChild(tempTextArea);
+                tempTextArea.select();
+                try {
+                    document.execCommand('copy');
+                    const originalText = buttonElement.innerHTML;
+                    buttonElement.innerHTML = `<i class="fas fa-check mr-1"></i> تم النسخ!`;
+                    setTimeout(() => {
+                        buttonElement.innerHTML = originalText;
+                    }, 2000);
+                } catch (err) {
+                    console.error('Failed to copy text: ', err);
+                }
+                document.body.removeChild(tempTextArea);
+            }
 
-            // Update the progress bar's width
-            progressBar.style.width = percentage + '%';
-
-            // Update the text to show current amount, goal, and percentage
-            progressText.textContent = `$${currentAmount} / $${goalAmount} (${Math.round(percentage)}%)`;
-        }
-
-
-        document.addEventListener("DOMContentLoaded", () => {
-            // Observer for general fade-in animations
+            // --- General Fade-in Observer ---
             const fadeObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
                     }
                 });
-            }, {
-                threshold: 0.1
-            });
-            document.querySelectorAll('.fade-in').forEach((el) => {
-                fadeObserver.observe(el);
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
+
+            // --- Download Counter Logic ---
+            const downloadBtn = document.getElementById('download-btn');
+            const downloadCounterElement = document.getElementById('download-counter');
+            if (downloadBtn && downloadCounterElement) {
+                let downloadCount = 111; // Starting number
+                downloadCounterElement.innerText = downloadCount;
+
+                downloadBtn.addEventListener('click', () => {
+                    downloadCount++;
+                    downloadCounterElement.innerText = downloadCount;
+                    downloadCounterElement.classList.add('count-up-animation');
+                    setTimeout(() => {
+                        downloadCounterElement.classList.remove('count-up-animation');
+                    }, 400);
+                });
+            }
+
+            // --- Donation Modal Logic ---
+            const modal = document.getElementById('donate-modal');
+            const openModalBtn = document.getElementById('open-donate-modal');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            const overlay = document.getElementById('modal-overlay');
+
+            if(modal && openModalBtn && closeModalBtn && overlay) {
+                openModalBtn.addEventListener('click', () => modal.classList.remove('hidden'));
+                closeModalBtn.addEventListener('click', () => modal.classList.add('hidden'));
+                overlay.addEventListener('click', () => modal.classList.add('hidden'));
+            }
+
+            // Setup copy buttons inside the modal
+            document.querySelectorAll('.copy-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetId = button.dataset.copyTarget;
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        copyToClipboard(targetElement.innerText, button);
+                    }
+                });
             });
 
-            // Elapsed Timer Logic
+            // --- Elapsed Timer Logic ---
             const elapsedTimerElement = document.getElementById('elapsed-timer');
             if (elapsedTimerElement) {
                 const startTime = new Date("2025-08-02T18:00:00+03:00").getTime();
-                const timerInterval = setInterval(() => {
+                setInterval(() => {
                     const now = new Date().getTime();
                     const distance = now - startTime;
                     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
                     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                    document.getElementById('elapsed-days').innerText = days < 10 ? '0' + days : days;
-                    document.getElementById('elapsed-hours').innerText = hours < 10 ? '0' + hours : hours;
-                    document.getElementById('elapsed-minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
-                    document.getElementById('elapsed-seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+                    document.getElementById('elapsed-days').innerText = String(days).padStart(2, '0');
+                    document.getElementById('elapsed-hours').innerText = String(hours).padStart(2, '0');
+                    document.getElementById('elapsed-minutes').innerText = String(minutes).padStart(2, '0');
+                    document.getElementById('elapsed-seconds').innerText = String(seconds).padStart(2, '0');
                 }, 1000);
             }
 
-            // Countdown Timer Logic
-            const countdownTimerElement = document.getElementById('countdown-timer');
-            const countdownTimerRoadmapElement = document.getElementById('countdown-timer-roadmap');
-            if (countdownTimerElement) {
-                const countDownDate = new Date("2025-09-20T00:00:00+03:00").getTime();
-                const countdownInterval = setInterval(() => {
-                    const now = new Date().getTime();
-                    const distance = countDownDate - now;
-                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                    if (days >= 0) {
-                        document.getElementById('countdown-days').innerText = days < 10 ? '0' + days : days;
-                        document.getElementById('countdown-hours').innerText = hours < 10 ? '0' + hours : hours;
-                        document.getElementById('countdown-minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
-                        document.getElementById('countdown-seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
-                    }
-                    if (countdownTimerRoadmapElement && days >= 0) {
-                        document.getElementById('countdown-days-roadmap').innerText = days < 10 ? '0' + days : days;
-                        document.getElementById('countdown-hours-roadmap').innerText = hours < 10 ? '0' + hours : hours;
-                        document.getElementById('countdown-minutes-roadmap').innerText = minutes < 10 ? '0' + minutes : minutes;
-                        document.getElementById('countdown-seconds-roadmap').innerText = seconds < 10 ? '0' + seconds : seconds;
-                    }
-                    if (distance < 0) {
-                        clearInterval(countdownInterval);
-                        const launchedMessage = `<p class="text-2xl font-bold text-green-400">التطبيق متوفر الآن على Google Play!</p>`;
-                        countdownTimerElement.innerHTML = launchedMessage;
-                        if(countdownTimerRoadmapElement) {
-                            countdownTimerRoadmapElement.innerHTML = `<p class="text-lg font-bold text-green-400">تم الإطلاق!</p>`;
-                        }
-                    }
-                }, 1000);
-            }
-
-            // --- NEW: Call the support progress update function on page load ---
-            // Simply change the first number (20) to update the progress bar everywhere.
+            // --- Initial Function Calls ---
             updateSupportProgress(20, 1500);
-
         });
     </script>
 </body>
