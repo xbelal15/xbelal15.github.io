@@ -13,18 +13,21 @@
     <meta name="keywords" content="EGORISE, ايجورايز, تحميل EGORISE, تطبيق EGORISE, تطوير الذات, لعبة RPG واقعية, gamification, تحويل الحياة للعبة, Rizo, Rizo مطور, self-improvement app, level up your life">
     
     <!-- Canonical URL: Tells Google this is the official version -->
-    <link rel="canonical" href="https://egorise.world/" />
+    <!-- UPDATED: Pointing to the new GitHub Pages domain -->
+    <link rel="canonical" href="https://xbelal15.github.io/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://egorise.world/">
+    <!-- UPDATED: Pointing to the new GitHub Pages domain -->
+    <meta property="og:url" content="https://xbelal15.github.io/">
     <meta property="og:title" content="EGORISE: الموقع الرسمي | حوّل تطوير ذاتك إلى لعبة RPG">
     <meta property="og:description" content="الموقع الرسمي لتطبيق EGORISE. رحلة Rizo لبناء أول تطبيق يغير مفهوم تطوير الذات، مستوحى من عالم الأنمي والألعاب. انضم للوصول المبكر وكن جزءًا من الأسطورة.">
     <meta property="og:image" content="https://i.postimg.cc/7ZDzr9sg/55.jpg">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://egorise.world/">
+    <!-- UPDATED: Pointing to the new GitHub Pages domain -->
+    <meta property="twitter:url" content="https://xbelal15.github.io/">
     <meta property="twitter:title" content="EGORISE: الموقع الرسمي | حوّل تطوير ذاتك إلى لعبة RPG">
     <meta property="twitter:description" content="الموقع الرسمي لتطبيق EGORISE. رحلة Rizo لبناء أول تطبيق يغير مفهوم تطوير الذات، مستوحى من عالم الأنمي والألعاب. انضم للوصول المبكر وكن جزءًا من الأسطورة.">
     <meta property="twitter:image" content="https://i.postimg.cc/7ZDzr9sg/55.jpg">
@@ -241,14 +244,21 @@
     <header class="sticky-nav">
         <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#hero" class="text-2xl font-bold tracking-widest text-white">EGORISE</a>
-            <div class="hidden md:flex items-center space-x-8 text-lg" data-direction-class="space-x-8">
-                <a href="#beta-download" data-lang="navDownload">تحميل التطبيق</a>
-                <a href="#news" data-lang="navNews">الأخبار</a>
-                <a href="#support" data-lang="navSupport">ادعمنا</a>
-                <a href="#about-rizo" data-lang="navStory">القصة</a>
-                <a href="#roadmap" data-lang="navRoadmap">خارطة الطريق</a>
-                <a href="#community" data-lang="navCommunity">المجتمع</a>
-                <button id="lang-switcher" class="text-purple-400 hover:text-white font-bold tracking-wider">English</button>
+            
+            <!-- Modified Navigation: Container for Links and Lang Switcher -->
+            <div class="flex items-center gap-4">
+                <!-- Navigation Links (Hidden on Mobile) -->
+                <div class="hidden md:flex items-center space-x-8 text-lg" data-direction-class="space-x-8">
+                    <a href="#beta-download" data-lang="navDownload">تحميل التطبيق</a>
+                    <a href="#news" data-lang="navNews">الأخبار</a>
+                    <a href="#support" data-lang="navSupport">ادعمنا</a>
+                    <a href="#about-rizo" data-lang="navStory">القصة</a>
+                    <a href="#roadmap" data-lang="navRoadmap">خارطة الطريق</a>
+                    <a href="#community" data-lang="navCommunity">المجتمع</a>
+                </div>
+
+                <!-- Language Switcher (Visible on Mobile and Desktop) -->
+                <button id="lang-switcher" class="text-purple-400 hover:text-white font-bold tracking-wider border border-purple-400/30 rounded px-3 py-1 transition-all">English</button>
             </div>
         </nav>
     </header>
@@ -618,7 +628,7 @@
                     communityPoint1: "تواصل مباشر معي وشارك أفكارك.",
                     communityPoint2: "صوّت على الميزات القادمة للتطبيق.",
                     communityPoint3: "شاهد كواليس التطوير وتحديثات حصرية.",
-                    communityPoint4: "ادفع مقابل الحصول على ميزات داخل التطبيق، تجربة النسخة التجريبية قبل الجميع، ومزايا داخل سيرفر الديسكورد.",
+                    communityPoint4: "Pay for in-app features, get early beta access, and enjoy perks on the Discord server.",
                     // App Intro
                     appIntroDesc: "هذا هو التطبيق الذي سيغير مفهوم تطوير الذات قريبا.",
                     // Footer
@@ -907,7 +917,7 @@
             }
 
             // --- Initial Function Calls ---
-            updateSupportProgress(20, 1500);
+            updateSupportProgress(270, 1500);
         });
     </script>
 </body>
