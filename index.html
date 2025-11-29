@@ -101,6 +101,19 @@
             transform: translateY(-3px) scale(1.05);
             box-shadow: 0 0 15px rgba(106, 0, 255, 0.8), 0 0 30px rgba(106, 0, 255, 0.5);
         }
+
+        .btn-secondary {
+            background-color: rgba(31, 41, 55, 0.8);
+            color: #FFFFFF;
+            border: 1px solid rgba(106, 0, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(31, 41, 55, 1);
+            border-color: #6A00FF;
+            transform: translateY(-2px);
+        }
         
         .fade-in {
             opacity: 0;
@@ -253,9 +266,26 @@
                 <p class="mt-6 text-lg md:text-xl max-w-2xl mx-auto text-gray-300" data-lang="heroSubtitle">
                     رحلتي لبناء أول تطبيق سيغيّر مفهوم تطوير الذات للأبد.
                 </p>
-                <a href="https://discord.gg/chkaYVz36U" target="_blank" class="mt-10 inline-block btn-primary font-bold py-4 px-12 rounded-lg text-xl uppercase tracking-wider">
-                    <i class="fab fa-discord" data-direction-class="mr-3"></i> <span data-lang="heroButton">انضم لقلعة الأبطال</span>
-                </a>
+                
+                <!-- NEW HERO BUTTONS -->
+                <div class="mt-10 flex flex-col md:flex-row items-center justify-center gap-4">
+                    <!-- Primary: Download -->
+                    <a href="https://github.com/xbelal15/xbelal15.github.io/releases/download/V0.3-BETA/EGORISEv3.apk" target="_blank" class="inline-block btn-primary font-bold py-4 px-12 rounded-lg text-xl uppercase tracking-wider">
+                        <i class="fas fa-download" data-direction-class="mr-3"></i> <span data-lang="heroDownloadBtn">تحميل v0.3</span>
+                    </a>
+                    <!-- Secondary: Discord -->
+                    <a href="https://discord.gg/chkaYVz36U" target="_blank" class="inline-block btn-secondary font-bold py-4 px-8 rounded-lg text-lg uppercase tracking-wider">
+                         <i class="fab fa-discord"></i>
+                    </a>
+                </div>
+
+                <!-- Download Count Below Button -->
+                <div class="mt-4 text-gray-400 text-lg flex items-center justify-center gap-2">
+                    <i class="fas fa-arrow-down text-purple-400"></i>
+                    <span class="font-bold text-glow-gold">10,101</span> 
+                    <span data-lang="heroDownloadCountText">بطل قاموا بالتحميل</span>
+                </div>
+
             </div>
         </section>
         
@@ -263,19 +293,18 @@
         <section id="beta-download" class="py-20 px-6 bg-black border-t border-purple-900/30">
             <div class="max-w-4xl mx-auto text-center fade-in">
                 <img src="https://i.postimg.cc/YCt0RjSm/LS20250816224047.png" alt="شعار تطبيق EGORISE" class="mx-auto w-40 h-40 mb-8 drop-shadow-[0_0_15px_rgba(106,0,255,0.6)]">
-                <!-- UPDATED VERSION TEXT TO v0.3 -->
                 <h2 class="text-4xl md:text-5xl font-bold tracking-wider" data-lang="downloadTitle">النسخة التجريبية <span class="text-neon-purple">v0.3 متاحة الآن</span></h2>
                 <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto" data-lang="downloadSubtitle">
                     كن من أوائل الأبطال الذين يختبرون عالم EGORISE. حمّل التحديث الجديد والمحسن مباشرة وشاركنا رأيك!
                 </p>
                 <div class="mt-10 flex flex-col items-center justify-center gap-4">
-                    <!-- UPDATED LINK TO v0.3 AND EGORISEv3.apk -->
                     <a id="download-btn" href="https://github.com/xbelal15/xbelal15.github.io/releases/download/V0.3-BETA/EGORISEv3.apk" target="_blank" class="inline-block btn-primary font-bold py-4 px-12 rounded-lg text-xl uppercase tracking-wider">
                         <i class="fas fa-download" data-direction-class="mr-3"></i> <span data-lang="downloadButton">تحميل التحديث (v0.3)</span>
                     </a>
                     <div class="flex items-center gap-2 text-lg text-gray-400">
                         <i class="fas fa-users text-purple-400"></i>
-                        <span id="download-counter" class="font-bold text-glow-gold text-2xl">7394</span>
+                        <!-- Updated Counter -->
+                        <span id="download-counter" class="font-bold text-glow-gold text-2xl">10101</span>
                         <span data-lang="downloadCounterText">بطل قاموا بالتحميل</span>
                     </div>
                 </div>
@@ -330,6 +359,15 @@
             <div class="max-w-4xl mx-auto text-center fade-in">
                 <h2 class="text-4xl md:text-5xl font-bold tracking-wider mb-12" data-lang="newsTitle">آخر <span class="text-neon-purple">الأخبار</span></h2>
                 <div class="max-w-2xl mx-auto" data-direction-class="text-right">
+                    <!-- News Item 3 (New Update) -->
+                    <div class="bg-purple-900/20 border border-purple-500/50 rounded-lg p-6 mb-6 shadow-[0_0_15px_rgba(106,0,255,0.15)]">
+                        <p class="text-sm text-purple-300 mb-2">5 أكتوبر 2025</p>
+                        <h3 class="text-2xl font-bold text-neon-purple mb-3" data-lang="news3Title">تحديث جديد v0.3 متوفر الآن!</h3>
+                        <p class="text-gray-300 leading-relaxed" data-lang="news3Desc">
+                            تم حل جميع مشاكل التطبيق وإضافة تحسينات عامة. التحديث الجديد متوفر الآن للتجربة. قم بالتحميل واستمتع بتجربة خالية من الأخطاء!
+                        </p>
+                    </div>
+
                     <!-- News Item 2 -->
                     <div class="bg-gray-900/50 border border-purple-800/30 rounded-lg p-6 mb-6">
                         <p class="text-sm text-gray-400 mb-2">2 أكتوبر 2025</p>
@@ -521,7 +559,8 @@
                     // Hero
                     heroTitle: 'حوّل حياتك إلى لعبة <span class="text-neon-purple">RPG</span> حقيقية',
                     heroSubtitle: "رحلتي لبناء أول تطبيق سيغيّر مفهوم تطوير الذات للأبد.",
-                    heroButton: "انضم لقلعة الأبطال",
+                    heroDownloadBtn: "تحميل v0.3",
+                    heroDownloadCountText: "بطل قاموا بالتحميل",
                     // Download - UPDATED TO v0.3
                     downloadTitle: 'النسخة التجريبية <span class="text-neon-purple">v0.3 متاحة الآن</span>',
                     downloadSubtitle: "كن من أوائل الأبطال الذين يختبرون عالم EGORISE. حمّل التحديث الجديد والمحسن مباشرة وشاركنا رأيك!",
@@ -540,6 +579,8 @@
                     supportButton: "اختر طريقة الدعم التي تناسبك",
                     // News
                     newsTitle: 'آخر <span class="text-neon-purple">الأخبار</span>',
+                    news3Title: "تحديث جديد v0.3 متوفر الآن!",
+                    news3Desc: "تم حل جميع مشاكل التطبيق وإضافة تحسينات عامة. التحديث الجديد متوفر الآن للتجربة. قم بالتحميل واستمتع بتجربة خالية من الأخطاء!",
                     news2Title: "تحديث هام: تم حل مشكلة السيرفر!",
                     news2Desc: "انتهت فترة الصيانة بنجاح وعاد التطبيق للعمل بشكل كامل. نعتذر عن أي إزعاج. **من الضروري تحديث التطبيق إلى الإصدار الجديد (v0.3)** للاستفادة من الإصلاحات والتحسينات الأخيرة. شكرًا لتفهمكم!",
                     news1Title: "لحظة تاريخية: الإصدار التجريبي متاح الآن للجميع!",
@@ -606,7 +647,8 @@
                     // Hero
                     heroTitle: 'Turn Your Life Into a Real <span class="text-neon-purple">RPG</span>',
                     heroSubtitle: "My journey to build the first app that will change the concept of self-development forever.",
-                    heroButton: "Join the Heroes' Castle",
+                    heroDownloadBtn: "Download v0.3",
+                    heroDownloadCountText: "Heroes have downloaded",
                      // Download - UPDATED TO v0.3
                     downloadTitle: 'Beta Version <span class="text-neon-purple">v0.3 is Now Available</span>',
                     downloadSubtitle: "Be among the first heroes to experience the world of EGORISE. Download the new and improved update directly and share your feedback!",
@@ -625,6 +667,8 @@
                     supportButton: "Choose Your Support Method",
                     // News
                     newsTitle: 'Latest <span class="text-neon-purple">News</span>',
+                    news3Title: "New Update v0.3 Available Now!",
+                    news3Desc: "All app issues have been resolved with general improvements. The new update is available now. Download and enjoy a bug-free experience!",
                     news2Title: "Important Update: Server Issue Resolved!",
                     news2Desc: "The maintenance period has successfully concluded, and the app is back online. We apologize for any inconvenience. **It is essential to update the app to the new version (v0.3)** to benefit from the latest fixes and improvements. Thank you for your understanding!",
                     news1Title: "A Historic Moment: The Beta is Now Open to Everyone!",
@@ -792,7 +836,7 @@
             const downloadCounterElement = document.getElementById('download-counter');
             if (downloadBtn && downloadCounterElement) {
                 // The base count that you will update manually in the code
-                const baseDownloadCount = 7394;
+                const baseDownloadCount = 10101;
                 
                 // We use localStorage to track if THIS specific user has clicked before.
                 let userClickCount = parseInt(localStorage.getItem('egoriseUserClicks') || '0', 10);
