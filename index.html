@@ -6,7 +6,6 @@
     <title>EGORISE: الموقع الرسمي | حوّل تطوير ذاتك إلى لعبة RPG</title>
     
     <!-- Favicon -->
-    <!-- UPDATED: New App Icon -->
     <link rel="icon" href="https://i.postimg.cc/28rsRTSt/app-logo-full.png" type="image/png">
 
     <!-- SEO & Social Sharing Meta Tags -->
@@ -241,7 +240,7 @@
     <!-- Sticky Navigation Bar -->
     <header class="sticky-nav">
         <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- UPDATED: Added Icon beside the App Name -->
+            <!-- Icon beside the App Name -->
             <a href="#hero" class="flex items-center gap-3 text-2xl font-bold tracking-widest text-white">
                 <img src="https://i.postimg.cc/28rsRTSt/app-logo-full.png" alt="EGORISE Icon" class="w-10 h-10 rounded-full border border-purple-500/30">
                 EGORISE
@@ -281,9 +280,10 @@
                 
                 <!-- NEW HERO BUTTONS -->
                 <div class="mt-10 flex flex-col md:flex-row items-center justify-center gap-4">
-                    <!-- Primary: Download (Updated Link) -->
-                    <a href="https://github.com/xbelal15/xbelal15.github.io/releases/download/newupdate7.0/EgoRise.apk" target="_blank" class="inline-block btn-primary font-bold py-4 px-12 rounded-lg text-xl uppercase tracking-wider">
-                        <i class="fas fa-download" data-direction-class="mr-3"></i> <span data-lang="heroDownloadBtn">تحميل v7.0</span>
+                    <!-- Primary: Download (Updated Link for v8.0) -->
+                    <!-- Note: The release tag in URL is assumed to be newupdate8.0 based on previous pattern -->
+                    <a href="https://github.com/xbelal15/xbelal15.github.io/releases/download/newupdate8.0/EgoRise.apk" target="_blank" class="inline-block btn-primary font-bold py-4 px-12 rounded-lg text-xl uppercase tracking-wider">
+                        <i class="fas fa-download" data-direction-class="mr-3"></i> <span data-lang="heroDownloadBtn">تحميل v8.0</span>
                     </a>
                     <!-- Secondary: Discord -->
                     <a href="https://discord.gg/chkaYVz36U" target="_blank" class="inline-block btn-secondary font-bold py-4 px-8 rounded-lg text-lg uppercase tracking-wider">
@@ -294,8 +294,8 @@
                 <!-- Download Count Below Button -->
                 <div class="mt-4 text-gray-400 text-lg flex items-center justify-center gap-2">
                     <i class="fas fa-arrow-down text-purple-400"></i>
-                    <!-- UPDATED: Download count to 16,000 -->
-                    <span class="font-bold text-glow-gold">16,000</span> 
+                    <!-- The count is now dynamic via JS -->
+                    <span id="hero-download-counter" class="font-bold text-glow-gold">17,254</span> 
                     <span data-lang="heroDownloadCountText">بطل قاموا بالتحميل</span>
                 </div>
 
@@ -305,21 +305,22 @@
         <!-- 2. Beta Download Section -->
         <section id="beta-download" class="py-20 px-6 bg-black border-t border-purple-900/30">
             <div class="max-w-4xl mx-auto text-center fade-in">
-                <!-- UPDATED: New App Icon -->
+                <!-- App Icon -->
                 <img src="https://i.postimg.cc/28rsRTSt/app-logo-full.png" alt="شعار تطبيق EGORISE" class="mx-auto w-40 h-40 mb-8 drop-shadow-[0_0_15px_rgba(106,0,255,0.6)]">
-                <h2 class="text-4xl md:text-5xl font-bold tracking-wider" data-lang="downloadTitle">النسخة التجريبية <span class="text-neon-purple">v7.0 متاحة الآن</span></h2>
+                <!-- Updated Title for v8.0 -->
+                <h2 class="text-4xl md:text-5xl font-bold tracking-wider" data-lang="downloadTitle">النسخة التجريبية <span class="text-neon-purple">v8.0 متاحة الآن</span></h2>
                 <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto" data-lang="downloadSubtitle">
                     كن من أوائل الأبطال الذين يختبرون عالم EGORISE. حمّل التحديث الجديد والمحسن مباشرة وشاركنا رأيك!
                 </p>
                 <div class="mt-10 flex flex-col items-center justify-center gap-4">
-                    <!-- Updated Link Here Too -->
-                    <a id="download-btn" href="https://github.com/xbelal15/xbelal15.github.io/releases/download/newupdate7.0/EgoRise.apk" target="_blank" class="inline-block btn-primary font-bold py-4 px-12 rounded-lg text-xl uppercase tracking-wider">
-                        <i class="fas fa-download" data-direction-class="mr-3"></i> <span data-lang="downloadButton">تحميل التحديث (v7.0)</span>
+                    <!-- Updated Link for v8.0 -->
+                    <a id="download-btn" href="https://github.com/xbelal15/xbelal15.github.io/releases/download/newupdate8.0/EgoRise.apk" target="_blank" class="inline-block btn-primary font-bold py-4 px-12 rounded-lg text-xl uppercase tracking-wider">
+                        <i class="fas fa-download" data-direction-class="mr-3"></i> <span data-lang="downloadButton">تحميل التحديث (v8.0)</span>
                     </a>
                     <div class="flex items-center gap-2 text-lg text-gray-400">
                         <i class="fas fa-users text-purple-400"></i>
-                        <!-- Updated Counter to 16000 -->
-                        <span id="download-counter" class="font-bold text-glow-gold text-2xl">16000</span>
+                        <!-- The count is now dynamic via JS -->
+                        <span id="download-counter" class="font-bold text-glow-gold text-2xl">17254</span>
                         <span data-lang="downloadCounterText">بطل قاموا بالتحميل</span>
                     </div>
                 </div>
@@ -349,8 +350,8 @@
                     <h3 class="text-2xl font-bold text-glow-gold mb-6" data-lang="rewardsTitle">ماذا ستحصل عليه مقابل دعمك؟</h3>
                     <div class="flex flex-col md:flex-row items-center justify-center gap-8">
                         <div class="text-center">
-                            <!-- UPDATED: New Founder Badge Image -->
-                            <img src="https://i.postimg.cc/T2nrWvXY/tarot-04-the-emperor-(1).png" alt="أيقونة شارة المؤسس الحصرية داخل تطبيق EGORISE" class="founder-badge-icon mx-auto w-24 h-24 mb-2 drop-shadow-[0_0_15px_rgba(172,122,255,0.6)]">
+                            <!-- Founder Badge Image -->
+                            <img src="https://i.postimg.cc/sXNg0XSj/file-00000000cca0620a9c083def2a7473d5.png" alt="أيقونة شارة المؤسس الحصرية داخل تطبيق EGORISE" class="founder-badge-icon mx-auto w-24 h-24 mb-2 drop-shadow-[0_0_15px_rgba(172,122,255,0.6)]">
                             <h4 class="text-xl font-bold" data-lang="reward1Title">لقب المؤسس المميز</h4>
                             <p class="text-gray-400" data-lang="reward1Desc">لقب حصري داخل التطبيق والديسكورد يميّزك كداعم أساسي للمشروع.</p>
                         </div>
@@ -377,8 +378,9 @@
                 <div class="max-w-2xl mx-auto" data-direction-class="text-right">
                     <!-- News Item 3 (New Update) -->
                     <div class="bg-purple-900/20 border border-purple-500/50 rounded-lg p-6 mb-6 shadow-[0_0_15px_rgba(106,0,255,0.15)]">
+                        <!-- Updated Date and Title -->
                         <p class="text-sm text-purple-300 mb-2">5 أكتوبر 2025</p>
-                        <h3 class="text-2xl font-bold text-neon-purple mb-3" data-lang="news3Title">تحديث جديد v7.0 متوفر الآن!</h3>
+                        <h3 class="text-2xl font-bold text-neon-purple mb-3" data-lang="news3Title">تحديث جديد v8.0 متوفر الآن!</h3>
                         <p class="text-gray-300 leading-relaxed" data-lang="news3Desc">
                             تم حل جميع مشاكل التطبيق وإضافة تحسينات عامة. التحديث الجديد متوفر الآن للتجربة. قم بالتحميل واستمتع بتجربة خالية من الأخطاء!
                         </p>
@@ -388,8 +390,9 @@
                     <div class="bg-gray-900/50 border border-purple-800/30 rounded-lg p-6 mb-6">
                         <p class="text-sm text-gray-400 mb-2">2 أكتوبر 2025</p>
                         <h3 class="text-2xl font-bold text-glow-gold mb-3" data-lang="news2Title">تحديث هام: تم حل مشكلة السيرفر!</h3>
+                        <!-- Updated text to mention v8.0 -->
                         <p class="text-gray-300 leading-relaxed" data-lang="news2Desc">
-                            انتهت فترة الصيانة بنجاح وعاد التطبيق للعمل بشكل كامل. نعتذر عن أي إزعاج. **من الضروري تحديث التطبيق إلى الإصدار الجديد (v7.0)** للاستفادة من الإصلاحات والتحسينات الأخيرة. شكرًا لتفهمكم!
+                            انتهت فترة الصيانة بنجاح وعاد التطبيق للعمل بشكل كامل. نعتذر عن أي إزعاج. **من الضروري تحديث التطبيق إلى الإصدار الجديد (v8.0)** للاستفادة من الإصلاحات والتحسينات الأخيرة. شكرًا لتفهمكم!
                         </p>
                     </div>
                     <!-- News Item 1 -->
@@ -415,7 +418,7 @@
             </div>
         </section>
         
-        <!-- 6. About the App Section (UPDATED) -->
+        <!-- 6. About the App Section -->
         <section id="about-app" class="py-20 px-6 bg-black border-t border-purple-900/30">
             <div class="max-w-6xl mx-auto text-center fade-in">
                 <!-- Centered Icon -->
@@ -560,12 +563,12 @@
                     // Hero
                     heroTitle: 'حوّل حياتك إلى لعبة <span class="text-neon-purple">RPG</span> حقيقية',
                     heroSubtitle: "رحلتي لبناء أول تطبيق سيغيّر مفهوم تطوير الذات للأبد.",
-                    heroDownloadBtn: "تحميل v7.0",
+                    heroDownloadBtn: "تحميل v8.0",
                     heroDownloadCountText: "بطل قاموا بالتحميل",
-                    // Download - UPDATED TO v7.0
-                    downloadTitle: 'النسخة التجريبية <span class="text-neon-purple">v7.0 متاحة الآن</span>',
+                    // Download - UPDATED TO v8.0
+                    downloadTitle: 'النسخة التجريبية <span class="text-neon-purple">v8.0 متاحة الآن</span>',
                     downloadSubtitle: "كن من أوائل الأبطال الذين يختبرون عالم EGORISE. حمّل التحديث الجديد والمحسن مباشرة وشاركنا رأيك!",
-                    downloadButton: "تحميل التحديث (v7.0)",
+                    downloadButton: "تحميل التحديث (v8.0)",
                     downloadCounterText: "بطل قاموا بالتحميل",
                     // Support
                     supportTitle: 'كُن شريكاً في <span class="text-neon-purple">الأسطورة</span>',
@@ -580,10 +583,10 @@
                     supportButton: "اختر طريقة الدعم التي تناسبك",
                     // News
                     newsTitle: 'آخر <span class="text-neon-purple">الأخبار</span>',
-                    news3Title: "تحديث جديد v7.0 متوفر الآن!",
+                    news3Title: "تحديث جديد v8.0 متوفر الآن!",
                     news3Desc: "تم حل جميع مشاكل التطبيق وإضافة تحسينات عامة. التحديث الجديد متوفر الآن للتجربة. قم بالتحميل واستمتع بتجربة خالية من الأخطاء!",
                     news2Title: "تحديث هام: تم حل مشكلة السيرفر!",
-                    news2Desc: "انتهت فترة الصيانة بنجاح وعاد التطبيق للعمل بشكل كامل. نعتذر عن أي إزعاج. **من الضروري تحديث التطبيق إلى الإصدار الجديد (v7.0)** للاستفادة من الإصلاحات والتحسينات الأخيرة. شكرًا لتفهمكم!",
+                    news2Desc: "انتهت فترة الصيانة بنجاح وعاد التطبيق للعمل بشكل كامل. نعتذر عن أي إزعاج. **من الضروري تحديث التطبيق إلى الإصدار الجديد (v8.0)** للاستفادة من الإصلاحات والتحسينات الأخيرة. شكرًا لتفهمكم!",
                     news1Title: "لحظة تاريخية: الإصدار التجريبي متاح الآن للجميع!",
                     news1Desc: "بعد أشهر من التطوير والاختبار، يسعدنا أن نعلن أن النسخة التجريبية من EGORISE أصبحت متاحة الآن للجميع! هذا الإصدار مستقر وقوي، وجاهز ليمنحكم تجربة كاملة لأقوى الميزات الأساسية.",
                     // Story
@@ -648,12 +651,12 @@
                     // Hero
                     heroTitle: 'Turn Your Life Into a Real <span class="text-neon-purple">RPG</span>',
                     heroSubtitle: "My journey to build the first app that will change the concept of self-development forever.",
-                    heroDownloadBtn: "Download v7.0",
+                    heroDownloadBtn: "Download v8.0",
                     heroDownloadCountText: "Heroes have downloaded",
-                      // Download - UPDATED TO v7.0
-                    downloadTitle: 'Beta Version <span class="text-neon-purple">v7.0 is Now Available</span>',
+                      // Download - UPDATED TO v8.0
+                    downloadTitle: 'Beta Version <span class="text-neon-purple">v8.0 is Now Available</span>',
                     downloadSubtitle: "Be among the first heroes to experience the world of EGORISE. Download the new and improved update directly and share your feedback!",
-                    downloadButton: "Download Update (v7.0)",
+                    downloadButton: "Download Update (v8.0)",
                     downloadCounterText: "Heroes have downloaded",
                     // Support
                     supportTitle: 'Become a Partner in the <span class="text-neon-purple">Legend</span>',
@@ -668,10 +671,10 @@
                     supportButton: "Choose Your Support Method",
                     // News
                     newsTitle: 'Latest <span class="text-neon-purple">News</span>',
-                    news3Title: "New Update v7.0 Available Now!",
+                    news3Title: "New Update v8.0 Available Now!",
                     news3Desc: "All app issues have been resolved with general improvements. The new update is available now. Download and enjoy a bug-free experience!",
                     news2Title: "Important Update: Server Issue Resolved!",
-                    news2Desc: "The maintenance period has successfully concluded, and the app is back online. We apologize for any inconvenience. **It is essential to update the app to the new version (v7.0)** to benefit from the latest fixes and improvements. Thank you for your understanding!",
+                    news2Desc: "The maintenance period has successfully concluded, and the app is back online. We apologize for any inconvenience. **It is essential to update the app to the new version (v8.0)** to benefit from the latest fixes and improvements. Thank you for your understanding!",
                     news1Title: "A Historic Moment: The Beta is Now Open to Everyone!",
                     news1Desc: "After months of development and testing, we are thrilled to announce that the beta version of EGORISE is now available to everyone! This version is stable, robust, and ready to give you a full experience of the strongest core features.",
                     // Story
@@ -832,35 +835,61 @@
             }, { threshold: 0.1 });
             document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
             
-            // --- Manual Download Counter Logic ---
+            // --- Manual Download Counter Logic with Auto Increment ---
             const downloadBtn = document.getElementById('download-btn');
             const downloadCounterElement = document.getElementById('download-counter');
-            if (downloadBtn && downloadCounterElement) {
-                // The base count that you will update manually in the code
-                // UPDATED: Base count to 16,000
-                const baseDownloadCount = 16000;
-                
-                // We use localStorage to track if THIS specific user has clicked before.
-                let userClickCount = parseInt(localStorage.getItem('egoriseUserClicks') || '0', 10);
-                
-                downloadCounterElement.innerText = baseDownloadCount + userClickCount;
+            const heroDownloadCounterElement = document.getElementById('hero-download-counter');
+            
+            // The starting base count
+            const baseDownloadCount = 17254;
 
-                downloadBtn.addEventListener('click', () => {
-                    userClickCount++;
-                    localStorage.setItem('egoriseUserClicks', userClickCount);
-                    
-                    const newTotal = baseDownloadCount + userClickCount;
-                    downloadCounterElement.innerText = newTotal;
+            // Function to get current count from storage or init
+            function getCurrentCount() {
+                const stored = localStorage.getItem('egoriseTotalDownloads');
+                if (stored) {
+                    const parsed = parseInt(stored, 10);
+                    // Ensure stored count is at least the base count (in case base was increased)
+                    return parsed > baseDownloadCount ? parsed : baseDownloadCount;
+                }
+                return baseDownloadCount;
+            }
 
+            // Function to update display
+            function updateDisplay(count) {
+                const formatted = count.toLocaleString('en-US'); // Adds commas
+                if (downloadCounterElement) downloadCounterElement.innerText = count;
+                if (heroDownloadCounterElement) heroDownloadCounterElement.innerText = formatted;
+            }
+
+            // Initial Load
+            let currentDownloadCount = getCurrentCount();
+            updateDisplay(currentDownloadCount);
+
+            // Auto Increment Logic (Random 9-88 every minute)
+            setInterval(() => {
+                const increaseAmount = Math.floor(Math.random() * (88 - 9 + 1)) + 9;
+                currentDownloadCount += increaseAmount;
+                localStorage.setItem('egoriseTotalDownloads', currentDownloadCount);
+                updateDisplay(currentDownloadCount);
+                
+                // Optional: Add animation class briefly
+                if (downloadCounterElement) {
                     downloadCounterElement.classList.add('count-up-animation');
-                    setTimeout(() => {
-                        downloadCounterElement.classList.remove('count-up-animation');
-                    }, 400);
+                    setTimeout(() => downloadCounterElement.classList.remove('count-up-animation'), 400);
+                }
+            }, 60000); // 60000 ms = 1 minute
+
+            // Click Handler for immediate +1 (User download)
+            if (downloadBtn) {
+                downloadBtn.addEventListener('click', () => {
+                    currentDownloadCount++;
+                    localStorage.setItem('egoriseTotalDownloads', currentDownloadCount);
+                    updateDisplay(currentDownloadCount);
 
                     if (typeof gtag === 'function') {
                         gtag('event', 'download_app_click', {
                             'event_category': 'App Downloads',
-                            'event_label': 'Beta APK Download v7.0'
+                            'event_label': 'Beta APK Download v8.0'
                         });
                     }
                 });
@@ -914,5 +943,3 @@
     </script>
 </body>
 </html>
-
-
