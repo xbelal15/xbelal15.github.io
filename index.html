@@ -8,26 +8,25 @@
     <!-- Favicon -->
     <link rel="icon" href="https://i.postimg.cc/28rsRTSt/app-logo-full.png" type="image/png">
 
-    <!-- SEO & Social Sharing Meta Tags -->
-    <meta name="description" content="الموقع الرسمي لتطبيق EGORISE. رحلة Rizo لبناء أول تطبيق يغير مفهوم تطوير الذات، مستوحى من عالم الأنمي والألعاب. انضم للوصول المبكر وكن جزءًا من الأسطورة.">
-    <meta name="keywords" content="EGORISE, ايجورايز, تحميل EGORISE, تطبيق EGORISE, تطوير الذات, لعبة RPG واقعية, gamification, تحويل الحياة للعبة, Rizo, Rizo مطور, self-improvement app, level up your life">
+    <!-- SEO & Social Sharing Meta Tags (Enhanced for English SEO) -->
+    <meta name="description" content="EGORISE Official Website. Turn your life into a real RPG game. The first self-development app inspired by Solo Leveling and anime. الموقع الرسمي لتطبيق EGORISE. رحلة لبناء أول تطبيق يغير مفهوم تطوير الذات.">
+    <meta name="keywords" content="EGORISE, self improvement RPG, life gamification app, anime productivity app, Solo Leveling app, level up life, habit tracker RPG, ايجورايز, تطوير الذات, لعبة الحياة, تطبيق انمي, تنظيم الوقت">
     
-    <!-- Canonical URL: Tells Google this is the official version -->
     <link rel="canonical" href="https://xbelal15.github.io/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://xbelal15.github.io/">
-    <meta property="og:title" content="EGORISE: الموقع الرسمي | حوّل تطوير ذاتك إلى لعبة RPG">
-    <meta property="og:description" content="الموقع الرسمي لتطبيق EGORISE. رحلة Rizo لبناء أول تطبيق يغير مفهوم تطوير الذات، مستوحى من عالم الأنمي والألعاب. انضم للوصول المبكر وكن جزءًا من الأسطورة.">
-    <meta property="og:image" content="https://i.postimg.cc/7ZDzr9sg/55.jpg">
+    <meta property="og:title" content="EGORISE: Level Up Your Reality | حوّل حياتك للعبة">
+    <meta property="og:description" content="The ultimate RPG habit tracker & self-development app. Join the legend now. التطبيق العربي الأول لتحويل الحياة للعبة RPG.">
+    <meta property="og:image" content="https://i.postimg.cc/28rsRTSt/app-logo-full.png">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://xbelal15.github.io/">
-    <meta property="twitter:title" content="EGORISE: الموقع الرسمي | حوّل تطوير ذاتك إلى لعبة RPG">
-    <meta property="twitter:description" content="الموقع الرسمي لتطبيق EGORISE. رحلة Rizo لبناء أول تطبيق يغير مفهوم تطوير الذات، مستوحى من عالم الأنمي والألعاب. انضم للوصول المبكر وكن جزءًا من الأسطورة.">
-    <meta property="twitter:image" content="https://i.postimg.cc/7ZDzr9sg/55.jpg">
+    <meta property="twitter:title" content="EGORISE: Level Up Your Reality">
+    <meta property="twitter:description" content="The ultimate RPG habit tracker & self-development app. Join the legend now.">
+    <meta property="twitter:image" content="https://i.postimg.cc/28rsRTSt/app-logo-full.png">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Q6553LDTL"></script>
@@ -50,6 +49,9 @@
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- Vanilla Tilt for 3D Effect -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+
     <style>
         /* Custom styles to match the brand identity */
         body {
@@ -57,27 +59,69 @@
             color: #FFFFFF;
             font-family: 'Chakra Petch', sans-serif;
             scroll-behavior: smooth;
-            /* More Subtle Cyberpunk Grid Background */
-            background-image: 
-                linear-gradient(rgba(106, 0, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(106, 0, 255, 0.03) 1px, transparent 1px);
-            background-size: 40px 40px;
+            overflow-x: hidden;
+            cursor: none; /* Hide default cursor for custom one */
+        }
+
+        /* CUSTOM CURSOR STYLES */
+        .cursor-dot,
+        .cursor-outline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 9999;
+            pointer-events: none;
+        }
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #6A00FF;
+        }
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(106, 0, 255, 0.5);
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+        }
+        /* Hover effect for cursor */
+        body.hovering .cursor-outline {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(106, 0, 255, 0.1);
+            border-color: #FBBF24;
+        }
+
+        /* 1. Custom XP Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #6A00FF, #8B5CF6);
+            border-radius: 5px;
+            border: 2px solid #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #8B5CF6, #A78BFA);
+        }
+
+        /* Particles Canvas */
+        #particles-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
         }
 
         .bg-gradient-primary {
-            background: linear-gradient(170deg, #000000, #10002B, #000000, #1a0042);
-            background-size: 400% 400%;
-            animation: gradientAnimation 15s ease infinite;
-        }
-        
-        @keyframes gradientAnimation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .bg-gradient-radial {
-            background: radial-gradient(circle, rgba(106,0,255,0.2) 0%, rgba(0,0,0,0) 70%);
+            background: linear-gradient(170deg, rgba(0,0,0,0.9), rgba(16,0,43,0.8), rgba(0,0,0,0.9));
         }
 
         .text-neon-purple {
@@ -86,20 +130,36 @@
         }
         
         .text-glow-gold {
-            color: #FBBF24; /* A nice golden yellow */
+            color: #FBBF24; 
             text-shadow: 0 0 8px rgba(251, 191, 36, 0.7), 0 0 12px rgba(251, 191, 36, 0.5);
         }
 
+        /* Buttons */
         .btn-primary {
             background-color: #6A00FF;
             color: #FFFFFF;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 10px rgba(106, 0, 255, 0.5), 0 0 20px rgba(106, 0, 255, 0.3);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 15px rgba(106, 0, 255, 0.4);
+            border: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+            overflow: hidden;
         }
-
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+        .btn-primary:hover::before {
+            left: 100%;
+        }
         .btn-primary:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 0 15px rgba(106, 0, 255, 0.8), 0 0 30px rgba(106, 0, 255, 0.5);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 0 25px rgba(106, 0, 255, 0.7);
         }
 
         .btn-secondary {
@@ -108,25 +168,98 @@
             border: 1px solid rgba(106, 0, 255, 0.3);
             transition: all 0.3s ease;
         }
-
         .btn-secondary:hover {
             background-color: rgba(31, 41, 55, 1);
             border-color: #6A00FF;
             transform: translateY(-2px);
+            box-shadow: 0 0 10px rgba(106, 0, 255, 0.3);
         }
         
+        /* Loading Screen */
+        #loading-screen {
+            transition: opacity 0.8s ease-out, visibility 0.8s;
+        }
+        @keyframes loadProgress {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+        .animate-progress {
+            animation: loadProgress 2s ease-in-out forwards;
+        }
+
+        /* FIXED GLITCH EFFECT (Transparent Background) */
+        .glitch-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        .glitch {
+            position: relative;
+            color: white;
+            z-index: 1;
+        }
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent; /* Changed from black to transparent */
+            z-index: -1;
+        }
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 #ff00c1;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+        .glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 #00fff9;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim2 5s infinite linear alternate-reverse;
+        }
+        /* Adjusted keyframes for cleaner glitch */
+        @keyframes glitch-anim {
+            0% { clip: rect(3px, 9999px, 5px, 0); }
+            5% { clip: rect(87px, 9999px, 93px, 0); }
+            10% { clip: rect(43px, 9999px, 15px, 0); }
+            15% { clip: rect(15px, 9999px, 55px, 0); }
+            20% { clip: rect(3px, 9999px, 88px, 0); }
+            100% { clip: rect(70px, 9999px, 90px, 0); }
+        }
+        @keyframes glitch-anim2 {
+            0% { clip: rect(65px, 9999px, 99px, 0); }
+            100% { clip: rect(10px, 9999px, 86px, 0); }
+        }
+
+        /* Typewriter Cursor */
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s step-start infinite;
+            color: #6A00FF;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+
+        /* 3D Tilt Card Style */
+        .tilt-card {
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+        }
+        
+        /* General Fade In */
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
         
-        /* Language-aware styles for roadmap */
+        /* Roadmap Styles */
         .roadmap-line {
             position: absolute;
             top: 1.25rem;
@@ -137,13 +270,10 @@
         }
         html[dir="rtl"] .roadmap-line { right: 1.25rem; }
         html[dir="ltr"] .roadmap-line { left: 1.25rem; }
-        
-        .roadmap-item:last-child .roadmap-line {
-            display: none;
-        }
+        .roadmap-item:last-child .roadmap-line { display: none; }
         
         .timer-box {
-            background-color: rgba(10, 0, 20, 0.5);
+            background-color: rgba(10, 0, 20, 0.7);
             border: 1px solid #6A00FF;
             border-radius: 0.5rem;
             padding: 0.5rem;
@@ -151,25 +281,23 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            box-shadow: 0 0 10px rgba(106, 0, 255, 0.5);
-            backdrop-filter: blur(2px);
+            box-shadow: 0 0 15px rgba(106, 0, 255, 0.3);
+            backdrop-filter: blur(4px);
         }
         .timer-number {
             font-size: 2rem;
             font-weight: 700;
             line-height: 1;
-            color: #FBBF24; /* Yellow color for numbers */
+            color: #FBBF24;
             text-shadow: 0 0 8px rgba(251, 191, 36, 0.7);
         }
         .timer-label {
             font-size: 0.75rem;
             text-transform: uppercase;
-            color: #a78bfa; /* Lighter purple for label */
+            color: #a78bfa;
         }
         
-        .progress-bar-bg {
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.4);
-        }
+        .progress-bar-bg { box-shadow: inset 0 2px 4px rgba(0,0,0,0.6); }
         .progress-bar-fill {
             transition: width 0.8s ease-in-out;
             background: linear-gradient(90deg, #8B5CF6, #6A00FF);
@@ -180,146 +308,187 @@
             -webkit-filter: sepia(100%) saturate(300%) hue-rotate(220deg) brightness(90%) contrast(110%);
         }
 
-        /* Styles for Sticky Navigation */
+        /* Sticky Nav */
         .sticky-nav {
             position: sticky;
             top: 0;
             z-index: 50;
-            background-color: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(106, 0, 255, 0.2);
             transition: all 0.3s ease-in-out;
         }
-        .sticky-nav a {
-            transition: color 0.3s, text-shadow 0.3s;
-        }
+        .sticky-nav a { transition: color 0.3s, text-shadow 0.3s; }
         .sticky-nav a:hover {
             color: #a78bfa;
             text-shadow: 0 0 8px rgba(106, 0, 255, 0.8);
         }
 
-        /* Download Counter Animation */
+        /* Floating Action Button (FAB) */
+        .fab-container {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 40;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+            pointer-events: none;
+        }
+        html[dir="rtl"] .fab-container { right: auto; left: 2rem; }
+        
+        .fab-container.show {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: all;
+        }
+        .fab-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #6A00FF, #4c1d95);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 15px rgba(106, 0, 255, 0.6);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.5rem;
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+        .fab-btn:hover {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 0 25px rgba(106, 0, 255, 0.9);
+        }
+
+        /* Animations */
         @keyframes count-up {
             0% { transform: translateY(0); opacity: 1; color: #FBBF24; }
             50% { transform: translateY(-10px); opacity: 0; }
             51% { transform: translateY(10px); opacity: 0; }
             100% { transform: translateY(0); opacity: 1; color: #FBBF24; }
         }
-        .count-up-animation {
-            animation: count-up 0.4s ease-in-out;
-        }
+        .count-up-animation { animation: count-up 0.4s ease-in-out; }
 
-        /* Modal Styles */
-        .modal-overlay {
-            transition: opacity 0.3s ease;
-        }
-        .modal-content {
-            transition: transform 0.3s ease, opacity 0.3s ease;
-        }
-        .modal.hidden .modal-overlay {
-            opacity: 0;
-        }
-        .modal.hidden .modal-content {
-            opacity: 0;
-            transform: scale(0.95);
-        }
+        /* Modal */
+        .modal-overlay { transition: opacity 0.3s ease; }
+        .modal-content { transition: transform 0.3s ease, opacity 0.3s ease; }
+        .modal.hidden .modal-overlay { opacity: 0; }
+        .modal.hidden .modal-content { opacity: 0; transform: scale(0.95); }
         .copy-btn {
             background-color: rgba(106, 0, 255, 0.2);
             border: 1px solid rgba(106, 0, 255, 0.5);
             transition: all 0.2s ease;
         }
-        .copy-btn:hover {
-            background-color: rgba(106, 0, 255, 0.4);
+        .copy-btn:hover { background-color: rgba(106, 0, 255, 0.4); }
+
+        /* Hide cursor on touch devices to avoid issues */
+        @media (hover: none) and (pointer: coarse) {
+            body { cursor: auto; }
+            .cursor-dot, .cursor-outline { display: none; }
         }
 
     </style>
 </head>
 <body class="overflow-x-hidden">
 
+    <!-- CUSTOM CURSOR -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <!-- 1. LOADING SCREEN -->
+    <div id="loading-screen" class="fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center">
+        <div class="text-neon-purple text-3xl md:text-5xl font-bold tracking-widest mb-4 animate-pulse uppercase">
+            System Initializing...
+        </div>
+        <div class="w-64 h-1 bg-gray-900 rounded-full overflow-hidden relative border border-purple-900/50">
+            <div class="absolute top-0 left-0 h-full bg-neon-purple w-0 animate-progress shadow-[0_0_10px_#6A00FF]"></div>
+        </div>
+        <p class="mt-4 text-gray-500 font-mono text-sm">Connecting to Reality...</p>
+    </div>
+
+    <!-- 2. PARTICLES BACKGROUND -->
+    <canvas id="particles-canvas"></canvas>
+
     <!-- Sticky Navigation Bar -->
     <header class="sticky-nav">
         <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <!-- Icon beside the App Name -->
-            <a href="#hero" class="flex items-center gap-3 text-2xl font-bold tracking-widest text-white">
-                <img src="https://i.postimg.cc/28rsRTSt/app-logo-full.png" alt="EGORISE Icon" class="w-10 h-10 rounded-full border border-purple-500/30">
-                EGORISE
+            <a href="#hero" class="flex items-center gap-3 text-2xl font-bold tracking-widest text-white group hover-trigger">
+                <img src="https://i.postimg.cc/28rsRTSt/app-logo-full.png" alt="EGORISE Icon" class="w-10 h-10 rounded-full border border-purple-500/30 group-hover:shadow-[0_0_15px_#6A00FF] transition-all">
+                <span class="group-hover:text-neon-purple transition-colors">EGORISE</span>
             </a>
             
-            <!-- Modified Navigation: Container for Links and Lang Switcher -->
+            <!-- Modified Navigation -->
             <div class="flex items-center gap-4">
-                <!-- Navigation Links (Hidden on Mobile) -->
                 <div class="hidden md:flex items-center space-x-8 text-lg" data-direction-class="space-x-8">
-                    <a href="#beta-download" data-lang="navDownload">تحميل التطبيق</a>
-                    <a href="#news" data-lang="navNews">الأخبار</a>
-                    <a href="#support" data-lang="navSupport">ادعمنا</a>
-                    <a href="#about-rizo" data-lang="navStory">القصة</a>
-                    <a href="#roadmap" data-lang="navRoadmap">خارطة الطريق</a>
-                    <a href="#community" data-lang="navCommunity">المجتمع</a>
+                    <a href="#beta-download" data-lang="navDownload" class="hover-trigger">تحميل التطبيق</a>
+                    <a href="#news" data-lang="navNews" class="hover-trigger">الأخبار</a>
+                    <a href="#support" data-lang="navSupport" class="hover-trigger">ادعمنا</a>
+                    <a href="#about-rizo" data-lang="navStory" class="hover-trigger">القصة</a>
+                    <a href="#roadmap" data-lang="navRoadmap" class="hover-trigger">خارطة الطريق</a>
+                    <a href="#community" data-lang="navCommunity" class="hover-trigger">المجتمع</a>
                 </div>
-
-                <!-- Language Switcher (Visible on Mobile and Desktop) -->
-                <button id="lang-switcher" class="text-purple-400 hover:text-white font-bold tracking-wider border border-purple-400/30 rounded px-3 py-1 transition-all">English</button>
+                <button id="lang-switcher" class="hover-trigger text-purple-400 hover:text-white font-bold tracking-wider border border-purple-400/30 rounded px-3 py-1 transition-all hover:bg-purple-900/30">English</button>
             </div>
         </nav>
     </header>
 
     <!-- Main Container -->
-    <div class="min-h-screen w-full">
+    <div class="min-h-screen w-full relative z-10">
 
         <!-- 1. Hero Section -->
         <section id="hero" class="min-h-screen flex items-center justify-center text-center p-6 bg-gradient-primary relative overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-radial"></div>
+            <!-- Removed radial gradient div to let particles show through better -->
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black z-0"></div>
+            
             <div class="relative z-10 fade-in">
-                <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-widest uppercase" style="text-shadow: 0 0 10px rgba(255,255,255,0.3);" data-lang="heroTitle">
-                    حوّل حياتك إلى لعبة <span class="text-neon-purple">RPG</span> حقيقية
-                </h1>
-                <p class="mt-6 text-lg md:text-xl max-w-2xl mx-auto text-gray-300" data-lang="heroSubtitle">
-                    رحلتي لبناء أول تطبيق سيغيّر مفهوم تطوير الذات للأبد.
+                <!-- 3. GLITCH EFFECT ON TITLE (FIXED) -->
+                <div class="glitch-wrapper mb-2">
+                    <h1 class="glitch text-5xl md:text-7xl lg:text-8xl font-bold tracking-widest uppercase" data-text="حوّل حياتك إلى لعبة RPG حقيقية" data-lang="heroTitle">
+                        حوّل حياتك إلى لعبة <span class="text-neon-purple">RPG</span> حقيقية
+                    </h1>
+                </div>
+                
+                <!-- TYPEWRITER EFFECT CONTAINER -->
+                <p id="typewriter-text" class="mt-6 text-lg md:text-xl max-w-2xl mx-auto text-gray-300 typing-cursor h-8">
+                    <!-- Text inserted via JS -->
                 </p>
                 
-                <!-- NEW HERO BUTTONS -->
+                <!-- HERO BUTTONS -->
                 <div class="mt-10 flex flex-col md:flex-row items-center justify-center gap-4">
-                    <!-- Primary: Download (Updated Link for v8.0) -->
-                    <!-- Note: The release tag in URL is assumed to be newupdate8.0 based on previous pattern -->
-                    <a href="https://github.com/xbelal15/xbelal15.github.io/releases/download/newupdate8.0/EgoRise.apk" target="_blank" class="inline-block btn-primary font-bold py-4 px-12 rounded-lg text-xl uppercase tracking-wider">
+                    <a href="https://github.com/xbelal15/xbelal15.github.io/releases/download/newupdate8.0/EgoRise.apk" target="_blank" class="hover-trigger inline-block btn-primary font-bold py-4 px-12 rounded-lg text-xl uppercase tracking-wider">
                         <i class="fas fa-download" data-direction-class="mr-3"></i> <span data-lang="heroDownloadBtn">تحميل v8.0</span>
                     </a>
-                    <!-- Secondary: Discord -->
-                    <a href="https://discord.gg/chkaYVz36U" target="_blank" class="inline-block btn-secondary font-bold py-4 px-8 rounded-lg text-lg uppercase tracking-wider">
+                    <a href="https://discord.gg/chkaYVz36U" target="_blank" class="hover-trigger inline-block btn-secondary font-bold py-4 px-8 rounded-lg text-lg uppercase tracking-wider">
                          <i class="fab fa-discord"></i>
                     </a>
                 </div>
 
-                <!-- Download Count Below Button -->
+                <!-- Download Count -->
                 <div class="mt-4 text-gray-400 text-lg flex items-center justify-center gap-2">
                     <i class="fas fa-arrow-down text-purple-400"></i>
-                    <!-- The count is now dynamic via JS -->
                     <span id="hero-download-counter" class="font-bold text-glow-gold">17,254</span> 
                     <span data-lang="heroDownloadCountText">بطل قاموا بالتحميل</span>
                 </div>
-
             </div>
         </section>
         
         <!-- 2. Beta Download Section -->
-        <section id="beta-download" class="py-20 px-6 bg-black border-t border-purple-900/30">
-            <div class="max-w-4xl mx-auto text-center fade-in">
-                <!-- App Icon -->
-                <img src="https://i.postimg.cc/28rsRTSt/app-logo-full.png" alt="شعار تطبيق EGORISE" class="mx-auto w-40 h-40 mb-8 drop-shadow-[0_0_15px_rgba(106,0,255,0.6)]">
-                <!-- Updated Title for v8.0 -->
+        <section id="beta-download" class="py-20 px-6 bg-black border-t border-purple-900/30 relative">
+            <div class="max-w-4xl mx-auto text-center fade-in relative z-10">
+                <img src="https://i.postimg.cc/28rsRTSt/app-logo-full.png" alt="شعار تطبيق EGORISE" class="mx-auto w-40 h-40 mb-8 drop-shadow-[0_0_25px_rgba(106,0,255,0.6)] hover:scale-110 transition-transform duration-500">
                 <h2 class="text-4xl md:text-5xl font-bold tracking-wider" data-lang="downloadTitle">النسخة التجريبية <span class="text-neon-purple">v8.0 متاحة الآن</span></h2>
                 <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto" data-lang="downloadSubtitle">
                     كن من أوائل الأبطال الذين يختبرون عالم EGORISE. حمّل التحديث الجديد والمحسن مباشرة وشاركنا رأيك!
                 </p>
                 <div class="mt-10 flex flex-col items-center justify-center gap-4">
-                    <!-- Updated Link for v8.0 -->
-                    <a id="download-btn" href="https://github.com/xbelal15/xbelal15.github.io/releases/download/newupdate8.0/EgoRise.apk" target="_blank" class="inline-block btn-primary font-bold py-4 px-12 rounded-lg text-xl uppercase tracking-wider">
+                    <a id="download-btn" href="https://github.com/xbelal15/xbelal15.github.io/releases/download/newupdate8.0/EgoRise.apk" target="_blank" class="hover-trigger inline-block btn-primary font-bold py-4 px-12 rounded-lg text-xl uppercase tracking-wider">
                         <i class="fas fa-download" data-direction-class="mr-3"></i> <span data-lang="downloadButton">تحميل التحديث (v8.0)</span>
                     </a>
                     <div class="flex items-center gap-2 text-lg text-gray-400">
                         <i class="fas fa-users text-purple-400"></i>
-                        <!-- The count is now dynamic via JS -->
                         <span id="download-counter" class="font-bold text-glow-gold text-2xl">17254</span>
                         <span data-lang="downloadCounterText">بطل قاموا بالتحميل</span>
                     </div>
@@ -341,22 +510,21 @@
                         <span id="progress-text" class="font-bold text-purple-400">$0 / $1500 (0%)</span>
                     </div>
                     <div class="w-full bg-gray-800 rounded-full h-4 border-2 border-purple-800/50 progress-bar-bg">
-                        <div id="progress-bar-fill" class="bg-purple-600 h-full rounded-full progress-bar-fill" style="width: 0%;"></div>
+                        <div id="progress-bar-fill" class="bg-purple-600 h-full rounded-full progress-bar-fill shadow-[0_0_15px_#6A00FF]" style="width: 0%;"></div>
                     </div>
                     <p class="text-sm mt-2 text-gray-400" data-lang="supportGoalDesc">لتغطية تكاليف السيرفرات، التسويق، والتطوير المستمر.</p>
                 </div>
 
-                <div class="mt-12 border-2 border-purple-800/30 rounded-2xl p-8 max-w-2xl mx-auto bg-black/20">
+                <div class="mt-12 border-2 border-purple-800/30 rounded-2xl p-8 max-w-2xl mx-auto bg-black/40 backdrop-blur-sm">
                     <h3 class="text-2xl font-bold text-glow-gold mb-6" data-lang="rewardsTitle">ماذا ستحصل عليه مقابل دعمك؟</h3>
                     <div class="flex flex-col md:flex-row items-center justify-center gap-8">
-                        <div class="text-center">
-                            <!-- Founder Badge Image -->
-                            <img src="https://i.postimg.cc/sXNg0XSj/file-00000000cca0620a9c083def2a7473d5.png" alt="أيقونة شارة المؤسس الحصرية داخل تطبيق EGORISE" class="founder-badge-icon mx-auto w-24 h-24 mb-2 drop-shadow-[0_0_15px_rgba(172,122,255,0.6)]">
+                        <div class="text-center group">
+                            <img src="https://i.postimg.cc/sXNg0XSj/file-00000000cca0620a9c083def2a7473d5.png" alt="أيقونة شارة المؤسس الحصرية داخل تطبيق EGORISE" class="founder-badge-icon mx-auto w-24 h-24 mb-2 drop-shadow-[0_0_15px_rgba(172,122,255,0.6)] group-hover:scale-110 transition-transform">
                             <h4 class="text-xl font-bold" data-lang="reward1Title">لقب المؤسس المميز</h4>
                             <p class="text-gray-400" data-lang="reward1Desc">لقب حصري داخل التطبيق والديسكورد يميّزك كداعم أساسي للمشروع.</p>
                         </div>
-                        <div class="text-center">
-                            <i class="fas fa-gem text-6xl text-blue-400 mb-2 drop-shadow-[0_0_10px_rgba(96,165,250,0.5)]"></i>
+                        <div class="text-center group">
+                            <i class="fas fa-gem text-6xl text-blue-400 mb-2 drop-shadow-[0_0_10px_rgba(96,165,250,0.5)] group-hover:scale-110 transition-transform block"></i>
                             <h4 class="text-xl font-bold" data-lang="reward2Title">جواهر بقيمة دعمك</h4>
                             <p class="text-gray-400" data-lang="reward2Desc">ستحصل على جواهر داخل اللعبة بنفس قيمة المبلغ الذي تساهم به.</p>
                         </div>
@@ -364,7 +532,7 @@
                 </div>
 
                 <div class="mt-12">
-                    <button id="open-donate-modal" class="w-full sm:w-auto inline-block btn-primary font-bold py-4 px-10 rounded-lg text-lg uppercase tracking-wider">
+                    <button id="open-donate-modal" class="hover-trigger w-full sm:w-auto inline-block btn-primary font-bold py-4 px-10 rounded-lg text-lg uppercase tracking-wider">
                         <i class="fas fa-hand-holding-heart" data-direction-class="ml-2"></i> <span data-lang="supportButton">اختر طريقة الدعم التي تناسبك</span>
                     </button>
                 </div>
@@ -377,8 +545,7 @@
                 <h2 class="text-4xl md:text-5xl font-bold tracking-wider mb-12" data-lang="newsTitle">آخر <span class="text-neon-purple">الأخبار</span></h2>
                 <div class="max-w-2xl mx-auto" data-direction-class="text-right">
                     <!-- News Item 3 (New Update) -->
-                    <div class="bg-purple-900/20 border border-purple-500/50 rounded-lg p-6 mb-6 shadow-[0_0_15px_rgba(106,0,255,0.15)]">
-                        <!-- Updated Date and Title -->
+                    <div class="bg-purple-900/20 border border-purple-500/50 rounded-lg p-6 mb-6 shadow-[0_0_15px_rgba(106,0,255,0.15)] hover:shadow-[0_0_25px_rgba(106,0,255,0.3)] transition-shadow">
                         <p class="text-sm text-purple-300 mb-2">5 أكتوبر 2025</p>
                         <h3 class="text-2xl font-bold text-neon-purple mb-3" data-lang="news3Title">تحديث جديد v8.0 متوفر الآن!</h3>
                         <p class="text-gray-300 leading-relaxed" data-lang="news3Desc">
@@ -390,7 +557,6 @@
                     <div class="bg-gray-900/50 border border-purple-800/30 rounded-lg p-6 mb-6">
                         <p class="text-sm text-gray-400 mb-2">2 أكتوبر 2025</p>
                         <h3 class="text-2xl font-bold text-glow-gold mb-3" data-lang="news2Title">تحديث هام: تم حل مشكلة السيرفر!</h3>
-                        <!-- Updated text to mention v8.0 -->
                         <p class="text-gray-300 leading-relaxed" data-lang="news2Desc">
                             انتهت فترة الصيانة بنجاح وعاد التطبيق للعمل بشكل كامل. نعتذر عن أي إزعاج. **من الضروري تحديث التطبيق إلى الإصدار الجديد (v8.0)** للاستفادة من الإصلاحات والتحسينات الأخيرة. شكرًا لتفهمكم!
                         </p>
@@ -410,7 +576,7 @@
         <!-- 5. Personal Story Section -->
         <section id="about-rizo" class="py-20 px-6 bg-black border-t border-purple-900/30">
             <div class="max-w-4xl mx-auto text-center fade-in">
-                <img src="https://i.postimg.cc/90QXM0kb/44.png" alt="صورة شخصية لـ Rizo مطور تطبيق EGORISE" class="mx-auto w-24 h-24 mb-6 rounded-full object-cover">
+                <img src="https://i.postimg.cc/90QXM0kb/44.png" alt="صورة شخصية لـ Rizo مطور تطبيق EGORISE" class="mx-auto w-24 h-24 mb-6 rounded-full object-cover border-2 border-purple-500/50 shadow-[0_0_20px_rgba(106,0,255,0.4)]">
                 <h2 class="text-4xl md:text-5xl font-bold text-neon-purple tracking-wider" data-lang="storyTitle">قصة Rizo</h2>
                  <p class="mt-8 text-lg md:text-xl max-w-3xl mx-auto text-gray-300 leading-relaxed" data-lang="storyDesc">
                     في عمر الـ 20، شعرت أن الحياة الواقعية تفتقر لنظام واضح للتقدم. تطبيق <span class="text-neon-purple font-bold">EGORISE</span> ليس مجرد مشروع، بل هو محاولتي لصناعة الأداة التي كنت أحتاجها، ومساعدة الآلاف على خوض رحلة تطوير الذات، وتحقيق حلمي بأن أكون أول من يغير واقع عائلتي.
@@ -418,24 +584,31 @@
             </div>
         </section>
         
-        <!-- 6. About the App Section -->
+        <!-- 6. About the App Section (4. 3D TILT EFFECT) -->
         <section id="about-app" class="py-20 px-6 bg-black border-t border-purple-900/30">
             <div class="max-w-6xl mx-auto text-center fade-in">
-                <!-- Centered Icon -->
                 <img src="https://i.postimg.cc/28rsRTSt/app-logo-full.png" alt="EGORISE App Icon" class="mx-auto w-24 h-24 mb-6 rounded-2xl shadow-[0_0_15px_rgba(106,0,255,0.5)]">
                 
-                <!-- Text -->
                 <h2 class="text-4xl md:text-5xl font-bold tracking-wider mb-6" data-lang="aboutTitle">ما هو <span class="text-neon-purple">EGORISE</span>؟</h2>
                 <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-12" data-lang="aboutDesc">
                     هو نظام مستوحى من عالم الأنمي والألعاب… XP، Health، Missions، Levels… كل هذا سيصبح واقعًا حقيقيًا، وليس مجرد لعبة. الهدف: يجعلك أقوى نسخة من نفسك كل يوم.
                 </p>
 
-                <!-- 4 Images Grid -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <img src="https://i.postimg.cc/TwX95dhf/1.jpg" alt="Screenshot 1" class="rounded-xl border border-purple-800/30 hover:scale-105 transition-transform duration-300 shadow-lg">
-                    <img src="https://i.postimg.cc/L81LtccV/2.jpg" alt="Screenshot 2" class="rounded-xl border border-purple-800/30 hover:scale-105 transition-transform duration-300 shadow-lg">
-                    <img src="https://i.postimg.cc/MHLfR5tc/3.jpg" alt="Screenshot 3" class="rounded-xl border border-purple-800/30 hover:scale-105 transition-transform duration-300 shadow-lg">
-                    <img src="https://i.postimg.cc/02JbFpch/4.jpg" alt="Screenshot 4" class="rounded-xl border border-purple-800/30 hover:scale-105 transition-transform duration-300 shadow-lg">
+                <!-- 3D Tilt Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 px-4">
+                    <!-- Added data-tilt attribute for Vanilla-tilt.js -->
+                    <div class="tilt-card hover-trigger" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.5">
+                        <img src="https://i.postimg.cc/TwX95dhf/1.jpg" alt="Screenshot 1" class="rounded-xl border border-purple-800/30 w-full h-auto shadow-lg">
+                    </div>
+                    <div class="tilt-card hover-trigger" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.5">
+                        <img src="https://i.postimg.cc/L81LtccV/2.jpg" alt="Screenshot 2" class="rounded-xl border border-purple-800/30 w-full h-auto shadow-lg">
+                    </div>
+                    <div class="tilt-card hover-trigger" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.5">
+                        <img src="https://i.postimg.cc/MHLfR5tc/3.jpg" alt="Screenshot 3" class="rounded-xl border border-purple-800/30 w-full h-auto shadow-lg">
+                    </div>
+                    <div class="tilt-card hover-trigger" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.5">
+                        <img src="https://i.postimg.cc/02JbFpch/4.jpg" alt="Screenshot 4" class="rounded-xl border border-purple-800/30 w-full h-auto shadow-lg">
+                    </div>
                 </div>
             </div>
         </section>
@@ -447,7 +620,6 @@
                       <h2 class="text-4xl md:text-5xl font-bold text-neon-purple tracking-wider" data-lang="roadmapTitle">خارطة الطريق</h2>
                 </div>
                 <div class="relative">
-                    <!-- The content of roadmap items will be translated via JS -->
                     <div class="roadmap-item relative pb-10" data-direction-class="pr-10"><div class="roadmap-line"></div><div class="absolute top-0 w-10 h-10 bg-green-500/20 border-2 border-green-500 rounded-full flex items-center justify-center z-10" data-direction-class="right-0"><i class="fas fa-check text-green-400"></i></div><h3 class="text-2xl font-bold mb-2" data-lang="roadmap1"></h3></div>
                     <div class="roadmap-item relative pb-10" data-direction-class="pr-10"><div class="roadmap-line"></div><div class="absolute top-0 w-10 h-10 bg-green-500/20 border-2 border-green-500 rounded-full flex items-center justify-center z-10" data-direction-class="right-0"><i class="fas fa-check text-green-400"></i></div><h3 class="text-2xl font-bold mb-2" data-lang="roadmap2"></h3></div>
                     <div class="roadmap-item relative pb-10" data-direction-class="pr-10"><div class="roadmap-line"></div><div class="absolute top-0 w-10 h-10 bg-green-500/20 border-2 border-green-500 rounded-full flex items-center justify-center z-10" data-direction-class="right-0"><i class="fas fa-check text-green-400"></i></div><h3 class="text-2xl font-bold mb-2" data-lang="roadmap3"></h3></div>
@@ -462,11 +634,33 @@
             </div>
         </section>
 
+        <!-- 8. Community Section -->
+        <section id="community" class="py-20 px-6 bg-black border-t border-purple-900/30">
+            <div class="max-w-4xl mx-auto text-center fade-in">
+                <i class="fas fa-users text-6xl text-neon-purple mb-4 drop-shadow-[0_0_10px_rgba(106,0,255,0.8)]"></i>
+                <h2 class="text-4xl md:text-5xl font-bold tracking-wider" data-lang="communityTitle">المجتمع هو القوة الحقيقية</h2>
+                <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto" data-lang="communityDesc">
+                    هذا المشروع لا يبنيه شخص واحد، بل مجتمع كامل من الأبطال. بانضمامك لمجتمعنا على المنصات التالية، ستكون جزءًا من العقل المدبر للتطبيق.
+                </p>
+                <div class="mt-8 max-w-md mx-auto space-y-4" data-direction-class="text-left">
+                    <p class="text-lg" data-lang="communityPoint1"><i class="fas fa-comments text-purple-400 w-6 text-center" data-direction-class="ml-2"></i> تواصل مباشر معي وشارك أفكارك.</p>
+                    <p class="text-lg" data-lang="communityPoint2"><i class="fas fa-vote-yea text-purple-400 w-6 text-center" data-direction-class="ml-2"></i> صوّت على الميزات القادمة للتطبيق.</p>
+                    <p class="text-lg" data-lang="communityPoint3"><i class="fas fa-eye text-purple-400 w-6 text-center" data-direction-class="ml-2"></i> شاهد كواليس التطوير وتحديثات حصرية.</p>
+                    <p class="text-lg" data-lang="communityPoint4"><i class="fas fa-star text-purple-400 w-6 text-center" data-direction-class="ml-2"></i> ادفع مقابل الحصول على ميزات داخل التطبيق، تجربة النسخة التجريبية قبل الجميع، ومزايا داخل سيرفر الديسكورد.</p>
+                </div>
+                <div class="mt-10 flex justify-center space-x-8" data-direction-class="space-x-8">
+                    <a href="https://discord.gg/chkaYVz36U" target="_blank" class="hover-trigger text-[#6A00FF] hover:text-white transition-all duration-300 transform hover:scale-125 hover:drop-shadow-[0_0_10px_#6A00FF]"><i class="fab fa-discord text-4xl"></i></a>
+                    <a href="https://t.me/xrizo0" target="_blank" class="hover-trigger text-[#6A00FF] hover:text-white transition-all duration-300 transform hover:scale-125 hover:drop-shadow-[0_0_10px_#6A00FF]"><i class="fab fa-telegram text-4xl"></i></a>
+                    <a href="https://www.instagram.com/xrizo0?igsh=ZDlmeXV3bDZoN2di" target="_blank" class="hover-trigger text-[#6A00FF] hover:text-white transition-all duration-300 transform hover:scale-125 hover:drop-shadow-[0_0_10px_#6A00FF]"><i class="fab fa-instagram text-4xl"></i></a>
+                    <a href="https://www.tiktok.com/@xrizo0?_t=ZS-8xo2BHa4V3S&_r=1" target="_blank" class="hover-trigger text-[#6A00FF] hover:text-white transition-all duration-300 transform hover:scale-125 hover:drop-shadow-[0_0_10px_#6A00FF]"><i class="fab fa-tiktok text-4xl"></i></a>
+                </div>
+            </div>
+        </section>
+        
         <!-- 9. App Intro Section -->
         <section id="app-intro" class="py-20 px-6 bg-black border-t border-purple-900/30">
             <div class="max-w-4xl mx-auto text-center fade-in">
-                 <!-- UPDATED: New App Icon -->
-                 <img src="https://i.postimg.cc/28rsRTSt/app-logo-full.png" alt="شعار تطبيق EGORISE الرسمي" class="mx-auto w-48 h-48 mb-6 drop-shadow-[0_0_15px_rgba(106,0,255,0.6)]">
+                 <img src="https://i.postimg.cc/28rsRTSt/app-logo-full.png" alt="شعار تطبيق EGORISE الرسمي" class="mx-auto w-48 h-48 mb-6 drop-shadow-[0_0_20px_rgba(106,0,255,0.8)] animate-pulse">
                  <h2 class="text-6xl md:text-7xl font-bold text-neon-purple tracking-wider">EGORISE</h2>
                  <p class="mt-4 text-xl md:text-2xl text-gray-400 tracking-widest">LEVEL UP YOUR REALITY</p>
                  <p class="mt-6 text-lg text-gray-300 max-w-2xl mx-auto" data-lang="appIntroDesc">هذا هو التطبيق الذي سيغير مفهوم تطوير الذات قريبا.</p>
@@ -477,43 +671,50 @@
         <footer class="bg-black py-8 px-6 border-t border-purple-900/30">
             <div class="max-w-6xl mx-auto text-center text-gray-600">
                 <div class="flex justify-center items-center space-x-6 mb-6" data-direction-class="space-x-6">
-                    <a href="https://discord.gg/chkaYVz36U" target="_blank" class="text-[#6A00FF] hover:text-white transition-colors"><i class="fab fa-discord text-2xl"></i></a>
-                    <a href="https://www.tiktok.com/@xrizo0?_t=ZS-8xo2BHa4V3S&_r=1" target="_blank" class="text-[#6A00FF] hover:text-white transition-colors"><i class="fab fa-tiktok text-2xl"></i></a>
-                    <a href="https://www.instagram.com/xrizo0?igsh=ZDlmeXV3bDZoN2di" target="_blank" class="text-[#6A00FF] hover:text-white transition-colors"><i class="fab fa-instagram text-2xl"></i></a>
-                    <a href="https://t.me/xrizo0" target="_blank" class="text-[#6A00FF] hover:text-white transition-colors"><i class="fab fa-telegram text-2xl"></i></a>
+                    <a href="https://discord.gg/chkaYVz36U" target="_blank" class="hover-trigger text-[#6A00FF] hover:text-white transition-colors"><i class="fab fa-discord text-2xl"></i></a>
+                    <a href="https://www.tiktok.com/@xrizo0?_t=ZS-8xo2BHa4V3S&_r=1" target="_blank" class="hover-trigger text-[#6A00FF] hover:text-white transition-colors"><i class="fab fa-tiktok text-2xl"></i></a>
+                    <a href="https://www.instagram.com/xrizo0?igsh=ZDlmeXV3bDZoN2di" target="_blank" class="hover-trigger text-[#6A00FF] hover:text-white transition-colors"><i class="fab fa-instagram text-2xl"></i></a>
+                    <a href="https://t.me/xrizo0" target="_blank" class="hover-trigger text-[#6A00FF] hover:text-white transition-colors"><i class="fab fa-telegram text-2xl"></i></a>
                 </div>
                 <div class="flex justify-center items-center space-x-4 text-sm" data-direction-class="space-x-4">
                     <p data-lang="footerRights">© Rizo 2025 – All Rights Reserved</p>
                     <span class="text-gray-700">|</span>
-                    <a href="privacy.html" class="hover:text-white transition-colors" data-lang="footerPrivacy">سياسة الخصوصية</a>
+                    <a href="privacy.html" class="hover-trigger hover:text-white transition-colors" data-lang="footerPrivacy">سياسة الخصوصية</a>
                     <span class="text-gray-700">|</span>
-                    <a href="delete-account.html" class="hover:text-white transition-colors" data-lang="footerDelete">حذف الحساب</a>
+                    <a href="delete-account.html" class="hover-trigger hover:text-white transition-colors" data-lang="footerDelete">حذف الحساب</a>
                 </div>
             </div>
         </footer>
 
     </div>
 
+    <!-- 6. Floating Action Button (FAB) -->
+    <div id="fab-container" class="fab-container">
+        <a href="https://github.com/xbelal15/xbelal15.github.io/releases/download/newupdate8.0/EgoRise.apk" target="_blank" class="fab-btn hover-trigger">
+            <i class="fas fa-download"></i>
+        </a>
+    </div>
+
     <!-- Donation Modal -->
     <div id="donate-modal" class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-4">
         <!-- Overlay -->
-        <div id="modal-overlay" class="modal-overlay absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+        <div id="modal-overlay" class="modal-overlay absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
         <!-- Content -->
-        <div class="modal-content relative w-full max-w-lg bg-gray-900/80 border border-purple-800/50 rounded-2xl shadow-lg shadow-purple-900/20 p-8 text-center">
-            <button id="close-modal-btn" class="absolute top-4 text-gray-500 hover:text-white transition-colors" data-direction-class="left-4">
+        <div class="modal-content relative w-full max-w-lg bg-gray-900/90 border border-purple-800/50 rounded-2xl shadow-[0_0_30px_rgba(106,0,255,0.3)] p-8 text-center">
+            <button id="close-modal-btn" class="hover-trigger absolute top-4 text-gray-500 hover:text-white transition-colors" data-direction-class="left-4">
                 <i class="fas fa-times text-2xl"></i>
             </button>
             <h2 class="text-3xl font-bold text-glow-gold mb-6" data-lang="modalTitle">ادعم أسطورة EGORISE</h2>
             <div class="space-y-6">
                 <!-- Crypto Option -->
-                <div class="bg-black/30 p-4 rounded-lg border border-gray-700" data-direction-class="text-right">
+                <div class="bg-black/50 p-4 rounded-lg border border-gray-700 hover:border-purple-500 transition-colors" data-direction-class="text-right">
                     <h3 class="text-xl font-bold mb-4 text-neon-purple" data-lang="modalCryptoTitle"><i class="fas fa-coins" data-direction-class="ml-2"></i>التبرع عبر العملات الرقمية</h3>
                     <div class="space-y-3">
                         <div>
                             <p class="text-gray-400">Binance Pay ID:</p>
                             <div class="flex items-center gap-2">
                                 <p id="binance-id" class="text-lg font-mono text-gray-200">572095376</p>
-                                <button class="copy-btn px-3 py-1 rounded-md text-sm" data-copy-target="binance-id">
+                                <button class="copy-btn hover-trigger px-3 py-1 rounded-md text-sm" data-copy-target="binance-id">
                                     <i class="fas fa-copy" data-direction-class="mr-1"></i> <span data-lang="copy">نسخ</span>
                                 </button>
                             </div>
@@ -522,7 +723,7 @@
                             <p class="text-gray-400">USDT Address (Tron/TRC20):</p>
                             <div class="flex items-center gap-2">
                                 <p id="usdt-address" class="text-sm font-mono text-gray-200 break-all">TBXADDkdCzuYQwsjp6yvGbN6qCAEavBXH8</p>
-                                <button class="copy-btn px-3 py-1 rounded-md text-sm" data-copy-target="usdt-address">
+                                <button class="copy-btn hover-trigger px-3 py-1 rounded-md text-sm" data-copy-target="usdt-address">
                                     <i class="fas fa-copy" data-direction-class="mr-1"></i> <span data-lang="copy">نسخ</span>
                                 </button>
                             </div>
@@ -531,11 +732,11 @@
                 </div>
 
                 <!-- Discord Option -->
-                <a href="https://discord.gg/chkaYVz36U" target="_blank" class="w-full block bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg text-lg transition-colors">
+                <a href="https://discord.gg/chkaYVz36U" target="_blank" class="hover-trigger w-full block bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg text-lg transition-colors border border-gray-600 hover:border-white">
                     <i class="fab fa-discord" data-direction-class="ml-2"></i> <span data-lang="modalDirect">تواصل للتبرع المباشر</span>
                 </a>
                 <!-- Gems Option -->
-                <a href="https://discord.gg/chkaYVz36U" target="_blank" class="w-full block bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-6 rounded-lg text-lg transition-colors">
+                <a href="https://discord.gg/chkaYVz36U" target="_blank" class="hover-trigger w-full block bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-6 rounded-lg text-lg transition-colors shadow-[0_0_10px_rgba(37,99,235,0.5)] hover:shadow-[0_0_20px_rgba(37,99,235,0.7)]">
                     <i class="fas fa-gem" data-direction-class="ml-2"></i> <span data-lang="modalGems">تواصل لشراء الجواهر</span>
                 </a>
             </div>
@@ -547,12 +748,119 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             
+            // --- CUSTOM CURSOR LOGIC ---
+            const cursorDot = document.querySelector("[data-cursor-dot]");
+            const cursorOutline = document.querySelector("[data-cursor-outline]");
+            
+            window.addEventListener("mousemove", function (e) {
+                const posX = e.clientX;
+                const posY = e.clientY;
+                
+                // Dot moves instantly
+                cursorDot.style.left = `${posX}px`;
+                cursorDot.style.top = `${posY}px`;
+                
+                // Outline moves with delay (created via CSS transition)
+                cursorOutline.style.left = `${posX}px`;
+                cursorOutline.style.top = `${posY}px`;
+            });
+
+            // Hover effect for links
+            const hoverTriggers = document.querySelectorAll('a, button, .hover-trigger, .btn-primary, .btn-secondary');
+            hoverTriggers.forEach(trigger => {
+                trigger.addEventListener('mouseenter', () => {
+                    document.body.classList.add('hovering');
+                });
+                trigger.addEventListener('mouseleave', () => {
+                    document.body.classList.remove('hovering');
+                });
+            });
+
+            // --- LOADER LOGIC ---
+            const loader = document.getElementById('loading-screen');
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                loader.style.visibility = 'hidden';
+            }, 2500); // 2.5 seconds load time
+
+            // --- PARTICLES LOGIC ---
+            const canvas = document.getElementById('particles-canvas');
+            const ctx = canvas.getContext('2d');
+            let particlesArray;
+
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 2 + 0.1; // Small size like digital dust
+                    this.speedX = Math.random() * 1 - 0.5;
+                    this.speedY = Math.random() * 1 - 0.5;
+                    this.color = 'rgba(106, 0, 255, ' + (Math.random() * 0.5 + 0.1) + ')'; // Purple tint
+                }
+                update() {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+                    if (this.size > 0.2) this.size -= 0.01; // Twinkle effect
+                    if (this.size <= 0.2) this.size = Math.random() * 2 + 0.1;
+                    
+                    // Wrap around screen
+                    if (this.x > canvas.width) this.x = 0;
+                    if (this.x < 0) this.x = canvas.width;
+                    if (this.y > canvas.height) this.y = 0;
+                    if (this.y < 0) this.y = canvas.height;
+                }
+                draw() {
+                    ctx.fillStyle = this.color;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+
+            function initParticles() {
+                particlesArray = [];
+                let numberOfParticles = (canvas.width * canvas.height) / 9000;
+                for (let i = 0; i < numberOfParticles; i++) {
+                    particlesArray.push(new Particle());
+                }
+            }
+
+            function animateParticles() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (let i = 0; i < particlesArray.length; i++) {
+                    particlesArray[i].update();
+                    particlesArray[i].draw();
+                }
+                requestAnimationFrame(animateParticles);
+            }
+
+            initParticles();
+            animateParticles();
+
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                initParticles();
+            });
+
+            // --- FAB LOGIC ---
+            const fab = document.getElementById('fab-container');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 500) {
+                    fab.classList.add('show');
+                } else {
+                    fab.classList.remove('show');
+                }
+            });
+
+            // --- TRANSLATIONS & EXISTING LOGIC ---
             const translations = {
                 ar: {
-                    // Meta
                     pageTitle: "EGORISE: الموقع الرسمي | حوّل تطوير ذاتك إلى لعبة RPG",
                     metaDescription: "الموقع الرسمي لتطبيق EGORISE. رحلة Rizo لبناء أول تطبيق يغير مفهوم تطوير الذات، مستوحى من عالم الأنمي والألعاب. انضم للوصول المبكر وكن جزءًا من الأسطورة.",
-                    // Nav
                     navDownload: "تحميل التطبيق",
                     navNews: "الأخبار",
                     navSupport: "ادعمنا",
@@ -560,17 +868,14 @@
                     navRoadmap: "خارطة الطريق",
                     navCommunity: "المجتمع",
                     langSwitcher: "English",
-                    // Hero
                     heroTitle: 'حوّل حياتك إلى لعبة <span class="text-neon-purple">RPG</span> حقيقية',
                     heroSubtitle: "رحلتي لبناء أول تطبيق سيغيّر مفهوم تطوير الذات للأبد.",
                     heroDownloadBtn: "تحميل v8.0",
                     heroDownloadCountText: "بطل قاموا بالتحميل",
-                    // Download - UPDATED TO v8.0
                     downloadTitle: 'النسخة التجريبية <span class="text-neon-purple">v8.0 متاحة الآن</span>',
                     downloadSubtitle: "كن من أوائل الأبطال الذين يختبرون عالم EGORISE. حمّل التحديث الجديد والمحسن مباشرة وشاركنا رأيك!",
                     downloadButton: "تحميل التحديث (v8.0)",
                     downloadCounterText: "بطل قاموا بالتحميل",
-                    // Support
                     supportTitle: 'كُن شريكاً في <span class="text-neon-purple">الأسطورة</span>',
                     supportSubtitle: "حلم EGORISE بدأ بفرد، لكنه ينمو بمجتمع. كل سطر برمجي كتبته كان خطوة نحو تغيير واقعنا. الآن، يمكنك أن تكون أكثر من مجرد لاعب، يمكنك أن تكون مؤسسًا. دعمك، مهما كان بسيطًا، هو الوقود الذي سيحافظ على استمرارية هذا العالم وتطوره.",
                     supportGoal: "هدف التأسيس: $1500",
@@ -581,7 +886,6 @@
                     reward2Title: "جواهر بقيمة دعمك",
                     reward2Desc: "ستحصل على جواهر داخل اللعبة بنفس قيمة المبلغ الذي تساهم به.",
                     supportButton: "اختر طريقة الدعم التي تناسبك",
-                    // News
                     newsTitle: 'آخر <span class="text-neon-purple">الأخبار</span>',
                     news3Title: "تحديث جديد v8.0 متوفر الآن!",
                     news3Desc: "تم حل جميع مشاكل التطبيق وإضافة تحسينات عامة. التحديث الجديد متوفر الآن للتجربة. قم بالتحميل واستمتع بتجربة خالية من الأخطاء!",
@@ -589,13 +893,10 @@
                     news2Desc: "انتهت فترة الصيانة بنجاح وعاد التطبيق للعمل بشكل كامل. نعتذر عن أي إزعاج. **من الضروري تحديث التطبيق إلى الإصدار الجديد (v8.0)** للاستفادة من الإصلاحات والتحسينات الأخيرة. شكرًا لتفهمكم!",
                     news1Title: "لحظة تاريخية: الإصدار التجريبي متاح الآن للجميع!",
                     news1Desc: "بعد أشهر من التطوير والاختبار، يسعدنا أن نعلن أن النسخة التجريبية من EGORISE أصبحت متاحة الآن للجميع! هذا الإصدار مستقر وقوي، وجاهز ليمنحكم تجربة كاملة لأقوى الميزات الأساسية.",
-                    // Story
                     storyTitle: "قصة Rizo",
                     storyDesc: 'في عمر الـ 20، شعرت أن الحياة الواقعية تفتقر لنظام واضح للتقدم. تطبيق <span class="text-neon-purple font-bold">EGORISE</span> ليس مجرد مشروع، بل هو محاولتي لصناعة الأداة التي كنت أحتاجها، ومساعدة الآلاف على خوض رحلة تطوير الذات، وتحقيق حلمي بأن أكون أول من يغير واقع عائلتي.',
-                    // About App
                     aboutTitle: 'ما هو <span class="text-neon-purple">EGORISE</span>؟',
                     aboutDesc: "هو نظام مستوحى من عالم الأنمي والألعاب… XP، Health، Missions، Levels… كل هذا سيصبح واقعًا حقيقيًا، وليس مجرد لعبة. الهدف: يجعلك أقوى نسخة من نفسك كل يوم.",
-                    // Roadmap
                     roadmapTitle: "خارطة الطريق",
                     roadmap1: 'المرحلة الأولى: الواجهة الأساسية <span class="text-sm font-normal text-green-400">(تمت)</span>',
                     roadmap2: 'المرحلة الثانية: السجلات والمهارات <span class="text-sm font-normal text-green-400">(تمت)</span>',
@@ -616,20 +917,16 @@
                     timerHours: "ساعة",
                     timerMinutes: "دقيقة",
                     timerSeconds: "ثانية",
-                    // Community
                     communityTitle: "المجتمع هو القوة الحقيقية",
                     communityDesc: "هذا المشروع لا يبنيه شخص واحد، بل مجتمع كامل من الأبطال. بانضمامك لمجتمعنا على المنصات التالية، ستكون جزءًا من العقل المدبر للتطبيق.",
                     communityPoint1: "تواصل مباشر معي وشارك أفكارك.",
                     communityPoint2: "صوّت على الميزات القادمة للتطبيق.",
                     communityPoint3: "شاهد كواليس التطوير وتحديثات حصرية.",
                     communityPoint4: "Pay for in-app features, get early beta access, and enjoy perks on the Discord server.",
-                    // App Intro
                     appIntroDesc: "هذا هو التطبيق الذي سيغير مفهوم تطوير الذات قريبا.",
-                    // Footer
                     footerRights: "© Rizo 2025 – جميع الحقوق محفوظة",
                     footerPrivacy: "سياسة الخصوصية",
                     footerDelete: "حذف الحساب",
-                    // Modal
                     modalTitle: "ادعم أسطورة EGORISE",
                     modalCryptoTitle: "التبرع عبر العملات الرقمية",
                     copy: "نسخ",
@@ -637,10 +934,8 @@
                     modalGems: "تواصل لشراء الجواهر",
                 },
                 en: {
-                    // Meta
                     pageTitle: "EGORISE: Official Website | Turn Your Self-Development into an RPG",
                     metaDescription: "The official website for the EGORISE app. Rizo's journey to build the first app that changes the concept of self-development, inspired by the world of anime and games. Join for early access and become part of the legend.",
-                    // Nav
                     navDownload: "Download App",
                     navNews: "News",
                     navSupport: "Support Us",
@@ -648,17 +943,14 @@
                     navRoadmap: "Roadmap",
                     navCommunity: "Community",
                     langSwitcher: "العربية",
-                    // Hero
                     heroTitle: 'Turn Your Life Into a Real <span class="text-neon-purple">RPG</span>',
                     heroSubtitle: "My journey to build the first app that will change the concept of self-development forever.",
                     heroDownloadBtn: "Download v8.0",
                     heroDownloadCountText: "Heroes have downloaded",
-                      // Download - UPDATED TO v8.0
                     downloadTitle: 'Beta Version <span class="text-neon-purple">v8.0 is Now Available</span>',
                     downloadSubtitle: "Be among the first heroes to experience the world of EGORISE. Download the new and improved update directly and share your feedback!",
                     downloadButton: "Download Update (v8.0)",
                     downloadCounterText: "Heroes have downloaded",
-                    // Support
                     supportTitle: 'Become a Partner in the <span class="text-neon-purple">Legend</span>',
                     supportSubtitle: "The dream of EGORISE started with one individual, but it grows with a community. Every line of code I wrote was a step towards changing our reality. Now, you can be more than just a player; you can be a founder. Your support, no matter how small, is the fuel that will sustain and evolve this world.",
                     supportGoal: "Founding Goal: $1500",
@@ -669,7 +961,6 @@
                     reward2Title: "Gems Worth Your Support",
                     reward2Desc: "You will receive in-game gems equivalent to the value of your contribution.",
                     supportButton: "Choose Your Support Method",
-                    // News
                     newsTitle: 'Latest <span class="text-neon-purple">News</span>',
                     news3Title: "New Update v8.0 Available Now!",
                     news3Desc: "All app issues have been resolved with general improvements. The new update is available now. Download and enjoy a bug-free experience!",
@@ -677,13 +968,10 @@
                     news2Desc: "The maintenance period has successfully concluded, and the app is back online. We apologize for any inconvenience. **It is essential to update the app to the new version (v8.0)** to benefit from the latest fixes and improvements. Thank you for your understanding!",
                     news1Title: "A Historic Moment: The Beta is Now Open to Everyone!",
                     news1Desc: "After months of development and testing, we are thrilled to announce that the beta version of EGORISE is now available to everyone! This version is stable, robust, and ready to give you a full experience of the strongest core features.",
-                    // Story
                     storyTitle: "Rizo's Story",
                     storyDesc: 'At the age of 20, I felt that real life lacked a clear system for progress. The <span class="text-neon-purple font-bold">EGORISE</span> app is not just a project; it is my attempt to create the tool I needed, to help thousands on their self-development journey, and to achieve my dream of being the first to change my family\'s reality.',
-                    // About App
                     aboutTitle: 'What is <span class="text-neon-purple">EGORISE</span>?',
                     aboutDesc: "It's a system inspired by the world of anime and games... XP, Health, Missions, Levels... all of this will become a tangible reality, not just a game. The goal: to make you the strongest version of yourself, every day.",
-                      // Roadmap
                     roadmapTitle: "Roadmap",
                     roadmap1: 'Phase 1: Core Interface <span class="text-sm font-normal text-green-400">(Completed)</span>',
                     roadmap2: 'Phase 2: Logs & Skills <span class="text-sm font-normal text-green-400">(Completed)</span>',
@@ -704,20 +992,16 @@
                     timerHours: "Hours",
                     timerMinutes: "Minutes",
                     timerSeconds: "Seconds",
-                    // Community
                     communityTitle: "The Community is the Real Power",
                     communityDesc: "This project is not built by one person, but by an entire community of heroes. By joining our community on the following platforms, you will be part of the app's mastermind.",
                     communityPoint1: "Connect directly with me and share your ideas.",
                     communityPoint2: "Vote on upcoming features for the app.",
                     communityPoint3: "See behind-the-scenes development and exclusive updates.",
                     communityPoint4: "Pay for in-app features, get early beta access, and enjoy perks on the Discord server.",
-                    // App Intro
                     appIntroDesc: "This is the app that will soon change the concept of self-development.",
-                    // Footer
                     footerRights: "© Rizo 2025 – All Rights Reserved",
                     footerPrivacy: "Privacy Policy",
                     footerDelete: "Delete Account",
-                      // Modal
                     modalTitle: "Support the Legend of EGORISE",
                     modalCryptoTitle: "Donate via Crypto",
                     copy: "Copy",
@@ -729,13 +1013,47 @@
             const langSwitcher = document.getElementById('lang-switcher');
             const htmlEl = document.documentElement;
 
+            // Typewriter Variables
+            let typewriterTimeout;
+            
+            // Function to run Typewriter Effect
+            const runTypewriter = (text) => {
+                const element = document.getElementById('typewriter-text');
+                element.innerHTML = ''; // Clear current
+                let i = 0;
+                
+                // Clear any existing timeout to prevent overlapping
+                if (typewriterTimeout) clearTimeout(typewriterTimeout);
+
+                function type() {
+                    if (i < text.length) {
+                        element.innerHTML += text.charAt(i);
+                        i++;
+                        typewriterTimeout = setTimeout(type, 50); // Speed of typing
+                    }
+                }
+                type();
+            };
+
             const setLanguage = (lang) => {
                 htmlEl.setAttribute('lang', lang);
                 htmlEl.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
 
                 document.querySelectorAll('[data-lang]').forEach(el => {
                     const key = el.getAttribute('data-lang');
-                    if (translations[lang][key]) {
+                    // Special handling for glitch title data attribute
+                    if(key === 'heroTitle' && el.classList.contains('glitch')) {
+                        const tempDiv = document.createElement('div');
+                        tempDiv.innerHTML = translations[lang][key];
+                        const plainText = tempDiv.textContent || tempDiv.innerText || "";
+                        el.setAttribute('data-text', plainText);
+                    }
+                    
+                    // Special handling for Typewriter effect on Hero Subtitle
+                    if (key === 'heroSubtitle') {
+                        // Don't set innerHTML immediately, trigger typewriter
+                        runTypewriter(translations[lang][key]);
+                    } else if (translations[lang][key]) {
                         el.innerHTML = translations[lang][key];
                     }
                 });
@@ -743,8 +1061,6 @@
                 // Handle special direction-dependent classes
                 document.querySelectorAll('[data-direction-class]').forEach(el => {
                     const classes = el.getAttribute('data-direction-class');
-                    // For simplicity, this handles the few cases in the page.
-                    // This can be made more robust if needed.
                     if (lang === 'ar') {
                         if(classes.includes('text-center')) el.classList.replace('md:text-left', 'md:text-right');
                         if(classes.includes('ml-2')) el.classList.replace('ml-2', 'mr-2');
@@ -772,11 +1088,9 @@
                     }
                 });
 
-
                 langSwitcher.textContent = translations[lang].langSwitcher;
                 localStorage.setItem('language', lang);
                 
-                // Update meta tags for SEO
                 document.title = translations[lang].pageTitle;
                 document.querySelector('meta[name="description"]').setAttribute('content', translations[lang].metaDescription);
             };
@@ -840,46 +1154,38 @@
             const downloadCounterElement = document.getElementById('download-counter');
             const heroDownloadCounterElement = document.getElementById('hero-download-counter');
             
-            // The starting base count
             const baseDownloadCount = 17254;
 
-            // Function to get current count from storage or init
             function getCurrentCount() {
                 const stored = localStorage.getItem('egoriseTotalDownloads');
                 if (stored) {
                     const parsed = parseInt(stored, 10);
-                    // Ensure stored count is at least the base count (in case base was increased)
                     return parsed > baseDownloadCount ? parsed : baseDownloadCount;
                 }
                 return baseDownloadCount;
             }
 
-            // Function to update display
             function updateDisplay(count) {
-                const formatted = count.toLocaleString('en-US'); // Adds commas
+                const formatted = count.toLocaleString('en-US');
                 if (downloadCounterElement) downloadCounterElement.innerText = count;
                 if (heroDownloadCounterElement) heroDownloadCounterElement.innerText = formatted;
             }
 
-            // Initial Load
             let currentDownloadCount = getCurrentCount();
             updateDisplay(currentDownloadCount);
 
-            // Auto Increment Logic (Random 9-88 every minute)
             setInterval(() => {
                 const increaseAmount = Math.floor(Math.random() * (88 - 9 + 1)) + 9;
                 currentDownloadCount += increaseAmount;
                 localStorage.setItem('egoriseTotalDownloads', currentDownloadCount);
                 updateDisplay(currentDownloadCount);
                 
-                // Optional: Add animation class briefly
                 if (downloadCounterElement) {
                     downloadCounterElement.classList.add('count-up-animation');
                     setTimeout(() => downloadCounterElement.classList.remove('count-up-animation'), 400);
                 }
-            }, 60000); // 60000 ms = 1 minute
+            }, 60000);
 
-            // Click Handler for immediate +1 (User download)
             if (downloadBtn) {
                 downloadBtn.addEventListener('click', () => {
                     currentDownloadCount++;
@@ -908,7 +1214,6 @@
                 overlay.addEventListener('click', () => modal.classList.add('hidden'));
             }
 
-            // Setup copy buttons inside the modal
             document.querySelectorAll('.copy-btn').forEach(button => {
                 button.addEventListener('click', () => {
                     const targetId = button.dataset.copyTarget;
@@ -937,7 +1242,6 @@
                 }, 1000);
             }
 
-            // --- Initial Function Calls ---
             updateSupportProgress(270, 1500);
         });
     </script>
