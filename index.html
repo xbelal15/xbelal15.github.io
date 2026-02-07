@@ -8,7 +8,7 @@
     <!-- Favicon -->
     <link rel="icon" href="https://i.postimg.cc/28rsRTSt/app-logo-full.png" type="image/png">
 
-    <!-- SEO & Social Sharing Meta Tags (Enhanced for English SEO) -->
+    <!-- SEO & Social Sharing Meta Tags -->
     <meta name="description" content="EGORISE Official Website. Turn your life into a real RPG game. The first self-development app inspired by Solo Leveling and anime. الموقع الرسمي لتطبيق EGORISE. رحلة لبناء أول تطبيق يغير مفهوم تطوير الذات.">
     <meta name="keywords" content="EGORISE, self improvement RPG, life gamification app, anime productivity app, Solo Leveling app, level up life, habit tracker RPG, ايجورايز, تطوير الذات, لعبة الحياة, تطبيق انمي, تنظيم الوقت">
     
@@ -174,6 +174,21 @@
             transform: translateY(-2px);
             box-shadow: 0 0 10px rgba(106, 0, 255, 0.3);
         }
+
+        /* Gold Button for Support */
+        .btn-gold {
+            background: linear-gradient(135deg, #F59E0B, #D97706);
+            color: #FFFFFF;
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
+        }
+        .btn-gold:hover {
+            background: linear-gradient(135deg, #FBBF24, #F59E0B);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 0 25px rgba(245, 158, 11, 0.7);
+            border-color: #FFF;
+        }
         
         /* Loading Screen */
         #loading-screen {
@@ -300,8 +315,8 @@
         .progress-bar-bg { box-shadow: inset 0 2px 4px rgba(0,0,0,0.6); }
         .progress-bar-fill {
             transition: width 0.8s ease-in-out;
-            background: linear-gradient(90deg, #8B5CF6, #6A00FF);
-            box-shadow: 0 0 10px rgba(106, 0, 255, 0.7);
+            background: linear-gradient(90deg, #F59E0B, #FBBF24); /* Changed to Gold for Support */
+            box-shadow: 0 0 10px rgba(251, 191, 36, 0.7);
         }
         .founder-badge-icon {
             filter: sepia(100%) saturate(300%) hue-rotate(220deg) brightness(90%) contrast(110%);
@@ -383,6 +398,18 @@
         }
         .copy-btn:hover { background-color: rgba(106, 0, 255, 0.4); }
 
+        /* Support Cards */
+        .support-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid rgba(106, 0, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        .support-card:hover {
+            transform: translateY(-5px);
+            border-color: #6A00FF;
+            box-shadow: 0 0 20px rgba(106, 0, 255, 0.2);
+        }
+
         /* Hide cursor on touch devices to avoid issues */
         @media (hover: none) and (pointer: coarse) {
             body { cursor: auto; }
@@ -425,7 +452,7 @@
                 <div class="hidden md:flex items-center space-x-8 text-lg" data-direction-class="space-x-8">
                     <a href="#beta-download" data-lang="navDownload" class="hover-trigger">تحميل التطبيق</a>
                     <a href="#news" data-lang="navNews" class="hover-trigger">الأخبار</a>
-                    <a href="#support" data-lang="navSupport" class="hover-trigger">ادعمنا</a>
+                    <a href="#support" data-lang="navSupport" class="hover-trigger text-glow-gold">ادعمنا</a>
                     <a href="#about-rizo" data-lang="navStory" class="hover-trigger">القصة</a>
                     <a href="#roadmap" data-lang="navRoadmap" class="hover-trigger">خارطة الطريق</a>
                     <a href="#community" data-lang="navCommunity" class="hover-trigger">المجتمع</a>
@@ -464,6 +491,12 @@
                     <a href="https://github.com/xbelal15/xbelal15.github.io/releases/download/newupdate8.0/EgoRise.apk" target="_blank" class="hover-trigger inline-block btn-primary font-bold py-4 px-12 rounded-lg text-xl uppercase tracking-wider">
                         <i class="fas fa-download" data-direction-class="mr-3"></i> <span data-lang="heroDownloadBtn">تحميل v8.0</span>
                     </a>
+                    
+                    <!-- NEW SUPPORT BUTTON (HERO) -->
+                    <a href="#support" class="hover-trigger inline-block btn-gold font-bold py-4 px-10 rounded-lg text-lg uppercase tracking-wider">
+                        <i class="fas fa-heart" data-direction-class="ml-2"></i> <span data-lang="heroSupportBtn">ادعم المشروع</span>
+                    </a>
+
                     <a href="https://discord.gg/chkaYVz36U" target="_blank" class="hover-trigger inline-block btn-secondary font-bold py-4 px-8 rounded-lg text-lg uppercase tracking-wider">
                          <i class="fab fa-discord"></i>
                     </a>
@@ -488,9 +521,16 @@
                     كن من أوائل الأبطال الذين يختبرون الإصدار الرسمي من عالم EGORISE. حمّل التحديث الجديد والمحسن مباشرة وشاركنا رأيك!
                 </p>
                 <div class="mt-10 flex flex-col items-center justify-center gap-4">
-                    <a id="download-btn" href="https://github.com/xbelal15/xbelal15.github.io/releases/download/newupdate8.0/EgoRise.apk" target="_blank" class="hover-trigger inline-block btn-primary font-bold py-4 px-12 rounded-lg text-xl uppercase tracking-wider">
-                        <i class="fas fa-download" data-direction-class="mr-3"></i> <span data-lang="downloadButton">تحميل التحديث (v8.0)</span>
-                    </a>
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <a id="download-btn" href="https://github.com/xbelal15/xbelal15.github.io/releases/download/newupdate8.0/EgoRise.apk" target="_blank" class="hover-trigger inline-block btn-primary font-bold py-4 px-12 rounded-lg text-xl uppercase tracking-wider">
+                            <i class="fas fa-download" data-direction-class="mr-3"></i> <span data-lang="downloadButton">تحميل التحديث (v8.0)</span>
+                        </a>
+                        <!-- NEW SUPPORT BUTTON (DOWNLOAD SECTION) -->
+                        <a href="#support" class="hover-trigger inline-block btn-gold font-bold py-4 px-12 rounded-lg text-xl uppercase tracking-wider text-center">
+                            <i class="fas fa-gem" data-direction-class="ml-2"></i> <span data-lang="downloadSupportBtn">شراء الجواهر والدعم</span>
+                        </a>
+                    </div>
+                    
                     <div class="flex items-center gap-2 text-lg text-gray-400">
                         <i class="fas fa-users text-purple-400"></i>
                         <span id="download-counter" class="font-bold text-glow-gold text-2xl">17254</span>
@@ -500,46 +540,88 @@
             </div>
         </section>
 
-        <!-- 3. Support the Legend Section -->
+        <!-- 3. Support & Gems Section (REVAMPED) -->
         <section id="support" class="py-20 px-6 bg-black border-t border-purple-900/30">
-            <div class="max-w-4xl mx-auto text-center fade-in">
-                <h2 class="text-4xl md:text-5xl font-bold tracking-wider" data-lang="supportTitle">كُن شريكاً في <span class="text-neon-purple">الأسطورة</span></h2>
-                <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto" data-lang="supportSubtitle">
-                    حلم EGORISE بدأ بفرد، لكنه ينمو بمجتمع. كل سطر برمجي كتبته كان خطوة نحو تغيير واقعنا. الآن، يمكنك أن تكون أكثر من مجرد لاعب، يمكنك أن تكون مؤسسًا. دعمك، مهما كان بسيطًا، هو الوقود الذي سيحافظ على استمرارية هذا العالم وتطوره.
+            <div class="max-w-6xl mx-auto text-center fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold tracking-wider mb-4" data-lang="supportTitle">ادعم الأسطورة <span class="text-glow-gold">واحصل على الجواهر</span></h2>
+                <p class="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto" data-lang="supportSubtitle">
+                    هذا الدعم هو الوقود لاستمرار المشروع. في المقابل، ستحصل على **جواهر داخل اللعبة** بنفس قيمة دعمك، بالإضافة إلى **لقب المؤسس** الفخري. اختر الطريقة التي تناسبك وكن جزءاً من الحلم.
                 </p>
 
-                <div class="mt-10 max-w-2xl mx-auto">
+                <!-- Goal Progress -->
+                <div class="mt-10 max-w-3xl mx-auto mb-16">
                     <div class="flex justify-between items-center mb-2 text-white">
-                        <span class="font-bold" data-lang="supportGoal">هدف التأسيس: $1500</span>
-                        <span id="progress-text" class="font-bold text-purple-400">$0 / $1500 (0%)</span>
+                        <span class="font-bold" data-lang="supportGoal">هدف المشروع: $3000</span>
+                        <span id="progress-text" class="font-bold text-yellow-500">$0 / $3000 (0%)</span>
                     </div>
-                    <div class="w-full bg-gray-800 rounded-full h-4 border-2 border-purple-800/50 progress-bar-bg">
-                        <div id="progress-bar-fill" class="bg-purple-600 h-full rounded-full progress-bar-fill shadow-[0_0_15px_#6A00FF]" style="width: 0%;"></div>
-                    </div>
-                    <p class="text-sm mt-2 text-gray-400" data-lang="supportGoalDesc">لتغطية تكاليف السيرفرات، التسويق، والتطوير المستمر.</p>
-                </div>
-
-                <div class="mt-12 border-2 border-purple-800/30 rounded-2xl p-8 max-w-2xl mx-auto bg-black/40 backdrop-blur-sm">
-                    <h3 class="text-2xl font-bold text-glow-gold mb-6" data-lang="rewardsTitle">ماذا ستحصل عليه مقابل دعمك؟</h3>
-                    <div class="flex flex-col md:flex-row items-center justify-center gap-8">
-                        <div class="text-center group">
-                            <img src="https://i.postimg.cc/sXNg0XSj/file-00000000cca0620a9c083def2a7473d5.png" alt="أيقونة شارة المؤسس الحصرية داخل تطبيق EGORISE" class="founder-badge-icon mx-auto w-24 h-24 mb-2 drop-shadow-[0_0_15px_rgba(172,122,255,0.6)] group-hover:scale-110 transition-transform">
-                            <h4 class="text-xl font-bold" data-lang="reward1Title">لقب المؤسس المميز</h4>
-                            <p class="text-gray-400" data-lang="reward1Desc">لقب حصري داخل التطبيق والديسكورد يميّزك كداعم أساسي للمشروع.</p>
-                        </div>
-                        <div class="text-center group">
-                            <i class="fas fa-gem text-6xl text-blue-400 mb-2 drop-shadow-[0_0_10px_rgba(96,165,250,0.5)] group-hover:scale-110 transition-transform block"></i>
-                            <h4 class="text-xl font-bold" data-lang="reward2Title">جواهر بقيمة دعمك</h4>
-                            <p class="text-gray-400" data-lang="reward2Desc">ستحصل على جواهر داخل اللعبة بنفس قيمة المبلغ الذي تساهم به.</p>
-                        </div>
+                    <div class="w-full bg-gray-800 rounded-full h-4 border-2 border-yellow-600/50 progress-bar-bg">
+                        <div id="progress-bar-fill" class="bg-yellow-500 h-full rounded-full progress-bar-fill shadow-[0_0_15px_#F59E0B]" style="width: 0%;"></div>
                     </div>
                 </div>
 
-                <div class="mt-12">
-                    <button id="open-donate-modal" class="hover-trigger w-full sm:w-auto inline-block btn-primary font-bold py-4 px-10 rounded-lg text-lg uppercase tracking-wider">
-                        <i class="fas fa-hand-holding-heart" data-direction-class="ml-2"></i> <span data-lang="supportButton">اختر طريقة الدعم التي تناسبك</span>
-                    </button>
+                <!-- Payment Methods Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    
+                    <!-- Method 1: Direct Link (Creators.sa) -->
+                    <div class="support-card rounded-2xl p-8 flex flex-col items-center relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 bg-yellow-600 text-black font-bold px-4 py-1 rounded-bl-xl text-sm" data-lang="recommendedBadge">موصى به</div>
+                        <div class="w-20 h-20 bg-yellow-500/10 rounded-full flex items-center justify-center mb-6 border border-yellow-500/30 group-hover:bg-yellow-500/20 transition-all">
+                            <i class="fas fa-credit-card text-4xl text-yellow-400"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2" data-lang="directPayTitle">الدفع المباشر (الأسرع)</h3>
+                        <p class="text-gray-400 mb-6 text-sm" data-lang="directPayDesc">يدعم Apple Pay، Visa، Mada، Google Pay. آمن وسريع.</p>
+                        
+                        <!-- Icons Row -->
+                        <div class="flex gap-4 mb-8 text-2xl text-gray-500">
+                            <i class="fab fa-apple hover:text-white transition-colors"></i>
+                            <i class="fab fa-google-pay hover:text-white transition-colors"></i>
+                            <i class="fab fa-cc-visa hover:text-white transition-colors"></i>
+                            <i class="far fa-credit-card hover:text-white transition-colors"></i>
+                        </div>
+
+                        <a href="https://creators.sa/rizo0" target="_blank" class="w-full btn-gold font-bold py-4 rounded-lg text-lg uppercase tracking-wider shadow-lg hover:shadow-yellow-500/20 transition-all">
+                            <span data-lang="payNowBtn">ادفع الآن</span> <i class="fas fa-external-link-alt" data-direction-class="mr-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- Method 2: Crypto -->
+                    <div class="support-card rounded-2xl p-8 flex flex-col items-center group">
+                        <div class="w-20 h-20 bg-purple-500/10 rounded-full flex items-center justify-center mb-6 border border-purple-500/30 group-hover:bg-purple-500/20 transition-all">
+                            <i class="fab fa-bitcoin text-4xl text-purple-400"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2" data-lang="cryptoPayTitle">الدفع عبر الكريبتو</h3>
+                        <p class="text-gray-400 mb-6 text-sm" data-lang="cryptoPayDesc">ادعم باستخدام USDT أو Binance Pay. مثالي للتعاملات الرقمية.</p>
+
+                        <div class="w-full space-y-4 text-left" data-direction-class="text-right">
+                            <div class="bg-black/40 p-3 rounded-lg border border-gray-700">
+                                <p class="text-xs text-gray-500 mb-1">Binance Pay ID</p>
+                                <div class="flex justify-between items-center">
+                                    <span id="binance-id-card" class="font-mono text-yellow-400 font-bold">572095376</span>
+                                    <button class="copy-btn px-2 py-1 rounded text-xs text-white" data-copy-target="binance-id-card"><i class="fas fa-copy"></i></button>
+                                </div>
+                            </div>
+                            <div class="bg-black/40 p-3 rounded-lg border border-gray-700">
+                                <p class="text-xs text-gray-500 mb-1">USDT (TRC20)</p>
+                                <div class="flex justify-between items-center">
+                                    <span id="usdt-addr-card" class="font-mono text-xs text-gray-300 truncate mr-2">TBXADDkdCzuYQwsjp6yvGbN6qCAEavBXH8</span>
+                                    <button class="copy-btn px-2 py-1 rounded text-xs text-white flex-shrink-0" data-copy-target="usdt-addr-card"><i class="fas fa-copy"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Verification Step -->
+                <div class="mt-16 bg-gradient-to-r from-purple-900/20 to-black border border-purple-500/30 rounded-2xl p-8 max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="text-right" data-direction-class="text-right md:text-right text-center">
+                        <h3 class="text-2xl font-bold text-white mb-2" data-lang="verifyTitle">تم التحويل؟ احصل على مكافأتك!</h3>
+                        <p class="text-gray-300 text-sm" data-lang="verifyDesc">بعد إتمام عملية الدعم بأي طريقة، تواصل معي مباشرة على إنستجرام وأرسل صورة التحويل لتفعيل الجواهر ولقب المؤسس في حسابك.</p>
+                    </div>
+                    <a href="https://www.instagram.com/xrizo0?igsh=ZDlmeXV3bDZoN2di" target="_blank" class="flex-shrink-0 btn-primary px-8 py-3 rounded-lg font-bold hover:scale-105 transition-transform">
+                        <i class="fab fa-instagram text-xl" data-direction-class="ml-2"></i> <span data-lang="verifyBtn">تواصل معي للتفعيل</span>
+                    </a>
+                </div>
+
             </div>
         </section>
 
@@ -699,55 +781,6 @@
         </a>
     </div>
 
-    <!-- Donation Modal -->
-    <div id="donate-modal" class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-4">
-        <!-- Overlay -->
-        <div id="modal-overlay" class="modal-overlay absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
-        <!-- Content -->
-        <div class="modal-content relative w-full max-w-lg bg-gray-900/90 border border-purple-800/50 rounded-2xl shadow-[0_0_30px_rgba(106,0,255,0.3)] p-8 text-center">
-            <button id="close-modal-btn" class="hover-trigger absolute top-4 text-gray-500 hover:text-white transition-colors" data-direction-class="left-4">
-                <i class="fas fa-times text-2xl"></i>
-            </button>
-            <h2 class="text-3xl font-bold text-glow-gold mb-6" data-lang="modalTitle">ادعم أسطورة EGORISE</h2>
-            <div class="space-y-6">
-                <!-- Crypto Option -->
-                <div class="bg-black/50 p-4 rounded-lg border border-gray-700 hover:border-purple-500 transition-colors" data-direction-class="text-right">
-                    <h3 class="text-xl font-bold mb-4 text-neon-purple" data-lang="modalCryptoTitle"><i class="fas fa-coins" data-direction-class="ml-2"></i>التبرع عبر العملات الرقمية</h3>
-                    <div class="space-y-3">
-                        <div>
-                            <p class="text-gray-400">Binance Pay ID:</p>
-                            <div class="flex items-center gap-2">
-                                <p id="binance-id" class="text-lg font-mono text-gray-200">572095376</p>
-                                <button class="copy-btn hover-trigger px-3 py-1 rounded-md text-sm" data-copy-target="binance-id">
-                                    <i class="fas fa-copy" data-direction-class="mr-1"></i> <span data-lang="copy">نسخ</span>
-                                </button>
-                            </div>
-                        </div>
-                        <div>
-                            <p class="text-gray-400">USDT Address (Tron/TRC20):</p>
-                            <div class="flex items-center gap-2">
-                                <p id="usdt-address" class="text-sm font-mono text-gray-200 break-all">TBXADDkdCzuYQwsjp6yvGbN6qCAEavBXH8</p>
-                                <button class="copy-btn hover-trigger px-3 py-1 rounded-md text-sm" data-copy-target="usdt-address">
-                                    <i class="fas fa-copy" data-direction-class="mr-1"></i> <span data-lang="copy">نسخ</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Discord Option -->
-                <a href="https://discord.gg/chkaYVz36U" target="_blank" class="hover-trigger w-full block bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg text-lg transition-colors border border-gray-600 hover:border-white">
-                    <i class="fab fa-discord" data-direction-class="ml-2"></i> <span data-lang="modalDirect">تواصل للتبرع المباشر</span>
-                </a>
-                <!-- Gems Option -->
-                <a href="https://discord.gg/chkaYVz36U" target="_blank" class="hover-trigger w-full block bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-6 rounded-lg text-lg transition-colors shadow-[0_0_10px_rgba(37,99,235,0.5)] hover:shadow-[0_0_20px_rgba(37,99,235,0.7)]">
-                    <i class="fas fa-gem" data-direction-class="ml-2"></i> <span data-lang="modalGems">تواصل لشراء الجواهر</span>
-                </a>
-            </div>
-        </div>
-    </div>
-
-
     <!-- Scripts -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -770,7 +803,7 @@
             });
 
             // Hover effect for links
-            const hoverTriggers = document.querySelectorAll('a, button, .hover-trigger, .btn-primary, .btn-secondary');
+            const hoverTriggers = document.querySelectorAll('a, button, .hover-trigger, .btn-primary, .btn-secondary, .btn-gold, .support-card');
             hoverTriggers.forEach(trigger => {
                 trigger.addEventListener('mouseenter', () => {
                     document.body.classList.add('hovering');
@@ -875,21 +908,25 @@
                     heroTitle: 'حوّل حياتك إلى لعبة <span class="text-neon-purple">RPG</span> حقيقية',
                     heroSubtitle: "رحلتي لبناء أول تطبيق سيغيّر مفهوم تطوير الذات للأبد.",
                     heroDownloadBtn: "تحميل v8.0",
+                    heroSupportBtn: "ادعم المشروع",
                     heroDownloadCountText: "بطل قاموا بالتحميل",
                     downloadTitle: 'النسخة الرسمية <span class="text-neon-purple">v8.0 متاحة الآن</span>',
                     downloadSubtitle: "كن من أوائل الأبطال الذين يختبرون الإصدار الرسمي من عالم EGORISE. حمّل التحديث الجديد والمحسن مباشرة وشاركنا رأيك!",
                     downloadButton: "تحميل التحديث (v8.0)",
+                    downloadSupportBtn: "شراء الجواهر والدعم",
                     downloadCounterText: "بطل قاموا بالتحميل",
-                    supportTitle: 'كُن شريكاً في <span class="text-neon-purple">الأسطورة</span>',
-                    supportSubtitle: "حلم EGORISE بدأ بفرد، لكنه ينمو بمجتمع. كل سطر برمجي كتبته كان خطوة نحو تغيير واقعنا. الآن، يمكنك أن تكون أكثر من مجرد لاعب، يمكنك أن تكون مؤسسًا. دعمك، مهما كان بسيطًا، هو الوقود الذي سيحافظ على استمرارية هذا العالم وتطوره.",
-                    supportGoal: "هدف التأسيس: $1500",
-                    supportGoalDesc: "لتغطية تكاليف السيرفرات، التسويق، والتطوير المستمر.",
-                    rewardsTitle: "ماذا ستحصل عليه مقابل دعمك؟",
-                    reward1Title: "لقب المؤسس المميز",
-                    reward1Desc: "لقب حصري داخل التطبيق والديسكورد يميّزك كداعم أساسي للمشروع.",
-                    reward2Title: "جواهر بقيمة دعمك",
-                    reward2Desc: "ستحصل على جواهر داخل اللعبة بنفس قيمة المبلغ الذي تساهم به.",
-                    supportButton: "اختر طريقة الدعم التي تناسبك",
+                    supportTitle: 'ادعم الأسطورة <span class="text-glow-gold">واحصل على الجواهر</span>',
+                    supportSubtitle: "هذا الدعم هو الوقود لاستمرار المشروع. في المقابل، ستحصل على **جواهر داخل اللعبة** بنفس قيمة دعمك، بالإضافة إلى **لقب المؤسس** الفخري. اختر الطريقة التي تناسبك وكن جزءاً من الحلم.",
+                    supportGoal: "هدف المشروع: $3000",
+                    recommendedBadge: "موصى به",
+                    directPayTitle: "الدفع المباشر (الأسرع)",
+                    directPayDesc: "يدعم Apple Pay، Visa، Mada، Google Pay. آمن وسريع.",
+                    payNowBtn: "ادفع الآن",
+                    cryptoPayTitle: "الدفع عبر الكريبتو",
+                    cryptoPayDesc: "ادعم باستخدام USDT أو Binance Pay. مثالي للتعاملات الرقمية.",
+                    verifyTitle: "تم التحويل؟ احصل على مكافأتك!",
+                    verifyDesc: "بعد إتمام عملية الدعم بأي طريقة، تواصل معي مباشرة على إنستجرام وأرسل صورة التحويل لتفعيل الجواهر ولقب المؤسس في حسابك.",
+                    verifyBtn: "تواصل معي للتفعيل",
                     newsTitle: 'آخر <span class="text-neon-purple">الأخبار</span>',
                     news3Title: "تحديث جديد v8.0 متوفر الآن!",
                     news3Desc: "تم حل جميع مشاكل التطبيق وإضافة تحسينات عامة. التحديث الجديد متوفر الآن للتجربة. قم بالتحميل واستمتع بتجربة خالية من الأخطاء!",
@@ -931,11 +968,7 @@
                     footerRights: "© Rizo 2025 – جميع الحقوق محفوظة",
                     footerPrivacy: "سياسة الخصوصية",
                     footerDelete: "حذف الحساب",
-                    modalTitle: "ادعم أسطورة EGORISE",
-                    modalCryptoTitle: "التبرع عبر العملات الرقمية",
                     copy: "نسخ",
-                    modalDirect: "تواصل للتبرع المباشر",
-                    modalGems: "تواصل لشراء الجواهر",
                 },
                 en: {
                     pageTitle: "EGORISE: Official Website | Turn Your Self-Development into an RPG",
@@ -950,21 +983,25 @@
                     heroTitle: 'Turn Your Life Into a Real <span class="text-neon-purple">RPG</span>',
                     heroSubtitle: "My journey to build the first app that will change the concept of self-development forever.",
                     heroDownloadBtn: "Download v8.0",
+                    heroSupportBtn: "Support Project",
                     heroDownloadCountText: "Heroes have downloaded",
                     downloadTitle: 'Official Version <span class="text-neon-purple">v8.0 is Now Available</span>',
                     downloadSubtitle: "Be among the first heroes to experience the official release of EGORISE. Download the new and improved update directly and share your feedback!",
                     downloadButton: "Download Update (v8.0)",
+                    downloadSupportBtn: "Buy Gems & Support",
                     downloadCounterText: "Heroes have downloaded",
-                    supportTitle: 'Become a Partner in the <span class="text-neon-purple">Legend</span>',
-                    supportSubtitle: "The dream of EGORISE started with one individual, but it grows with a community. Every line of code I wrote was a step towards changing our reality. Now, you can be more than just a player; you can be a founder. Your support, no matter how small, is the fuel that will sustain and evolve this world.",
-                    supportGoal: "Founding Goal: $1500",
-                    supportGoalDesc: "To cover server costs, marketing, and continuous development.",
-                    rewardsTitle: "What do you get for your support?",
-                    reward1Title: "Exclusive Founder Title",
-                    reward1Desc: "An exclusive title in-app and on Discord that distinguishes you as a core supporter of the project.",
-                    reward2Title: "Gems Worth Your Support",
-                    reward2Desc: "You will receive in-game gems equivalent to the value of your contribution.",
-                    supportButton: "Choose Your Support Method",
+                    supportTitle: 'Support the Legend <span class="text-glow-gold">& Get Gems</span>',
+                    supportSubtitle: "Your support fuels this project. In return, you'll receive **in-game gems** equal to your contribution, plus the honorary **Founder Title**. Choose your method and join the dream.",
+                    supportGoal: "Project Goal: $3000",
+                    recommendedBadge: "Recommended",
+                    directPayTitle: "Direct Payment (Fastest)",
+                    directPayDesc: "Supports Apple Pay, Visa, Mada, Google Pay. Secure & Instant.",
+                    payNowBtn: "Pay Now",
+                    cryptoPayTitle: "Crypto Payment",
+                    cryptoPayDesc: "Support using USDT or Binance Pay. Perfect for digital transactions.",
+                    verifyTitle: "Transferred? Claim Your Rewards!",
+                    verifyDesc: "After completing the support via any method, DM me directly on Instagram with the payment proof to activate your Gems and Founder Title.",
+                    verifyBtn: "Contact to Activate",
                     newsTitle: 'Latest <span class="text-neon-purple">News</span>',
                     news3Title: "New Update v8.0 Available Now!",
                     news3Desc: "All app issues have been resolved with general improvements. The new update is available now. Download and enjoy a bug-free experience!",
@@ -1006,11 +1043,7 @@
                     footerRights: "© Rizo 2025 – All Rights Reserved",
                     footerPrivacy: "Privacy Policy",
                     footerDelete: "Delete Account",
-                    modalTitle: "Support the Legend of EGORISE",
-                    modalCryptoTitle: "Donate via Crypto",
                     copy: "Copy",
-                    modalDirect: "Contact for Direct Donation",
-                    modalGems: "Contact to Buy Gems",
                 }
             };
 
@@ -1205,19 +1238,6 @@
                 });
             }
 
-
-            // --- Donation Modal Logic ---
-            const modal = document.getElementById('donate-modal');
-            const openModalBtn = document.getElementById('open-donate-modal');
-            const closeModalBtn = document.getElementById('close-modal-btn');
-            const overlay = document.getElementById('modal-overlay');
-
-            if(modal && openModalBtn && closeModalBtn && overlay) {
-                openModalBtn.addEventListener('click', () => modal.classList.remove('hidden'));
-                closeModalBtn.addEventListener('click', () => modal.classList.add('hidden'));
-                overlay.addEventListener('click', () => modal.classList.add('hidden'));
-            }
-
             document.querySelectorAll('.copy-btn').forEach(button => {
                 button.addEventListener('click', () => {
                     const targetId = button.dataset.copyTarget;
@@ -1246,7 +1266,7 @@
                 }, 1000);
             }
 
-            updateSupportProgress(270, 1500);
+            updateSupportProgress(270, 3000); // Updated goal to 3000
         });
     </script>
 </body>
