@@ -192,14 +192,14 @@
         
         /* Loading Screen */
         #loading-screen {
-            transition: opacity 0.8s ease-out, visibility 0.8s;
+            transition: opacity 0.5s ease-out, visibility 0.5s;
         }
         @keyframes loadProgress {
             0% { width: 0%; }
             100% { width: 100%; }
         }
         .animate-progress {
-            animation: loadProgress 2s ease-in-out forwards;
+            animation: loadProgress 1s ease-in-out forwards;
         }
 
         /* FIXED GLITCH EFFECT (Transparent Background) */
@@ -839,10 +839,23 @@
 
             // --- LOADER LOGIC ---
             const loader = document.getElementById('loading-screen');
+            
+            // Remove artificial delay. Hide loader as soon as page fully loads.
+            window.addEventListener('load', () => {
+                // Small buffer to ensure smooth transition if load is instant
+                setTimeout(() => {
+                    loader.style.opacity = '0';
+                    loader.style.visibility = 'hidden';
+                }, 500); 
+            });
+
+            // Fallback: in case load event misfires or takes too long (e.g. slow network image), force hide after 3s
             setTimeout(() => {
-                loader.style.opacity = '0';
-                loader.style.visibility = 'hidden';
-            }, 2500); // 2.5 seconds load time
+                if (loader.style.opacity !== '0') {
+                    loader.style.opacity = '0';
+                    loader.style.visibility = 'hidden';
+                }
+            }, 3000);
 
             // --- PARTICLES LOGIC ---
             const canvas = document.getElementById('particles-canvas');
