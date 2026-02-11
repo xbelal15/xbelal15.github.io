@@ -437,6 +437,47 @@
         .badge-maint { background-color: rgba(251, 191, 36, 0.15); color: #FBBF24; border: 1px solid rgba(251, 191, 36, 0.4); }
         .badge-event { background-color: rgba(16, 185, 129, 0.15); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.4); }
 
+        /* Testimonials Styles */
+        .testimonial-card {
+            background: rgba(31, 41, 55, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            border-color: #6A00FF;
+            transform: translateY(-5px);
+            background: rgba(31, 41, 55, 0.9);
+        }
+
+        /* FAQ Accordion */
+        .faq-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-question {
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .faq-question:hover {
+            color: #a78bfa;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 200px; /* Approximate max height */
+        }
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
         /* Hide cursor on touch devices to avoid issues */
         @media (hover: none) and (pointer: coarse) {
             body { cursor: auto; }
@@ -790,6 +831,94 @@
             </div>
         </section>
 
+        <!-- 8. Testimonials Section (New) -->
+        <section id="testimonials" class="py-20 px-6 bg-black border-t border-purple-900/30">
+            <div class="max-w-6xl mx-auto text-center fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold tracking-wider mb-12" data-lang="testiTitle">آراء <span class="text-neon-purple">الأبطال</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card p-6 rounded-xl text-center relative">
+                        <i class="fas fa-quote-right text-4xl text-purple-500/30 absolute top-4 right-4"></i>
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-purple-500">
+                        <h4 class="text-xl font-bold text-white mb-2" data-lang="testi1Name">أحمد محمد</h4>
+                        <div class="flex justify-center mb-3 text-yellow-400 text-sm">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm italic" data-lang="testi1Text">"غيرت حياتي تماماً! نظام الـ RPG جعل الالتزام بالعادات إدمان حقيقي. شكراً Rizo!"</p>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card p-6 rounded-xl text-center relative">
+                        <i class="fas fa-quote-right text-4xl text-purple-500/30 absolute top-4 right-4"></i>
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User" class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-purple-500">
+                        <h4 class="text-xl font-bold text-white mb-2" data-lang="testi2Name">سارة علي</h4>
+                        <div class="flex justify-center mb-3 text-yellow-400 text-sm">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm italic" data-lang="testi2Text">"أخيراً تطبيق يفهم عقلية محبي الأنمي. التصميم والمهارات شي خيالي. استمروا!"</p>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card p-6 rounded-xl text-center relative">
+                        <i class="fas fa-quote-right text-4xl text-purple-500/30 absolute top-4 right-4"></i>
+                        <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="User" class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-purple-500">
+                        <h4 class="text-xl font-bold text-white mb-2" data-lang="testi3Name">خالد عمر</h4>
+                        <div class="flex justify-center mb-3 text-yellow-400 text-sm">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm italic" data-lang="testi3Text">"أنتظر نسخة الأيفون بفارغ الصبر، جربته على جوال أخي وكان رهيب. 10/10"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. FAQ Section (New) -->
+        <section id="faq" class="py-20 px-6 bg-black border-t border-purple-900/30">
+            <div class="max-w-4xl mx-auto fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-center tracking-wider mb-12" data-lang="faqTitle">الأسئلة <span class="text-neon-purple">الشائعة</span></h2>
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="faq-item bg-gray-900/50 rounded-lg overflow-hidden">
+                        <div class="faq-question p-5 flex justify-between items-center cursor-pointer hover:bg-gray-800 transition-colors">
+                            <h3 class="text-lg md:text-xl font-bold text-white" data-lang="faq1Q">هل التطبيق متوفر للأيفون (iOS)؟</h3>
+                            <i class="fas fa-chevron-down text-purple-400 faq-icon"></i>
+                        </div>
+                        <div class="faq-answer px-5 text-gray-300 text-sm md:text-base bg-black/30">
+                            <p class="py-4" data-lang="faq1A">حالياً التطبيق متاح للأندرويد فقط. سنبدأ العمل على نسخة الأيفون فور تحقيق الهدف المالي في خارطة الطريق وتوفر السيولة الكافية.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ 2 -->
+                    <div class="faq-item bg-gray-900/50 rounded-lg overflow-hidden">
+                        <div class="faq-question p-5 flex justify-between items-center cursor-pointer hover:bg-gray-800 transition-colors">
+                            <h3 class="text-lg md:text-xl font-bold text-white" data-lang="faq2Q">هل سينزل التطبيق على متجر بلاي؟</h3>
+                            <i class="fas fa-chevron-down text-purple-400 faq-icon"></i>
+                        </div>
+                        <div class="faq-answer px-5 text-gray-300 text-sm md:text-base bg-black/30">
+                            <p class="py-4" data-lang="faq2A">للأسف، تم حظر حساب المطور الخاص بي لأسباب غير واضحة (غالباً مادية). الحل يحتاج لسيولة، لذا سنعمل على حل المشكلة ونشره على المتجر بعد جمع الدعم الكافي.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ 3 -->
+                    <div class="faq-item bg-gray-900/50 rounded-lg overflow-hidden">
+                        <div class="faq-question p-5 flex justify-between items-center cursor-pointer hover:bg-gray-800 transition-colors">
+                            <h3 class="text-lg md:text-xl font-bold text-white" data-lang="faq3Q">هل التطبيق مجاني؟</h3>
+                            <i class="fas fa-chevron-down text-purple-400 faq-icon"></i>
+                        </div>
+                        <div class="faq-answer px-5 text-gray-300 text-sm md:text-base bg-black/30">
+                            <p class="py-4" data-lang="faq3A">نعم، مجاني بالكامل. يحتوي على إعلان إجباري مؤقت (لدعم السيرفرات حتى النشر على المتجر) وإعلانات اختيارية للحصول على مكافآت.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ 4 (Added) -->
+                    <div class="faq-item bg-gray-900/50 rounded-lg overflow-hidden">
+                        <div class="faq-question p-5 flex justify-between items-center cursor-pointer hover:bg-gray-800 transition-colors">
+                            <h3 class="text-lg md:text-xl font-bold text-white" data-lang="faq4Q">هل بياناتي وسجلاتي آمنة؟</h3>
+                            <i class="fas fa-chevron-down text-purple-400 faq-icon"></i>
+                        </div>
+                        <div class="faq-answer px-5 text-gray-300 text-sm md:text-base bg-black/30">
+                            <p class="py-4" data-lang="faq4A">بالتأكيد. نستخدم أحدث تقنيات التشفير السحابي لحماية جميع بياناتك، سجلاتك، وتقدمك في اللعبة لضمان عدم ضياعها.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- 8. Community Section -->
         <section id="community" class="py-20 px-6 bg-black border-t border-purple-900/30">
             <div class="max-w-4xl mx-auto text-center fade-in">
@@ -873,7 +1002,7 @@
             });
 
             // Hover effect for links
-            const hoverTriggers = document.querySelectorAll('a, button, .hover-trigger, .btn-primary, .btn-secondary, .btn-gold, .support-card');
+            const hoverTriggers = document.querySelectorAll('a, button, .hover-trigger, .btn-primary, .btn-secondary, .btn-gold, .support-card, .news-card, .testimonial-card, .faq-question');
             hoverTriggers.forEach(trigger => {
                 trigger.addEventListener('mouseenter', () => {
                     document.body.classList.add('hovering');
@@ -902,6 +1031,20 @@
                     loader.style.visibility = 'hidden';
                 }
             }, 3000);
+
+            // --- FAQ Accordion Logic ---
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close others
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) otherItem.classList.remove('active');
+                    });
+                    // Toggle current
+                    item.classList.toggle('active');
+                });
+            });
 
             // --- PARTICLES LOGIC ---
             const canvas = document.getElementById('particles-canvas');
@@ -1055,6 +1198,22 @@
                     footerPrivacy: "سياسة الخصوصية",
                     footerDelete: "حذف الحساب",
                     copy: "نسخ",
+                    testiTitle: 'آراء <span class="text-neon-purple">الأبطال</span>',
+                    testi1Name: "أحمد محمد",
+                    testi1Text: '"غيرت حياتي تماماً! نظام الـ RPG جعل الالتزام بالعادات إدمان حقيقي. شكراً Rizo!"',
+                    testi2Name: "سارة علي",
+                    testi2Text: '"أخيراً تطبيق يفهم عقلية محبي الأنمي. التصميم والمهارات شي خيالي. استمروا!"',
+                    testi3Name: "خالد عمر",
+                    testi3Text: '"أنتظر نسخة الأيفون بفارغ الصبر، جربته على جوال أخي وكان رهيب. 10/10"',
+                    faqTitle: 'الأسئلة <span class="text-neon-purple">الشائعة</span>',
+                    faq1Q: "هل التطبيق متوفر للأيفون (iOS)؟",
+                    faq1A: "حالياً التطبيق متاح للأندرويد فقط. سنبدأ العمل على نسخة الأيفون فور تحقيق الهدف المالي في خارطة الطريق وتوفر السيولة الكافية.",
+                    faq2Q: "هل سينزل التطبيق على متجر بلاي؟",
+                    faq2A: "للأسف، تم حظر حساب المطور الخاص بي لأسباب غير واضحة (غالباً مادية). الحل يحتاج لسيولة، لذا سنعمل على حل المشكلة ونشره على المتجر بعد جمع الدعم الكافي.",
+                    faq3Q: "هل التطبيق مجاني؟",
+                    faq3A: "نعم، مجاني بالكامل. يحتوي على إعلان إجباري مؤقت (لدعم السيرفرات حتى النشر على المتجر) وإعلانات اختيارية للحصول على مكافآت.",
+                    faq4Q: "هل بياناتي وسجلاتي آمنة؟",
+                    faq4A: "بالتأكيد. نستخدم أحدث تقنيات التشفير السحابي لحماية جميع بياناتك، سجلاتك، وتقدمك في اللعبة لضمان عدم ضياعها.",
                 },
                 en: {
                     pageTitle: "EGORISE: Official Website | Turn Your Self-Development into an RPG",
@@ -1133,6 +1292,22 @@
                     footerPrivacy: "Privacy Policy",
                     footerDelete: "Delete Account",
                     copy: "Copy",
+                    testiTitle: 'Heroes <span class="text-neon-purple">Feedback</span>',
+                    testi1Name: "Ahmed Mohamed",
+                    testi1Text: '"Changed my life completely! The RPG system made sticking to habits a real addiction. Thanks Rizo!"',
+                    testi2Name: "Sarah Ali",
+                    testi2Text: '"Finally an app that understands the anime fan mindset. The design and skills are unreal. Keep it up!"',
+                    testi3Name: "Khalid Omar",
+                    testi3Text: '"Waiting for the iPhone version eagerly, tried it on my brother\'s phone and it was awesome. 10/10"',
+                    faqTitle: 'Frequently Asked <span class="text-neon-purple">Questions</span>',
+                    faq1Q: "Is the app available on iPhone (iOS)?",
+                    faq1A: "Currently, the app is available on Android only. We will start working on the iPhone version once we reach the funding goal in the roadmap and have enough liquidity.",
+                    faq2Q: "Will the app be on Play Store?",
+                    faq2A: "Unfortunately, my developer account was banned for unclear reasons (mostly financial). The solution requires liquidity, so we will work on resolving the issue and publishing it after raising enough support.",
+                    faq3Q: "Is the app free?",
+                    faq3A: "Yes, completely free. It contains a temporary mandatory ad (to support servers until store publication) and optional ads for rewards.",
+                    faq4Q: "Is my data and logs safe?",
+                    faq4A: "Absolutely. We use the latest cloud encryption technologies to protect all your data, logs, and game progress to ensure nothing is lost.",
                 }
             };
 
