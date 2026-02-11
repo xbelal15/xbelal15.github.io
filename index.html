@@ -63,6 +63,20 @@
             cursor: none; /* Hide default cursor for custom one */
         }
 
+        /* 0. SCANLINE EFFECT (The System Vibe) */
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1));
+            background-size: 100% 4px;
+            pointer-events: none;
+            z-index: 9998; /* Below cursor, above content */
+            opacity: 0.3;
+        }
+
         /* CUSTOM CURSOR STYLES */
         .cursor-dot,
         .cursor-outline {
@@ -509,6 +523,9 @@
     <div class="cursor-dot" data-cursor-dot></div>
     <div class="cursor-outline" data-cursor-outline></div>
 
+    <!-- 0. SCANLINES OVERLAY -->
+    <div class="scanlines"></div>
+
     <!-- 1. LOADING SCREEN -->
     <div id="loading-screen" class="fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center">
         <div class="text-neon-purple text-3xl md:text-5xl font-bold tracking-widest mb-4 animate-pulse uppercase">
@@ -742,7 +759,7 @@
                 <!-- Added Image Here -->
                 <div class="mb-10 relative group">
                     <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-                    <img src="https://i.postimg.cc/5ysMSQWc/photo-1-2026-02-11-01-28-23.jpg" alt="Update Banner" class="relative rounded-lg shadow-2xl border border-purple-500/30 w-full object-cover">
+                    <img src="https://i.postimg.cc/5ysMSQWc/photo-1-2026-02-11-01-28-23.jpg" alt="Update Banner" loading="lazy" class="relative rounded-lg shadow-2xl border border-purple-500/30 w-full object-cover">
                 </div>
 
                 <div class="max-w-2xl mx-auto space-y-6" data-direction-class="text-right">
@@ -790,7 +807,7 @@
         <!-- 5. Personal Story Section -->
         <section id="about-rizo" class="py-20 px-6 bg-black border-t border-purple-900/30">
             <div class="max-w-4xl mx-auto text-center fade-in">
-                <img src="https://i.postimg.cc/Ssm51QrR/photo-2-2026-02-11-01-20-30.jpg" alt="صورة شخصية لـ Rizo مطور تطبيق EGORISE" class="mx-auto w-24 h-24 mb-6 rounded-full object-cover border-2 border-purple-500/50 shadow-[0_0_20px_rgba(106,0,255,0.4)]">
+                <img src="https://i.postimg.cc/Ssm51QrR/photo-2-2026-02-11-01-20-30.jpg" alt="صورة شخصية لـ Rizo مطور تطبيق EGORISE" loading="lazy" class="mx-auto w-24 h-24 mb-6 rounded-full object-cover border-2 border-purple-500/50 shadow-[0_0_20px_rgba(106,0,255,0.4)]">
                 <h2 class="text-4xl md:text-5xl font-bold text-neon-purple tracking-wider" data-lang="storyTitle">قصة Rizo</h2>
                  <p class="mt-8 text-lg md:text-xl max-w-3xl mx-auto text-gray-300 leading-relaxed" data-lang="storyDesc">
                     في عمر الـ 20، شعرت أن الحياة الواقعية تفتقر لنظام واضح للتقدم. تطبيق <span class="text-neon-purple font-bold">EGORISE</span> ليس مجرد مشروع، بل هو محاولتي لصناعة الأداة التي كنت أحتاجها، ومساعدة الآلاف على خوض رحلة تطوير الذات، وتحقيق حلمي بأن أكون أول من يغير واقع عائلتي.
@@ -865,7 +882,7 @@
         <!-- 6. About the App Section (4. 3D TILT EFFECT) -->
         <section id="about-app" class="py-20 px-6 bg-black border-t border-purple-900/30">
             <div class="max-w-6xl mx-auto text-center fade-in">
-                <img src="https://i.postimg.cc/28rsRTSt/app-logo-full.png" alt="EGORISE App Icon" class="mx-auto w-24 h-24 mb-6 rounded-2xl shadow-[0_0_15px_rgba(106,0,255,0.5)]">
+                <img src="https://i.postimg.cc/28rsRTSt/app-logo-full.png" alt="EGORISE App Icon" loading="lazy" class="mx-auto w-24 h-24 mb-6 rounded-2xl shadow-[0_0_15px_rgba(106,0,255,0.5)]">
                 
                 <h2 class="text-4xl md:text-5xl font-bold tracking-wider mb-6" data-lang="aboutTitle">ما هو <span class="text-neon-purple">EGORISE</span>؟</h2>
                 <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-12" data-lang="aboutDesc">
@@ -876,16 +893,16 @@
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6 px-4">
                     <!-- Added data-tilt attribute for Vanilla-tilt.js -->
                     <div class="tilt-card hover-trigger" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.5">
-                        <img src="https://i.postimg.cc/TwX95dhf/1.jpg" alt="Screenshot 1" class="rounded-xl border border-purple-800/30 w-full h-auto shadow-lg">
+                        <img src="https://i.postimg.cc/TwX95dhf/1.jpg" alt="Screenshot 1" loading="lazy" class="rounded-xl border border-purple-800/30 w-full h-auto shadow-lg">
                     </div>
                     <div class="tilt-card hover-trigger" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.5">
-                        <img src="https://i.postimg.cc/L81LtccV/2.jpg" alt="Screenshot 2" class="rounded-xl border border-purple-800/30 w-full h-auto shadow-lg">
+                        <img src="https://i.postimg.cc/L81LtccV/2.jpg" alt="Screenshot 2" loading="lazy" class="rounded-xl border border-purple-800/30 w-full h-auto shadow-lg">
                     </div>
                     <div class="tilt-card hover-trigger" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.5">
-                        <img src="https://i.postimg.cc/MHLfR5tc/3.jpg" alt="Screenshot 3" class="rounded-xl border border-purple-800/30 w-full h-auto shadow-lg">
+                        <img src="https://i.postimg.cc/MHLfR5tc/3.jpg" alt="Screenshot 3" loading="lazy" class="rounded-xl border border-purple-800/30 w-full h-auto shadow-lg">
                     </div>
                     <div class="tilt-card hover-trigger" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.5">
-                        <img src="https://i.postimg.cc/02JbFpch/4.jpg" alt="Screenshot 4" class="rounded-xl border border-purple-800/30 w-full h-auto shadow-lg">
+                        <img src="https://i.postimg.cc/02JbFpch/4.jpg" alt="Screenshot 4" loading="lazy" class="rounded-xl border border-purple-800/30 w-full h-auto shadow-lg">
                     </div>
                 </div>
             </div>
@@ -920,7 +937,7 @@
                     <!-- Testimonial 1 -->
                     <div class="testimonial-card p-6 rounded-xl text-center relative">
                         <i class="fas fa-quote-right text-4xl text-purple-500/30 absolute top-4 right-4"></i>
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-purple-500">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" loading="lazy" class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-purple-500">
                         <h4 class="text-xl font-bold text-white mb-2" data-lang="testi1Name">أحمد محمد</h4>
                         <div class="flex justify-center mb-3 text-yellow-400 text-sm">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -930,7 +947,7 @@
                     <!-- Testimonial 2 -->
                     <div class="testimonial-card p-6 rounded-xl text-center relative">
                         <i class="fas fa-quote-right text-4xl text-purple-500/30 absolute top-4 right-4"></i>
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User" class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-purple-500">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User" loading="lazy" class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-purple-500">
                         <h4 class="text-xl font-bold text-white mb-2" data-lang="testi2Name">سارة علي</h4>
                         <div class="flex justify-center mb-3 text-yellow-400 text-sm">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -940,7 +957,7 @@
                     <!-- Testimonial 3 -->
                     <div class="testimonial-card p-6 rounded-xl text-center relative">
                         <i class="fas fa-quote-right text-4xl text-purple-500/30 absolute top-4 right-4"></i>
-                        <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="User" class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-purple-500">
+                        <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="User" loading="lazy" class="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-purple-500">
                         <h4 class="text-xl font-bold text-white mb-2" data-lang="testi3Name">خالد عمر</h4>
                         <div class="flex justify-center mb-3 text-yellow-400 text-sm">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
@@ -1020,16 +1037,6 @@
                     <a href="https://www.instagram.com/xrizo0?igsh=ZDlmeXV3bDZoN2di" target="_blank" class="hover-trigger text-[#6A00FF] hover:text-white transition-all duration-300 transform hover:scale-125 hover:drop-shadow-[0_0_10px_#6A00FF]"><i class="fab fa-instagram text-4xl"></i></a>
                     <a href="https://www.tiktok.com/@xrizo0?_t=ZS-8xo2BHa4V3S&_r=1" target="_blank" class="hover-trigger text-[#6A00FF] hover:text-white transition-all duration-300 transform hover:scale-125 hover:drop-shadow-[0_0_10px_#6A00FF]"><i class="fab fa-tiktok text-4xl"></i></a>
                 </div>
-            </div>
-        </section>
-        
-        <!-- 9. App Intro Section -->
-        <section id="app-intro" class="py-20 px-6 bg-black border-t border-purple-900/30">
-            <div class="max-w-4xl mx-auto text-center fade-in">
-                 <img src="https://i.postimg.cc/28rsRTSt/app-logo-full.png" alt="شعار تطبيق EGORISE الرسمي" class="mx-auto w-48 h-48 mb-6 drop-shadow-[0_0_20px_rgba(106,0,255,0.8)] animate-pulse">
-                 <h2 class="text-6xl md:text-7xl font-bold text-neon-purple tracking-wider">EGORISE</h2>
-                 <p class="mt-4 text-xl md:text-2xl text-gray-400 tracking-widest">LEVEL UP YOUR REALITY</p>
-                 <p class="mt-6 text-lg text-gray-300 max-w-2xl mx-auto" data-lang="appIntroDesc">هذا هو التطبيق الذي سيغير مفهوم تطوير الذات قريبا.</p>
             </div>
         </section>
 
