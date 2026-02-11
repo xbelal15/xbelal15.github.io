@@ -478,6 +478,23 @@
             transform: rotate(180deg);
         }
 
+        /* Class Card Styles */
+        .class-card {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: linear-gradient(180deg, rgba(20,20,20,0.8) 0%, rgba(10,10,10,0.95) 100%);
+            transition: all 0.4s ease;
+        }
+        .class-card:hover {
+            border-color: var(--class-color);
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px var(--class-color-dim);
+        }
+        .class-icon-wrapper {
+            background: radial-gradient(circle, var(--class-color-dim) 0%, transparent 70%);
+        }
+
         /* Hide cursor on touch devices to avoid issues */
         @media (hover: none) and (pointer: coarse) {
             body { cursor: auto; }
@@ -778,6 +795,70 @@
                  <p class="mt-8 text-lg md:text-xl max-w-3xl mx-auto text-gray-300 leading-relaxed" data-lang="storyDesc">
                     في عمر الـ 20، شعرت أن الحياة الواقعية تفتقر لنظام واضح للتقدم. تطبيق <span class="text-neon-purple font-bold">EGORISE</span> ليس مجرد مشروع، بل هو محاولتي لصناعة الأداة التي كنت أحتاجها، ومساعدة الآلاف على خوض رحلة تطوير الذات، وتحقيق حلمي بأن أكون أول من يغير واقع عائلتي.
                 </p>
+            </div>
+        </section>
+        
+        <!-- NEW SECTION: Game Features & Classes -->
+        <section id="features" class="py-20 px-6 bg-black border-t border-purple-900/30">
+            <div class="max-w-7xl mx-auto text-center fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold tracking-wider mb-6" data-lang="featuresTitle">اختر <span class="text-neon-purple">مسارك</span></h2>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-16" data-lang="featuresDesc">
+                    نظام "الإيقاظ" يتيح لك اختيار فئة تناسب أسلوب حياتك. كل فئة تمنحك مهاماً خاصة وقدرات فريدة.
+                </p>
+
+                <!-- Classes Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+                    <!-- Class 1 -->
+                    <div class="class-card p-6 rounded-xl hover-trigger" style="--class-color: #9333EA; --class-color-dim: rgba(147, 51, 234, 0.2);">
+                        <div class="class-icon-wrapper w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-chess-king text-4xl text-purple-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2" data-lang="class1Title">حاكم الظلال</h3>
+                        <p class="text-gray-400 text-sm" data-lang="class1Desc">التركيز على الإنتاجية، القيادة، وإدارة الوقت بصرامة.</p>
+                    </div>
+                    <!-- Class 2 -->
+                    <div class="class-card p-6 rounded-xl hover-trigger" style="--class-color: #DC2626; --class-color-dim: rgba(220, 38, 38, 0.2);">
+                        <div class="class-icon-wrapper w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-skull text-4xl text-red-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2" data-lang="class2Title">سفاح الظلام</h3>
+                        <p class="text-gray-400 text-sm" data-lang="class2Desc">التركيز على القوة البدنية، اللياقة، وتحدي الحدود الجسدية.</p>
+                    </div>
+                    <!-- Class 3 -->
+                    <div class="class-card p-6 rounded-xl hover-trigger" style="--class-color: #2563EB; --class-color-dim: rgba(37, 99, 235, 0.2);">
+                        <div class="class-icon-wrapper w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-hat-wizard text-4xl text-blue-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2" data-lang="class3Title">ساحر غامض</h3>
+                        <p class="text-gray-400 text-sm" data-lang="class3Desc">التركيز على الذكاء، التعلم، القراءة، وتطوير العقل.</p>
+                    </div>
+                    <!-- Class 4 -->
+                    <div class="class-card p-6 rounded-xl hover-trigger" style="--class-color: #059669; --class-color-dim: rgba(5, 150, 105, 0.2);">
+                        <div class="class-icon-wrapper w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-shield-alt text-4xl text-green-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2" data-lang="class4Title">الدرع الحديدي</h3>
+                        <p class="text-gray-400 text-sm" data-lang="class4Desc">التركيز على الصحة، التحمل، والعادات الصحية المستدامة.</p>
+                    </div>
+                </div>
+
+                <!-- RPG Features List -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-right" data-direction-class="text-right">
+                    <div class="bg-gray-900/60 p-8 rounded-2xl border border-gray-700">
+                        <h3 class="text-2xl font-bold text-glow-gold mb-6"><i class="fas fa-dungeon" data-direction-class="ml-3"></i> <span data-lang="featDungeonTitle">نظام الدهاليز</span></h3>
+                        <ul class="space-y-4 text-gray-300">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-purple-500 mt-1" data-direction-class="ml-3"></i> <span data-lang="featDungeon1">دهاليز أسبوعية (7 طوابق) وشهرية (30 طابق) لتحدي الانضباط.</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-purple-500 mt-1" data-direction-class="ml-3"></i> <span data-lang="featDungeon2">مكافآت ضخمة عند إكمال الطوابق وهزيمة "زعماء" الكسل.</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-900/60 p-8 rounded-2xl border border-gray-700">
+                        <h3 class="text-2xl font-bold text-glow-gold mb-6"><i class="fas fa-scroll" data-direction-class="ml-3"></i> <span data-lang="featContractTitle">نظام العقود والرانك</span></h3>
+                        <ul class="space-y-4 text-gray-300">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-purple-500 mt-1" data-direction-class="ml-3"></i> <span data-lang="featContract1">أنشئ مهامك الخاصة باستخدام "حبر العقود" وحدد الصعوبة والمكافأة.</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-purple-500 mt-1" data-direction-class="ml-3"></i> <span data-lang="featContract2">ارفع تصنيفك من E-Rank إلى S-Rank بناءً على التزامك ونقاط الخبرة.</span></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
         
@@ -1214,6 +1295,22 @@
                     faq3A: "نعم، مجاني بالكامل. يحتوي على إعلان إجباري مؤقت (لدعم السيرفرات حتى النشر على المتجر) وإعلانات اختيارية للحصول على مكافآت.",
                     faq4Q: "هل بياناتي وسجلاتي آمنة؟",
                     faq4A: "بالتأكيد. نستخدم أحدث تقنيات التشفير السحابي لحماية جميع بياناتك، سجلاتك، وتقدمك في اللعبة لضمان عدم ضياعها.",
+                    featuresTitle: 'اختر <span class="text-neon-purple">مسارك</span>',
+                    featuresDesc: "نظام \"الإيقاظ\" يتيح لك اختيار فئة تناسب أسلوب حياتك. كل فئة تمنحك مهاماً خاصة وقدرات فريدة.",
+                    class1Title: "حاكم الظلال",
+                    class1Desc: "التركيز على الإنتاجية، القيادة، وإدارة الوقت بصرامة.",
+                    class2Title: "سفاح الظلام",
+                    class2Desc: "التركيز على القوة البدنية، اللياقة، وتحدي الحدود الجسدية.",
+                    class3Title: "ساحر غامض",
+                    class3Desc: "التركيز على الذكاء، التعلم، القراءة، وتطوير العقل.",
+                    class4Title: "الدرع الحديدي",
+                    class4Desc: "التركيز على الصحة، التحمل، والعادات الصحية المستدامة.",
+                    featDungeonTitle: "نظام الدهاليز",
+                    featDungeon1: "دهاليز أسبوعية (7 طوابق) وشهرية (30 طابق) لتحدي الانضباط.",
+                    featDungeon2: "مكافآت ضخمة عند إكمال الطوابق وهزيمة \"زعماء\" الكسل.",
+                    featContractTitle: "نظام العقود والرانك",
+                    featContract1: "أنشئ مهامك الخاصة باستخدام \"حبر العقود\" وحدد الصعوبة والمكافأة.",
+                    featContract2: "ارفع تصنيفك من E-Rank إلى S-Rank بناءً على التزامك ونقاط الخبرة.",
                 },
                 en: {
                     pageTitle: "EGORISE: Official Website | Turn Your Self-Development into an RPG",
@@ -1308,6 +1405,22 @@
                     faq3A: "Yes, completely free. It contains a temporary mandatory ad (to support servers until store publication) and optional ads for rewards.",
                     faq4Q: "Is my data and logs safe?",
                     faq4A: "Absolutely. We use the latest cloud encryption technologies to protect all your data, logs, and game progress to ensure nothing is lost.",
+                    featuresTitle: 'Choose Your <span class="text-neon-purple">Path</span>',
+                    featuresDesc: "The 'Awakening' system lets you choose a class that fits your lifestyle. Each class grants unique quests and abilities.",
+                    class1Title: "Shadow Monarch",
+                    class1Desc: "Focus on Productivity, Leadership, and strict Time Management.",
+                    class2Title: "Dark Slayer",
+                    class2Desc: "Focus on Physical Strength, Fitness, and challenging physical limits.",
+                    class3Title: "Mystery Mage",
+                    class3Desc: "Focus on Intelligence, Learning, Reading, and Mind Development.",
+                    class4Title: "Iron Shield",
+                    class4Desc: "Focus on Health, Endurance, and sustainable healthy habits.",
+                    featDungeonTitle: "Dungeon System",
+                    featDungeon1: "Weekly (7 floors) and Monthly (30 floors) dungeons to challenge your discipline.",
+                    featDungeon2: "Huge rewards for clearing floors and defeating 'Bosses' of laziness.",
+                    featContractTitle: "Contracts & Ranking",
+                    featContract1: "Create your own quests using 'Contract Ink', set difficulty and rewards.",
+                    featContract2: "Rise from E-Rank to S-Rank based on your commitment and XP.",
                 }
             };
 
